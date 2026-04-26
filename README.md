@@ -12,10 +12,17 @@ The goal is to build the bridge between "I took real analysis" and "I actually s
 Currently a work in progress. Chapters 1–2 are largely complete; Chapter 3 is in active development, and outlines of the remaining chapters have been sketched in their entirety.
 
 Ch1: Numbers
+
 Ch2: Fourier Series
+
 Ch3: Polynomials
+
 Ch4: The Heat Equation and the Fourier Transform
+
 Ch5: Algorithms and the Fast Fourier Transform
+
 Ch6: The Exponential Family
+
 Ch7: Quantum Mechanics
+
 Ch8: Representation Theory
