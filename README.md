@@ -11,11 +11,11 @@ The goal is to build the bridge between "I took real analysis" and "I actually s
 
 Currently a work in progress. Chapters 1–2 are largely complete; Chapter 3 is in active development, and outlines of the remaining chapters have been sketched in their entirety.
 
-Ch1: Numbers
+[Ch1: Numbers](https://github.com/greystat/good-math-texts/blob/main/Approximation-Representation-Ch1.pdf)
 
-Ch2: Fourier Series
+[Ch2: Fourier Series](https://github.com/greystat/good-math-texts/blob/main/Approximation-Representation-Ch2.pdf)
 
-Ch3: Polynomials
+[Ch3: Polynomials](https://github.com/greystat/good-math-texts/blob/main/Approximation-Representation-Ch3inprog.pdf)
 
 Ch4: The Heat Equation and the Fourier Transform
 
