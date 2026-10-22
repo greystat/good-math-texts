@@ -1,8 +1,6 @@
 # good-math-texts
 A persistent repository where I'll upload my own math expositions.
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
-
 **Approximation and Representation**
 
 A graduate-level textbook on the mathematical methods that connect pure analysis to applied statistics. The central arc follows how we approximate and represent functions — starting with Fourier series, moving through polynomial approximation and orthogonal expansions, then into the Fourier transform, FFT, regression, optimization, and representation — intending to treat each topic with full rigor, but while retaining an informal voice first and foremost.
