@@ -1,0 +1,1553 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[margin=2.7cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\setlist{itemsep=2pt,topsep=4pt}
+\allowdisplaybreaks
+\emergencystretch=3em
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Alph{theorem}}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem{cor}[prop]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[prop]{Definition}
+\newtheorem{example}[prop]{Example}
+\theoremstyle{remark}
+\newtheorem{rem}[prop]{Remark}
+
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\TT}{\mathbb T}
+\newcommand{\m}{\mathfrak m}
+\newcommand{\dr}{\mathfrak{dr}}
+\newcommand{\bm}{\mathbf m}
+\newcommand{\bx}{\mathbf x}
+\newcommand{\ff}{\mathfrak f}
+\newcommand{\Open}{\operatorname{Open}}
+\newcommand{\Conj}{\operatorname{C}}
+\newcommand{\tsig}{\widetilde\sigma}
+\newcommand{\sG}{\mathsf G}
+\newcommand{\sZ}{\mathsf Z}
+\newcommand{\sB}{\mathsf B}
+\newcommand{\sT}{\mathsf T}
+\newcommand{\sQ}{\mathsf Q}
+\newcommand{\Gst}[4]{\Gamma_{\substack{#1\\#2}}\!\begin{bmatrix}#3\\#4\end{bmatrix}}
+\newcommand{\IZ}{\mathbb I_{\mathbb Z}}
+\newcommand{\Ilat}[1]{\mathbb I_{#1}}
+\newcommand{\Tx}[3]{(\sT_{#1;(1)}[x]\,#2)((#3,\infty))}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Dir}{Dir}
+\DeclareMathOperator{\pat}{pat}
+\DeclareMathOperator*{\CT}{CT}
+
+\title{Both letters at the centre:\\ width, pinned sets and the motivic coaction\\ of periods of lists}
+\author{B.~Grey Vandeberg}
+\date{22 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A list on a finite set, a nonempty set of bases with the exchange property (a matroid), has two letters: its basis polynomial $K$, a sum over the bases, and its cobasis polynomial $\Psi$, a sum over their complements. Inversion of the variables carries each letter to the other and each full lean, one letter alone, to the opposite one. The centre, where the two letters enter with equal exponents, is its fixed point, and there both letters of every active list are active. For a family $F$ of lists on $E$ with integer exponents and masses, the period
+\[
+P_F=\int_{\sigma_E}\alpha^{\bm}\prod_jK_j(\alpha)^{-s_j}\Psi_j(\alpha)^{-t_j}\,\frac{\Omega_E}{\alpha_1\cdots\alpha_n}
+\]
+converges exactly when all its walls are positive. It is then the period of a mixed motive in Brown's affine model, and, for nonnegative exponents and positive masses, a value of the serif family: a stacked Gamma times a Trailmoment of the joint law of its letters. Its motivic coaction follows the width of the lists: the number of levels, less one, at which their bases meet a set.
+\begin{itemize}
+\item[(A)] Along any tree of bunches a left factor of weight $\le k$ is a sum of products of open periods of blocks of at most $k+1$ marks. Each block sits at one vertex; its letters other than the linear letters $\alpha_J$ are letters of children of the lists there, and its open periods are rational combinations of constant terms of continued periods of families of lists on the block. For nonnegative exponents the Foreman tree, which the family builds without a choice, is one of these trees.
+\item[(B)] At a bunch of width $c$ the bunch and its room meet only through the Skeleton values of the letters along the bunch, at most $c$ for each letter: every open period of a node piece is a shape integral of rational functions against constant terms of stacked Gammas times Bretas of this joint spectrum, and at the root so is every left factor. At width one each letter has at most one Skeleton value, a quotient of hinge values, and the share side of the scale integral of each term, wherever that integral converges, separates the bunch from the room on every contour along which the integrals over the two converge absolutely.
+\item[(C)] Cells read through one hinge value split off motivically: the motivic period is that of the core times those of the pinned cells, for any number of cells, and a bunch of any width stays in the core.
+\item[(D)] Conversely, in a convergent family with nonnegative exponents a set of marks splits off, acting as one mark on every family glued to it balanced, exactly when it is pinned: of width at most one in every active list, and read by all the active letters through one hinge value. A pinned set with at least two marks and width one in every active list splits off motivically, as in (C). For one list with both letters active, pinned means width one and one even letter $K\Psi$ for the two hinge minors, and, when they are connected, that they form a dual pair. A set of width two or more in some active list never splits off.
+\end{itemize}
+For one list at a full lean one letter is active, every set of width one is pinned, and the motivic period is a rational multiple of the product of those of the prime nodes. At the centre both letters read a set of width one, through two hinge values, and it splits off exactly where they agree. The list $\binom{[4]}1$ (alias $U_{1,4}$) has rational periods at both of its full leans; at its centre no pair of its marks splits off, one share stays free and pairs the moments of the two ratios of hinge values, and the period is the Trailmoment of the lattice input on $\frac12+\Z$ at index three, seven times that of the counting input (alias $7\zeta(3)$). The list $\binom{[4]}2$ splits off a copy of $\binom{[3]}2$ at every mark and has its motivic period, three times a Trailmoment of a lattice input of step three (alias $3L(\chi_{-3},2)$). Besides Brown's motivic periods, his coaction and his affine model, with resolution of singularities and the functoriality of relative cohomology on the motivic side, everything the proofs use is defined and proved here, and every statement on the side of the periods is the specialization to lists of a statement of the author's handbook, cited where it is made.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\paragraph{The centre needs both letters.} A list $N$ on a finite set $Z$ of marks has two letters, its basis and cobasis polynomials
+\[
+K_N(\alpha)=\sum_{T\in\cB(N)}\alpha^T,\qquad \Psi_N(\alpha)=\sum_{T\in\cB(N)}\alpha^{Z\setminus T},
+\]
+and its \emph{centre} is the period in which they enter together, with equal exponents,
+\[
+P_{(N;1,1)}=\int_{\sigma_Z}\frac{\Omega_Z}{K_N(\alpha)\,\Psi_N(\alpha)} .
+\]
+Inversion of the variables reads each letter as the other, $\Psi_N(\alpha)=\alpha^ZK_N(\alpha^{-1})$, and it carries a period of $K_N$ alone, a full lean, to a period of $\Psi_N$ alone, the opposite full lean: this is Cremona (Lemma~\ref{lem:cremona}). The centre is its fixed point, and there both letters are active. On four marks, the list $\binom{[4]}1$ has rational periods at both of its full leans, while its centre is seven times the Trailmoment of the counting input at index three (alias $7\zeta(3)$), and none of its pairs splits off (Example~\ref{ex:U14}). This note is about what the two letters do together.
+
+The periods of \cite{B2} (Feynman periods) carry one letter, which \cite[Def.~1.3]{B2} calls ``the Kirchhoff polynomial (or 1st Symanzik polynomial)''. With one letter the two names can be identified, since Cremona identifies the two full leans. With both letters, each with its own exponent, they cannot: the basis polynomial $K$ is the one aliased Kirchhoff and the cobasis polynomial $\Psi$ the one aliased Symanzik (on the list of spanning trees of a graph, the spanning-tree and the spanning-cotree polynomials).
+
+\paragraph{Width.} The bases of $N$ meet a set $S\subseteq Z$ in every number of marks from the least, $d_N(S)$, to the largest, $r_N(S)$ (Lemma~\ref{lem:window}), and
+\[
+c_N(S)=r_N(S)-d_N(S)
+\]
+is the \emph{width} of $S$ (alias: its connectivity). The basis letter sees $S$ from the floor $d_N(S)$ of this window and the cobasis letter from the floor $d^\ast_N(S)=|S|-r_N(S)$ of the complementary one, and along the scale of $S$ each sees it through $c_N(S)$ Skeleton values, the negatives of the roots of its Skeleton polynomial. A set of width one is seen by $K_N$ through one hinge value and by $\Psi_N$ through another; their ratio is the ratio of the even letters $K\Psi$ of the two hinge minors, the letters of their centres (Lemma~\ref{lem:skeleton}).
+
+\paragraph{The point.} A family $F=((N_j;s_j,t_j))_j$ of lists on $E$, $|E|=n$, with integer exponents and integer masses $\bm\in\Z^E$, has the period $P_F$ of the abstract. It converges exactly when all its walls are positive (Proposition~\ref{prop:model}), and then it is the period of a mixed motive $H_F$ in Brown's affine model (\S\ref{sec:motive}), so its motivic period $P^{\m}_F$ carries the coaction of \cite{B1}. Its value is written in the serif family of stacked Gammas, Grammas, Zammas, Bretas and Trailmoments (\S\ref{sec:serif}). For nonnegative exponents and positive masses, $P_F$ is a stacked Gamma times a Trailmoment of the joint law of its letters under a Dirichlet law, and as a function of the exponents that Trailmoment is the moment generating function of the logarithms of the letters. For positive exponents, at masses $\bm'$ with $\kappa_E(\bm')>0$, the interest, the same integrand against $e^{-|\alpha|}$ on the orthant, is a Gramma up to Gammas of the exponents (Proposition~\ref{prop:serifvalue}; alias: a Mellin integral in several parameters \cite{B3}). The coaction of $P^{\m}_F$ follows the width.
+\begin{enumerate}[label=(\arabic*)]
+\item A bunch $S$ of width $c$ is seen by its room through at most $c$ Skeleton values per letter. Every open period of a node piece is a shape integral of rational functions against constant terms of stacked Gammas times Bretas of these values, and at the root so is every left factor of the coaction (Theorem~\ref{thm:B}). At width one each letter has at most one Skeleton value, the room's hinge value over the bunch's, and the share side of the scale integral of each term, wherever that integral converges, separates the bunch from the room on every contour along which the integrals over the two converge absolutely. For the period itself the bunch and the room separate on the shares at every width, through the bunch word and the room word, one share per station and one more pin for each direction that a side does not see (Remark~\ref{rem:periodnode}; \cite[Thm.~27.9(iii), p.~230; Thm.~27.11, p.~232]{F}).
+\item In a convergent family with nonnegative exponents a set of marks $S$ \emph{splits off}, acting as one mark on every family glued to it balanced, exactly when it is \emph{pinned}: it has width at most one in every active list, and the active letters read it through one hinge value (Theorem~\ref{thm:D}). When a pinned $S$ has at least two marks and width one in every active list, it splits off motivically: it contributes the motivic period of its own pinned family, and the rest is the motivic period of the family with $S$ replaced by one mark (Theorems~\ref{thm:C} and~\ref{thm:D}). For one list with both letters active, a set of width one is pinned exactly when its two hinge minors have one even letter, $K_{M|S}\Psi_{M|S}=K_{M/S'}\Psi_{M/S'}$, and, when they are connected, exactly when they are a dual pair, $M/S'=(M|S)^\ast$.
+\item A set of width two or more in some active list never splits off. Every period of a family glued on it reads it through its law, a measure on its seam torus, and that law is not a point mass (Theorem~\ref{thm:D}).
+\end{enumerate}
+So the two letters decide. For one list at a full lean one letter is active, every set of width one is pinned, and the motivic period is a rational multiple of the product of those of the prime nodes of the list (Corollary~\ref{cor:instances}(b); alias, at $(0,2)$ on the list of spanning trees of a graph: the product identity of Feynman periods \cite[Thm.~2.10]{Sch}, here as an identity of motivic periods). At the centre both letters are active, and a set of width one splits off exactly when its two hinge values agree: in the lists of the machine checks, $20$ of the $263$ sets of width one with at least two marks are pinned at the centre, exactly the dual pairs (computed).
+
+\paragraph{Two lists on four marks.} At their centres $\binom{[4]}2$ and $\binom{[4]}1$ behave oppositely.
+\begin{itemize}
+\item In $\binom{[4]}2$ the complement $R=E\setminus\{e\}$ of every mark has width one, and it is a dual pair: $M|R=\binom R2$ and $M/e=\binom R1=\binom R2^\ast$. It splits off, and $P^{\m}_{\binom{[4]}2}=P^{\m}_{\binom{[3]}2}$ (Example~\ref{ex:U24}). The value is three times a Trailmoment of a lattice input of step three (alias $3L(\chi_{-3},2)$). The pairs of $\binom{[4]}2$ have width two, and none of them splits off.
+\item In $\binom{[4]}1$, with $K=e_1$ and $\Psi=e_3$, every pair $S$ has width one but is read through two different hinge values, whose ratio is $\varrho_S=u(1-u)$ on the shape simplex of $S$. No pair splits off. Across a pair and its room the share side of Theorem~\ref{thm:B}(iv) leaves one free share, which pairs the moments of the two ratios (Example~\ref{ex:U14}):
+\[
+P_{\binom{[4]}1}=\frac1{2\pi i}\int_{\re a=\frac12}\Gst40{a,\ a,\ 1-a,\ 1-a}{}\ \Gst21{1-a,\ 1-a}{2-2a}\ \Gst21{a,\ a}{2a}\,da .
+\]
+By the reflection of the stacked Gamma this is the critical-line word of order one of the argument $1$ \cite[Def.~33.3, p.~298]{F}, and closing it on the triple poles at the positive integers gives the Trailmoment of the lattice input on $\frac12+\Z$ at index three,
+\[
+P_{\binom{[4]}1}=\Tx{3}{\Ilat{\frac12+\Z}}{0}=7\,\Tx{3}{\IZ}{0}\qquad\text{(alias $7\zeta(3)$)}.
+\]
+\end{itemize}
+A list on eight marks with a bunch of width two (Example~\ref{ex:M8}) has $P^{\m}=(P^{\m}_{\binom{[3]}2})^3$: its bunch of width two never splits off, but it sits inside the core, and the core splits further at sets of width one.
+
+\paragraph{The tree.} Theorem~\ref{thm:A} organizes the weight-graded left factors of the coaction along a tree of bunches: each block of a flag is attached to exactly one vertex, its letters other than the $\alpha_J$ are letters of children of the lists there, and its open periods are rational combinations of constant terms of continued periods of families of lists on the block (Corollary~\ref{cor:serif}). For nonnegative exponents the program of \cite{F} reads a family along one tree, the Foreman tree, which the family builds itself (Remark~\ref{rem:foreman}): it peels each molecule at the least of its smallest classes of marks in the order of \cite[Def.~13.5, p.~78; Thm.~13.7, p.~79]{F}, at the native split, which hands a centre down as centres. It makes no choice, and it computes the period wherever some tree of bunches does. Its tree of the centre is the one the procedure of \cite[Def.~16.12, p.~97]{F} follows at every lean, and it is to the trees of bunches what the pseudointegral of \cite[Def.~16.26, p.~101]{F} is to the generalized integrals: the member that makes no choice. Theorem~\ref{thm:A}, Corollary~\ref{cor:serif} and Theorem~\ref{thm:B} hold along every tree of bunches, the Foreman tree among them, and along it what they attach to each vertex is fixed by the family; Theorems~\ref{thm:C} and~\ref{thm:D} involve no tree.
+
+\paragraph{Sources.} The framework of this note, lists and their two letters, windows, levels and children, families and their walls, the serif family, cells, cores and substitution, pieces with stations and their laws, and the Foreman tree, is that of the author's handbook \cite{F}, specialized from tables, whose bases carry weights, to lists. Every definition and statement on the side of the periods names the items of \cite{F} it specializes, by their printed numbers and pages. Every statement that a proof uses is proved here, from the exchange property up, so that the proofs can be read without \cite{F}; the remarks and examples that go further quote \cite{F} where they do. What the note adds to \cite{F} is the motive: Theorems~\ref{thm:A} and~\ref{thm:B}(v) are statements about the coaction, Theorem~\ref{thm:C}(ii) and Corollary~\ref{cor:instances} are identities of motivic periods, and Theorem~\ref{thm:B} holds for every form on every node piece, not only for the period. With them come two statements on lists: one hinge value forces width at most one (Lemma~\ref{lem:onehinge}), so that a set whose law is a point mass is pinned (Theorem~\ref{thm:D}); and two connected hinge minors with one even letter are a dual pair. The examples are evaluated with the relations of the serif family in \cite{F}, each cited where it is used. From outside \cite{F}, the note uses Brown's motivic periods and coaction \cite{B1} and his affine model \cite{B2}, with resolution of singularities \cite{Hi} and the functoriality of relative cohomology \cite{HMS} on the motivic side. Classical names appear only as aliases.
+
+\paragraph{Plan.} Section~\ref{sec:families} sets up lists, families and the serif family, with the elementary facts about them. Section~\ref{sec:motive} is the motive. Section~\ref{sec:bunches} is the structure at a bunch: trees of bunches and blocks, cells and substitution, pieces, laws and the glue. Section~\ref{sec:statements} states the results, Section~\ref{sec:examples} works out the examples, and Sections~\ref{sec:proofA}--\ref{sec:proofCD} contain the proofs.
+
+\section{Lists, families, and the serif family}\label{sec:families}
+
+\subsection{Lists and their letters}
+
+We write $X-a=X\setminus\{a\}$ and $X+b=X\cup\{b\}$, $\alpha^{\mathbf a}=\prod_e\alpha_e^{a_e}$, $\alpha^S=\alpha^{\mathbf 1_S}$, $a_S=\sum_{e\in S}a_e$, $[n]=\{1,\dots,n\}$ and $\N=\{0,1,2,\dots\}$.
+
+\begin{defn}[Lists; {\cite[Def.~7.1, p.~48; Def.~8.17, p.~57]{F}}]\label{def:list}
+A \emph{list} $N$ on a finite set $Z$, whose elements are its \emph{marks}, is a nonempty set $\cB(N)$ of subsets of $Z$ of one size $r(N)$, its \emph{bases}, with the \emph{exchange property}: for $T,T'\in\cB(N)$ and $a\in T\setminus T'$ there is $b\in T'\setminus T$ with $T-a+b\in\cB(N)$ (alias: a matroid). A mark in no basis is a \emph{loop}, a mark in every basis a \emph{coloop}. The \emph{letters} of $N$ are its \emph{Foreman polynomials}, the basis and the cobasis polynomial
+\[
+K_N(\alpha)=\sum_{T\in\cB(N)}\alpha^T,\qquad \Psi_N(\alpha)=\sum_{T\in\cB(N)}\alpha^{Z\setminus T}
+\]
+(aliases: Kirchhoff and Symanzik), homogeneous of the degrees $r(N)$ and $|Z|-r(N)$, with coefficients $0$ and $1$ and degree at most one in each variable, positive on the open orthant, and $\Psi_N(\alpha)=\alpha^ZK_N(\alpha^{-1})$. Their product $\mathbf E_N=K_N\Psi_N$ is the \emph{even letter}. For a set $S$ and $0\le k\le|S|$, $\binom Sk$ is the list on $S$ whose bases are the $k$-subsets of $S$ (alias $U_{k,|S|}$); its letters are the elementary symmetric polynomials $e_k$ and $e_{|S|-k}$ of $\alpha_S$. For $J\subseteq Z$, $\alpha_J=\sum_{j\in J}\alpha_j$ is the basis polynomial of $\binom J1$, read on $Z$ with the marks of $Z\setminus J$ as loops.
+\end{defn}
+
+\begin{lemma}[Duality; {\cite[Def.~7.1, Prop.~7.2, p.~48]{F}}]\label{lem:dual}
+For $T,T'\in\cB(N)$ and $x\in T'\setminus T$ there is $y\in T\setminus T'$ with $T-y+x\in\cB(N)$. So the complements $Z\setminus T$, $T\in\cB(N)$, are the bases of a list $N^\ast$, the \emph{dual}, and $K_{N^\ast}=\Psi_N$, $\Psi_{N^\ast}=K_N$, $N^{\ast\ast}=N$.
+\end{lemma}
+
+\begin{proof}
+Induct on $k=|T\setminus T'|$. At $k=1$, $T-y+x=T'$ for the one $y\in T\setminus T'$. At $k\ge2$ choose $x'\in T'\setminus T$ with $x'\neq x$. The exchange property gives $y'\in T\setminus T'$ with $T''=T'-x'+y'\in\cB(N)$. Then $x\in T''\setminus T$ and $|T\setminus T''|=k-1$, so by induction some $y\in T\setminus T''\subseteq T\setminus T'$ has $T-y+x\in\cB(N)$. For the complements, $a\in(Z\setminus T)\setminus(Z\setminus T')$ is an $x\in T'\setminus T$, and $(Z\setminus T)-a+y=Z\setminus(T-y+x)$.
+\end{proof}
+
+\begin{defn}[Traces, window, width; {\cite[Def.~7.10, Thm.~7.11, p.~49]{F}}]\label{def:window}
+For $S\subseteq Z$ the \emph{traces} of $S$ are the numbers $|T\cap S|$, $T\in\cB(N)$. The least and the largest are $d_N(S)$ and $r_N(S)$; $d^\ast_N(S)=|S|-r_N(S)$ is the least of the $|S\setminus T|$; and
+\[
+c_N(S)=r_N(S)-d_N(S)
+\]
+is the \emph{width} of $S$. A basis is at the \emph{bottom} of $S$ when its trace is $d_N(S)$ and at the \emph{top} when it is $r_N(S)$. Since $|T\cap S|+|T\setminus S|=r(N)$, the bottom of $S$ is the top of $Z\setminus S$, $d_N(S)=r(N)-r_N(Z\setminus S)$, and $c_N(S)=c_N(Z\setminus S)=r_N(S)+r_N(Z\setminus S)-r(N)$ (alias: the connectivity of $S$). The traces of the cobases are the $|S|-|T\cap S|$, so $d_{N^\ast}(S)=d^\ast_N(S)$ and $c_{N^\ast}(S)=c_N(S)$. A set $\varnothing\neq S\subsetneq Z$ of width zero is a \emph{separator}, and $N$ is \emph{connected} if it has none.
+\end{defn}
+
+\begin{lemma}[The window; {\cite[Thm.~7.11, p.~49; Lemma~8.5, p.~55]{F}}]\label{lem:window}
+Let $N$ be a list on $Z$.
+\begin{enumerate}[label=(\roman*)]
+\item The traces of $S$ fill the window: every $k$ with $d_N(S)\le k\le r_N(S)$ is the trace of a basis.
+\item For a chain $S_1\subseteq\cdots\subseteq S_\ell\subseteq Z$ some basis is at the top of every $S_i$, and some basis is at the bottom of every $S_i$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Let $T$ and $T'$ be at the bottom and at the top of $S$. While $T\neq T'$, take $a\in T\setminus T'$ and $b\in T'\setminus T$ with $T-a+b\in\cB(N)$, and replace $T$ by it: $|T\setminus T'|$ drops by one and the trace changes by at most one. On the way from $d_N(S)$ to $r_N(S)$ the traces take every value in between.
+
+(ii) Induct on $\ell$. Let $T$ be at the top of $S_1,\dots,S_{\ell-1}$ and $T_1$ at the top of $S_\ell$, and suppose $|T\cap S_\ell|<r_N(S_\ell)$. Then $|T\setminus S_\ell|>|T_1\setminus S_\ell|$, so some $a\in T\setminus S_\ell$ is not in $T_1$, and the exchange property gives $b\in T_1\setminus T$ with $T-a+b\in\cB(N)$. As $a\notin S_\ell\supseteq S_i$, the trace of $T-a+b$ on $S_i$ is that of $T$ plus one if $b\in S_i$; it cannot exceed $r_N(S_i)$, so $b\notin S_{\ell-1}$. If $b\in S_\ell$, the trace on $S_\ell$ has grown. Otherwise $T-a+b$ is still at the top of $S_1,\dots,S_{\ell-1}$, with the same trace on $S_\ell$, and $|(T-a+b)\setminus T_1|=|T\setminus T_1|-1$; replace $T$ by it. The trace on $S_\ell$ grows before $T$ reaches $T_1$, and it grows until it is $r_N(S_\ell)$. The bottom is the top of the complements $Z\setminus S_\ell\subseteq\cdots\subseteq Z\setminus S_1$.
+\end{proof}
+
+\begin{lemma}[Extreme levels; {\cite[Def.~7.5, p.~49; Thm.~12.17, p.~73]{F}}]\label{lem:extreme}
+Let $Z=B\sqcup R$.
+\begin{enumerate}[label=(\roman*)]
+\item If $T_1,T_2\in\cB(N)$ are both at the top of $B$, then $(T_1\cap B)\cup(T_2\cap R)\in\cB(N)$; likewise at the bottom.
+\item So the bases at the top of $B$ are the unions $p\sqcup X$ of a \emph{top trace} $p=T\cap B$ and a room side $X=T\cap R$ of a basis at the top. The top traces are the bases of a list $N|B$ on $B$, the \emph{restriction}, and these room sides the bases of a list $N/B$ on $R$, the \emph{contraction} of $B$. At the bottom of $B$, which is the top of $R$, the traces form the list $N/R$ on $B$ and the room sides the list $N|R$.
+\item $(N|B)^\ast=N^\ast/R$ and $(N/B)^\ast=N^\ast|R$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Write $T_i=p_i\sqcup X_i$ with $p_i\subseteq B$. While $X_1\neq X_2$, take $x\in X_1\setminus X_2$ and $y\in T_2\setminus T_1$ with $T_1-x+y\in\cB(N)$. If $y\in B$, the trace of $T_1-x+y$ on $B$ would be $r_N(B)+1$; so $y\in X_2\setminus X_1$, and $T_1-x+y=p_1\sqcup(X_1-x+y)$ is at the top of $B$ with one more mark of $X_2$. At the end $p_1\sqcup X_2\in\cB(N)$. At the bottom, exchange a mark of $p_1\setminus p_2$ instead: a mark of $R$ coming in would bring the trace below $d_N(B)$.
+
+(ii) The product form is (i). For $p_1,p_2\in N|B$ and $a\in p_1\setminus p_2$, fix a room side $X$; then $p_1\sqcup X$ and $p_2\sqcup X$ are bases, and the exchange property gives $b\in p_2\setminus p_1$ with $(p_1-a+b)\sqcup X\in\cB(N)$, at the top of $B$. So $N|B$ is a list, and likewise $N/B$ and the two lists at the bottom.
+
+(iii) $T$ is at the top of $B$ exactly when its cobasis $Z\setminus T$ is at the bottom of $B$ in $N^\ast$, which is the top of $R$; the trace and the room side of $Z\setminus T$ are $B\setminus p$ and $R\setminus X$.
+\end{proof}
+
+For a mark $e$ write $N\setminus e=N|(Z-e)$ and $N/e$. When $e$ is neither a loop nor a coloop, their bases are the bases avoiding $e$ and the sets $T-e$ with $e\in T$, and \cite[Def.~7.3, p.~48]{F}
+\[
+K_N=K_{N\setminus e}+\alpha_eK_{N/e},\qquad \Psi_N=\alpha_e\Psi_{N\setminus e}+\Psi_{N/e}.
+\]
+
+\begin{defn}[Patterns, children, levels; {\cite[Def.~12.1, p.~70; Def.~12.9, p.~71; Def.~12.15, p.~73]{F}}]\label{def:children}
+Let $Z=B\sqcup R$. The \emph{patterns} of $B$ are the traces $p=T\cap B$, $T\in\cB(N)$, and the \emph{child} at $p$ is $N_{(p)}$ on the \emph{room} $R$, whose bases are the $X\subseteq R$ with $p\sqcup X\in\cB(N)$. Grouping the bases by their patterns,
+\[
+K_N(x\alpha_B,\alpha_R)=\sum_{k=d_N(B)}^{r_N(B)}x^k\,K^{(k)}_B(\alpha),\qquad K^{(k)}_B(\alpha)=\sum_{|p|=k}\alpha_B^{\,p}\,K_{N_{(p)}}(\alpha_R),
+\]
+the sum over the patterns of size $k$: the $K^{(k)}_B$ are the \emph{levels} of $B$, nonzero exactly for $d_N(B)\le k\le r_N(B)$ (Lemma~\ref{lem:window}). The \emph{Skeleton polynomials} of $B$ at a point $\alpha$ of the open orthant are
+\[
+\sQ^K_B(x;\alpha)=x^{-d_N(B)}\frac{K_N(x\alpha_B,\alpha_R)}{K_N(\alpha)},\qquad \sQ^\Psi_B(x;\alpha)=x^{-d^\ast_N(B)}\frac{\Psi_N(x\alpha_B,\alpha_R)}{\Psi_N(\alpha)},
+\]
+the second being the first for $N^\ast$.
+\end{defn}
+
+\begin{lemma}[Children; {\cite[Lemma~12.2, p.~70; Thm.~12.17, p.~73; Prop.~14.5, p.~82]{F}} for (i), (ii)]\label{lem:children}
+Let $Z=B\sqcup R$.
+\begin{enumerate}[label=(\roman*)]
+\item Every child $N_{(p)}$ is a list on $R$, of rank $r(N)-|p|$, and $(N_{(p)})^\ast=(N^\ast)_{(B\setminus p)}$. At every pattern of the bottom level the child is $N|R$, at every pattern of the top level it is $N/B$, and
+\[
+K^{(d_N(B))}_B=K_{N/R}(\alpha_B)\,K_{N|R}(\alpha_R),\qquad K^{(r_N(B))}_B=K_{N|B}(\alpha_B)\,K_{N/B}(\alpha_R).
+\]
+\item \emph{Children of children are children.} For $B=B_1\sqcup B_2$ and a pattern $p$ of $B$, $N_{(p)}=(N_{(p\cap B_1)})_{(p\cap B_2)}$.
+\item \emph{Children do not widen.} For a pattern $p$ of $B$, $A\subseteq R$ and $W\subseteq B$, $c_{N_{(p)}}(A)\le c_N(A\cup W)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) For $X_1,X_2$ in the child and $a\in X_1\setminus X_2$, the exchange property in $p\sqcup X_1$ and $p\sqcup X_2$ brings in some $b\in X_2\setminus X_1$. The cobases $(B\setminus p)\sqcup(R\setminus X)$ give the dual. The extreme children are Lemma~\ref{lem:extreme}(i),(ii). (ii) is the definition read twice. (iii) For $X$ in the child, $|X\cap A|=|(p\sqcup X)\cap(A\cup W)|-|p\cap W|$: the traces of $A$ in the child are traces of $A\cup W$ in $N$, shifted by a constant.
+\end{proof}
+
+\begin{lemma}[Skeleton values; hinge values; {\cite[Def.~12.9, p.~71; Def.~12.13, p.~73; Def.~18.4, p.~115; Cor.~18.7, p.~117]{F}}]\label{lem:skeleton}
+Let $Z=B\sqcup R$, $d=d_N(B)$ and $c=c_N(B)$.
+\begin{enumerate}[label=(\roman*)]
+\item On the open orthant $\sQ^K_B(x;\alpha)$ is a polynomial of degree $c$ in $x$ with positive coefficients and the value $1$ at $x=1$, so
+\[
+\sQ^K_B(x;\alpha)=\prod_{i=1}^c\frac{x+\xi_i}{1+\xi_i},\qquad \xi_i=\xi_i(\alpha)\in\mathbb C\setminus(-\infty,0],
+\]
+the \emph{Skeleton values} of $N$ along $B$ at $\alpha$; those of $\Psi_N$ are those of $N^\ast$. Together they form the \emph{joint spectrum} of $B$.
+\item If $c=0$, then $N|B=N/R$ and $N|R=N/B$, the bases of $N$ are the unions of a basis of $N|B$ and one of $N|R$, and $K_N=K_{N|B}K_{N|R}$: $N$ is the \emph{direct sum} $N|B\oplus N|R$.
+\item If $c=1$, the \emph{hinge values} of $B$ and of $R$,
+\[
+\gamma^K_B=\frac{K_{N|B}}{K_{N/R}},\quad \gamma^\Psi_B=\frac{\Psi_{N/R}}{\Psi_{N|B}},\qquad \gamma^K_R=\frac{K_{N|R}}{K_{N/B}},\quad \gamma^\Psi_R=\frac{\Psi_{N/B}}{\Psi_{N|R}},
+\]
+are positive functions of $\alpha_B$, respectively of $\alpha_R$, homogeneous of degree one; $K_N$ has the one Skeleton value $\gamma^K_R/\gamma^K_B$ along $B$, and $\Psi_N$ the one Skeleton value $\gamma^\Psi_R/\gamma^\Psi_B$. Their \emph{ratio}
+\[
+\varrho_B=\frac{\gamma^\Psi_B}{\gamma^K_B}=\frac{\mathbf E_{N/R}}{\mathbf E_{N|B}}
+\]
+is the ratio of the even letters of the two lists on $B$, a function of the shape $\alpha_B/|\alpha_B|$ alone.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) $x^{d}K_N(\alpha)\sQ^K_B(x;\alpha)=\sum_kx^kK^{(k)}_B(\alpha)$, and the levels from $d$ to $d+c$ are nonzero polynomials with nonnegative coefficients (Lemma~\ref{lem:window}(i)), positive on the open orthant; a polynomial with positive coefficients has no root in $[0,\infty)$. (ii) At $c=0$ the bottom and the top of $B$ are one level, and Lemma~\ref{lem:extreme}(ii) reads it twice. (iii) At $c=1$ the root is $-K^{(d)}_B/K^{(d+1)}_B=-K_{N/R}K_{N|R}/(K_{N|B}K_{N/B})$ by Lemma~\ref{lem:children}(i), and the degrees differ by $r_N(B)-d_N(B)=1$. For $\Psi_N=K_{N^\ast}$, Lemma~\ref{lem:extreme}(iii) at $B$ and at $R$ gives $N^\ast/R=(N|B)^\ast$, $N^\ast|R=(N/B)^\ast$, $N^\ast|B=(N/R)^\ast$ and $N^\ast/B=(N|R)^\ast$.
+\end{proof}
+
+\begin{cor}[Bottom levels; {\cite[Thm.~12.17, p.~73]{F}}]\label{lem:initial}
+Let $N$ be a list on $E$ and $\varnothing\neq S\subsetneq E$. The least degree of $K_N$ in $\alpha_S$ is the floor $d_N(S)$, and its terms of that degree, the \emph{bottom level} of $S$, are
+\[
+K^{(d_N(S))}_S=K_{N/(E\setminus S)}(\alpha_S)\,K_{N|(E\setminus S)}(\alpha_{E\setminus S}).
+\]
+The least degree of $\Psi_N$ in $\alpha_S$ is $d^\ast_N(S)$, and its terms of that degree, the \emph{bottom colevel}, are $\Psi_{N|S}(\alpha_S)\,\Psi_{N/S}(\alpha_{E\setminus S})$. Every letter $f$, whether $K_N$, $\Psi_N=K_{N^\ast}$ or $\alpha_J=K_{\binom J1}$, is the basis polynomial of a list $N_f$; its \emph{floor} along $S$ is $d_f(S)=d_{N_f}(S)$, and its bottom level is a product $f_S\,f^S$ of a polynomial in $\alpha_S$ and one in $\alpha_{E\setminus S}$. For $\alpha_J$ it is $\alpha_J$ if $J\subseteq S$, and $\alpha_{J\setminus S}$ otherwise.
+\end{cor}
+
+\begin{proof}
+The terms of least degree are the bases at the bottom of $S$, and Lemma~\ref{lem:extreme}(ii) writes them as products. For $\Psi_N$ they are the cobases of the bases at the top of $S$.
+\end{proof}
+
+\begin{cor}[Blocks; {\cite[Lemma~8.5, Thm.~8.7(ii), p.~55; Thm.~12.17, p.~73; Prop.~14.5, p.~82]{F}}]\label{cor:blocks}
+Let $S_1\subsetneq\cdots\subsetneq S_\ell$ be a chain of nonempty proper subsets of $E$, with the \emph{blocks} $Z_i=S_i\setminus S_{i-1}$ ($S_0=\varnothing$, $S_{\ell+1}=E$). The bases at the bottom of every $S_i$ exist; for any one of them, $T_0$, their traces on $Z_i$ are the bases of the child $N_{(T_0\setminus Z_i)}$ of $N$ at the trace of $T_0$ on $E\setminus Z_i$, the \emph{block list} at $Z_i$, and these bases are exactly the unions of one basis of each block list. Likewise the bases at the top of every $S_i$, with $T_1$ one of them, give the block lists $N_{(T_1\setminus Z_i)}$. So the \emph{bottom level of the chain}, the sum of the terms at the floors along all the $S_i$ at once, factors over the blocks:
+\[
+K_N\mapsto\prod_iK_{N_{(T_0\setminus Z_i)}}(\alpha_{Z_i}),\qquad \Psi_N\mapsto\prod_i\Psi_{N_{(T_1\setminus Z_i)}}(\alpha_{Z_i}),\qquad \alpha_J\mapsto\alpha_{J\cap Z_i},
+\]
+the last for the $i$ with $J\subseteq S_i$, $J\not\subseteq S_{i-1}$. These factors, the \emph{block letters} of the chain, are nonzero polynomials on the blocks. Along a maximal chain every block is one mark, and the bottom level of the chain of $K_N$ is one monomial $\alpha^{T_0}$ with coefficient $1$, $T_0$ the one basis at the bottom of every $S_i$.
+\end{cor}
+
+\begin{proof}
+Bases at the bottom of every $S_i$ exist by Lemma~\ref{lem:window}(ii). Let $T$ and $T'$ be two of them and $1\le i\le\ell+1$. By Lemma~\ref{lem:extreme}(i) at $S_{i-1}$, $T''=(T'\cap S_{i-1})\cup(T\setminus S_{i-1})$ is a basis; its trace on $S_j$ is that of $T'$ for $j<i$, and $d_N(S_{i-1})+|T\cap S_j|-|T\cap S_{i-1}|=d_N(S_j)$ for $j\ge i$. By Lemma~\ref{lem:extreme}(i) at $S_i$ applied to $T''$ and $T'$, $(T'\setminus Z_i)\cup(T\cap Z_i)$ is a basis, again at the bottom of every $S_j$. So one block can be exchanged at a time, and the bases at the bottom of every $S_j$ are the unions of their traces on the blocks. If $(T_0\setminus Z_i)\sqcup X$ is any basis with $X\subseteq Z_i$, then $|X|=|T_0\cap Z_i|$ and its traces on the $S_j$ are those of $T_0$: so the traces on $Z_i$ form the child of $N$ at $T_0\setminus Z_i$, a list by Lemma~\ref{lem:children}(i). The top is the bottom for $N^\ast$, and $\Psi_N=K_{N^\ast}$; for $\alpha_J=K_{\binom J1}$ the bases at the bottom of every $S_i$ are the marks of $J\cap Z_i$, for the first $i\le\ell+1$ with $J\subseteq S_i$. Along a maximal chain the traces on the blocks determine the basis.
+\end{proof}
+
+\subsection{Families and their periods}
+
+For a finite set $B$, $\Delta_B=\{u\in(0,\infty)^B:|u|=1\}$ is its \emph{shape simplex}, $|u|=\sum_eu_e$, and $d\omega_B$ is Lebesgue measure in the coordinates $(u_e)_{e\neq e_0}$ for a fixed $e_0\in B$; a change of $e_0$ has determinant $\pm1$, and for $|B|=1$, $\omega_B$ is the unit point mass \cite[Def.~1.1(iii), p.~10]{F}.
+
+\begin{defn}[Families; {\cite[Def.~8.1, p.~53; Thm.~8.10, p.~56; Def.~9.1, p.~61]{F}}]\label{def:family}
+A \emph{family} $F$ on $E$, $n=|E|\ge2$, is a finite sequence of lists $N_1,\dots,N_k$ on $E$, its \emph{tables}, with exponents $s_j,t_j\in\Z$, and masses $\bm\in\Z^E$, subject to the \emph{balance}
+\[
+m_E=\sum_j\big(s_j\,r(N_j)+t_j\,(n-r(N_j))\big).
+\]
+A letter of a table is \emph{active} when its exponent, $s_j$ for $K_{N_j}$ and $t_j$ for $\Psi_{N_j}$, is not zero, and a table is active when one of its letters is. The letters of $F$ are $\cL(F)=\{K_{N_j}:s_j\neq0\}\cup\{\Psi_{N_j}:t_j\neq0\}$. Its form is
+\[
+\omega_F=\alpha^{\bm}\prod_jK_{N_j}(\alpha)^{-s_j}\Psi_{N_j}(\alpha)^{-t_j}\,\frac{\Omega_E}{\alpha_1\cdots\alpha_n},\qquad \Omega_E=\sum_{i=1}^n(-1)^{i-1}\alpha_i\,d\alpha_1\wedge\cdots\widehat{d\alpha_i}\cdots\wedge d\alpha_n,
+\]
+a rational form of degree $N:=n-1$ on $\PP^{N}$. Its \emph{walls} are, for $\varnothing\neq S\subseteq E$,
+\[
+\kappa_S(F)=m_S-\sum_j\big(s_j\,d_{N_j}(S)+t_j\,d^\ast_{N_j}(S)\big),
+\]
+so the balance is $\kappa_E(F)=0$. $F$ is \emph{convergent} if $\kappa_S(F)\ge1$ for every $\varnothing\neq S\subsetneq E$. Its \emph{period} is
+\[
+P_F=\int_{\sigma_E}\omega_F\ \in(0,\infty],\qquad \sigma_E=\{\alpha\in\PP^{N}(\R):\alpha_e\ge0\ \text{for all }e\},
+\]
+the integral of Lemma~\ref{lem:sections} of the positive function $\alpha^{\bm-\mathbf 1}\prod_jK_{N_j}^{-s_j}\Psi_{N_j}^{-t_j}$, homogeneous of degree $-n$; a letter with a negative exponent is a polynomial factor. It is finite exactly when $F$ is convergent (Proposition~\ref{prop:model}(ii)). The \emph{strength} and the \emph{lean} of table $j$ are $\sigma_j=\frac{s_j+t_j}2$ and $\delta_j=\frac{s_j-t_j}2$, and $\sigma=\sum_j\sigma_j$. $F$ is at its \emph{centre} when every $\delta_j=0$ and the masses are $\sigma\mathbf 1$, and at a \emph{full lean} when every $|\delta_j|=\sigma_j$, one letter of every table being inactive. One list $N$ at the exponents $(s,t)$ is the family $(N;s,t)$; its centre with unit masses is $(N;1,1)$.
+\end{defn}
+
+\begin{lemma}[Scale and shape; sections; {\cite[Lemma~2.7, p.~14; Lemma~16.2, p.~94]{F}}]\label{lem:sections}
+Let $B$ and $E$ be finite sets.
+\begin{enumerate}[label=(\roman*)]
+\item $(\rho,u)\mapsto\rho u$ is a bijection $(0,\infty)\times\Delta_B\to(0,\infty)^B$, with $d\alpha_B=\rho^{|B|-1}\,d\rho\,d\omega_B(u)$.
+\item Let $f$ be a measurable function on $(0,\infty)^E$, homogeneous of degree $-|E|$, with $f\ge0$ or $\int_{\Delta_E}|f|\,d\omega_E<\infty$. For every $\varnothing\neq A\subseteq E$,
+\[
+\int_{\Delta_E}f\,d\omega_E=\int_{\Delta_A}\int_{(0,\infty)^{E\setminus A}}f(\beta,u)\,d\beta\,d\omega_A(u),
+\]
+and both equal $\int_{(0,\infty)^E}f(\alpha)\,\phi(h(\alpha))\,d\alpha$ for every positive continuous $h$ homogeneous of degree one and every measurable $\phi\ge0$ with $\int_0^\infty\phi(t)\,dt/t=1$.
+\end{enumerate}
+We write $\int_{\sigma_E}f\,\Omega_E$ for this number. At $A=\{e\}$ it is the integral over the chart $\alpha_e=1$, where $\Omega_E$ restricts to $\pm d\alpha_{E\setminus e}$, so it is the integral of the projective form $f\,\Omega_E$ over $\sigma_E$ with the orientation that makes it positive for $f>0$.
+\end{lemma}
+
+\begin{proof}
+(i) is the change of variables $\alpha_e=\rho u_e$, $e\neq e_0$, and $\alpha_{e_0}=\rho(1-\sum_{e\neq e_0}u_e)$. (ii) Write $I(h)$ for the integral against $\phi(h(\alpha))$. By (i) on $E$ and $f(\rho u)=\rho^{-n}f(u)$,
+\[
+I(h)=\int_{\Delta_E}f(u)\int_0^\infty\phi(\rho h(u))\,\frac{d\rho}\rho\,d\omega_E(u)=\int_{\Delta_E}f\,d\omega_E .
+\]
+For $h(\alpha)=|\alpha_A|$, the map $(\rho,u,\beta)\mapsto(\rho\beta,\rho u)$ from $(0,\infty)\times\Delta_A\times(0,\infty)^{E\setminus A}$ onto $(0,\infty)^E$ has $d\alpha=\rho^{n-1}d\rho\,d\omega_A(u)\,d\beta$, so $I(h)=\int_0^\infty\phi(\rho)\frac{d\rho}\rho\int\!\!\int f(\beta,u)\,d\beta\,d\omega_A(u)$. For signed $f$, apply this to $|f|$ and then use Fubini.
+\end{proof}
+
+\begin{lemma}[Cremona; {\cite[Thm.~8.12, Thm.~8.13, p.~57]{F}}]\label{lem:cremona}
+For every family with $s_j,t_j\ge0$, in $[0,\infty]$,
+\[
+P_{((N_j;s_j,t_j))_j}(\bm)=P_{((N_j;t_j,s_j))_j}(2\sigma\mathbf 1-\bm),
+\]
+and the wall of the right side at $S$ is the wall of the left side at $E\setminus S$. Cremona swaps the two exponents of every table: it carries a full lean to the opposite full lean and fixes the centre.
+\end{lemma}
+
+\begin{proof}
+Under $\alpha\mapsto\alpha^{-1}$, $K_{N}(\alpha^{-1})=\alpha^{-E}\Psi_N(\alpha)$, $\Psi_N(\alpha^{-1})=\alpha^{-E}K_N(\alpha)$ and $\Omega_E/\alpha^{\mathbf 1}\mapsto\pm\Omega_E/\alpha^{\mathbf 1}$, so $\omega_F$ goes to $\pm\alpha^{2\sigma\mathbf 1-\bm}\prod_jK_{N_j}^{-t_j}\Psi_{N_j}^{-s_j}\Omega_E/\alpha^{\mathbf 1}$, and inversion maps the open orthant onto itself. The walls follow from $|S|=d_N(S)+c_N(S)+d^\ast_N(S)$ and Lemma~\ref{lem:compwalls}.
+\end{proof}
+
+\begin{lemma}[Complementary walls; {\cite[Prop.~8.15, p.~57]{F}}]\label{lem:compwalls}
+For every family and every $\varnothing\neq S\subsetneq E$,
+\[
+\kappa_S(F)+\kappa_{E\setminus S}(F)=\kappa_E(F)+2\sum_j\sigma_j\,c_{N_j}(S).
+\]
+So on the balance wall: if $F$ is convergent, then $2\sum_j\sigma_jc_{N_j}(S)\ge2$ for every $S$; and if $c_{N_j}(S)=1$ for every $j$, then $\kappa_S+\kappa_{E\setminus S}=2\sigma$.
+\end{lemma}
+
+\begin{proof}
+$d_N(S)+d_N(E\setminus S)=r(N)-c_N(S)$ and $d^\ast_N(S)+d^\ast_N(E\setminus S)=n-r(N)-c_N(S)$ (Definition~\ref{def:window}); add.
+\end{proof}
+
+In particular a convergent family with $s_j,t_j\ge0$ has, at every $\varnothing\neq S\subsetneq E$, an active table in which $S$ has positive width: no $S$ is a separator of every active table.
+
+\subsection{The serif family}\label{sec:serif}
+
+Values are written with $\exp$, $\log$, the stacked Gamma and the serif family: the Gramma, the Zamma, the Breta and the Trailmoment \cite[Def.~1.1(vi), p.~10]{F}. Each is defined once, with all its slots, and every later appearance is that definition with particular data in its slots.
+
+\begin{defn}[Stacked Gamma; Dirichlet law; {\cite[Def.~1.2, p.~11; Def.~3.10, p.~21]{F}}]\label{def:stacked}
+For $\alpha\in\mathbb C^p$ and $\beta\in\mathbb C^q$,
+\[
+\Gst pq{\alpha_1,\ \dots,\ \alpha_p}{\beta_1,\ \dots,\ \beta_q}=\frac{\Gamma(\alpha_1)\cdots\Gamma(\alpha_p)}{\Gamma(\beta_1)\cdots\Gamma(\beta_q)},
+\]
+a meromorphic function of its entries, the \emph{stacked Gamma}; $\Gst21{a,\ b}{a+b}$ is a \emph{Beta corner}, and $(a)_J=\Gst11{a+J}{a}=a(a+1)\cdots(a+J-1)$. For $\bm\in(0,\infty)^B$ the \emph{Dirichlet law} $\Dir_{\bm}$ is the probability measure $u^{\bm-\mathbf 1}d\omega_B(u)\big/\Gst{|B|}1{\bm}{m_B}$ on $\Delta_B$ (Lemma~\ref{lem:dirichlet}).
+\end{defn}
+
+\begin{lemma}[The shape integral; {\cite[Thm.~3.9, p.~21]{F}}]\label{lem:dirichlet}
+For $\re m_e>0$, $\int_{\Delta_B}u^{\bm-\mathbf 1}\,d\omega_B(u)=\Gst{|B|}1{\bm}{m_B}$. In particular, for $\re a,\re b>0$, the Beta corner is $\Gst21{a,\ b}{a+b}=\int_0^\infty z^{a-1}(1+z)^{-a-b}\,dz$, and $\big|\Gst21{a,\ b}{a+b}\big|\le\Gst21{\re a,\ \re b}{\re a+\re b}$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:sections}(i), $\prod_e\Gamma(m_e)=\int_{(0,\infty)^B}x^{\bm-\mathbf 1}e^{-|x|}dx=\int_0^\infty\rho^{m_B-1}e^{-\rho}d\rho\int_{\Delta_B}u^{\bm-\mathbf 1}d\omega_B(u)$. On two scales put $u=(\frac z{1+z},\frac1{1+z})$.
+\end{proof}
+
+\begin{defn}[Gramma, Zamma, Breta, Trailmoment; {\cite[Defs.~2.1, 2.12, 3.1, 5.1, 5.2, pp.~13--28]{F}}]\label{def:serif}
+The four members of the serif family are the following.
+\begin{enumerate}[label=(\roman*)]
+\item For a finite set $\mathcal E$ of \emph{scales}, a \emph{configuration} $t=(t_1,\dots,t_K)$ of exponents $t_k\in\R^{\mathcal E}$, \emph{coefficients} $\boldsymbol\xi\in(0,\infty)^K$ and an \emph{index} $\nu\in\mathbb C^{\mathcal E}$, the \emph{Gramma} is
+\[
+\sG_{\nu;t}(\boldsymbol\xi)=\int_{(0,\infty)^{\mathcal E}}x^{\nu-\mathbf 1}\exp\Big(-\sum_{k=1}^K\xi_k\,x^{t_k}\Big)\,dx
+\]
+wherever it converges; $\Gamma(\nu)=\sG_{\nu;(1)}(1)$, and the \emph{unit configuration} $I_{\mathcal E}$ has one unit column per scale.
+\item The \emph{Zamma} is the Gramma divided by the Gammas of its index, $\sZ_{\nu;t}=\sG_{\nu;t}/\prod_e\Gamma(\nu_e)$, wherever the Gramma converges and no $\nu_e$ lies in $-\N$; at the unit configuration it is $\sZ_{\nu;I_{\mathcal E}}(\boldsymbol\xi)=\prod_e\xi_e^{-\nu_e}$ for every $\nu$. With $K$ unit exponents on one scale it is the power of a sum, $\sZ_{\nu;(1,\dots,1)}(\boldsymbol\xi)=\big(\sum_k\xi_k\big)^{-\nu}$, since $\int_0^\infty x^{\nu-1}e^{-x\sum_k\xi_k}dx=\Gamma(\nu)(\sum_k\xi_k)^{-\nu}$ for $\re\nu>0$, and it carries this power to every $\nu$.
+\item The data of a \emph{Breta} are a partition $\mathcal P$ of the scales $\mathcal E$ into \emph{bunches} $Q$, a \emph{shape index} $\mathbf w\in\mathbb C^{\mathcal E}$, a \emph{scale index} $\boldsymbol\nu=(\nu_Q)_Q$, and terms $k$ with \emph{shape exponents} $\pi_k\in\R^{\mathcal E}$, \emph{levels} $\ell_k\in\R^{\mathcal P}$ and coefficients $\xi_k>0$. With $u^{\pi_k}=\prod_Qu_Q^{\pi_k|_Q}$ and $d\omega=\prod_Qd\omega_Q$,
+\[
+\sB^{\mathcal P}_{\mathbf w,\boldsymbol\nu;(\pi,\ell)}(\boldsymbol\xi)=\int_{\prod_Q\Delta_Q}u^{\mathbf w-\mathbf 1}\,\sZ_{\boldsymbol\nu;\ell}\big((u^{\pi_k}\xi_k)_k\big)\,d\omega(u)
+\]
+wherever it converges. When every level is the degree of its shape exponent on each bunch the data are homogeneous, the shape exponents form a configuration $t$, and the Breta is written $\sB^{\mathcal P}_{\mathbf w,\boldsymbol\nu;t}$. With one bunch $J$ and the unit configuration $I_J$ the Zamma inside is a power of a sum:
+\[
+\sB^{\{J\}}_{\mathbf w,\nu;I_J}(\boldsymbol\xi)=\int_{\Delta_J}u^{\mathbf w-\mathbf 1}\Big(\sum_{\ell\in J}\xi_\ell u_\ell\Big)^{-\nu}d\omega_J(u).
+\]
+\item For an \emph{input} $\phi$, a positive measure on a space $Y$ (or such a measure with a complex density), a measurable \emph{coefficient function} $\mathbf c:Y\to(0,\infty)^K$ and a \emph{cut region} $Y'\subseteq Y$, the \emph{Trailmoment} is
+\[
+(\sT_{\nu;t}[\mathbf c]\,\phi)(Y')=\int_{Y'}\sZ_{\nu;t}\big(\mathbf c(y)\big)\,\phi(dy)
+\]
+wherever it converges. On a line, with one unit exponent, the coefficient function $x$ and the cut region $(x_0,\infty)$, $x_0\ge0$, the Trailmoment of an input $\phi$ is $\Tx{\nu}{\phi}{x_0}=\int_{(x_0,\infty)}x^{-\nu}\,\phi(dx)$. For the lattice input $\Ilat{b+q\Z}$ on a coset $b+q\Z$ of step $q$ ($b\in\R$, $q>0$), counting measure on the coset,
+\[
+\Tx{\nu}{\Ilat{b+q\Z}}{x_0}=\sum_{m\in b+q\Z,\ m>x_0}m^{-\nu}\qquad(x_0\ge0),
+\]
+and $\IZ=\Ilat{\Z}$ is the \emph{counting input}. Inputs add, and a dilation of the coset scales the value \cite[Thm.~5.9, p.~31]{F}:
+\[
+\Tx{\nu}{\Ilat{ab+aq\Z}}{0}=a^{-\nu}\,\Tx{\nu}{\Ilat{b+q\Z}}{0}\qquad(a>0).
+\]
+\end{enumerate}
+\end{defn}
+
+\begin{prop}[The period is a value of the serif family; {\cite[Thm.~8.3, p.~54; Thm.~8.10, Prop.~8.11, p.~56]{F}}]\label{prop:serifvalue}
+Let $F$ be a convergent family with $s_j,t_j\ge0$ and positive masses.
+\begin{enumerate}[label=(\roman*)]
+\item With $U\sim\Dir_{\bm}$ and $\phi_{\bm}$ the joint law of the letters $\big(K_{N_j}(U),\Psi_{N_j}(U)\big)_j$, an input on $(0,\infty)^{2k}$,
+\[
+P_F=\Gst{n}1{\bm}{m_E}\,\mathbb E\Big[\prod_jK_{N_j}(U)^{-s_j}\Psi_{N_j}(U)^{-t_j}\Big]=\Gst{n}1{\bm}{m_E}\,\big(\sT_{(\mathbf s,\mathbf t);I_{2k}}[\mathrm{id}]\,\phi_{\bm}\big)\big((0,\infty)^{2k}\big),
+\]
+a stacked Gamma times a Trailmoment at the unit configuration. As a function of the exponents, $P_F/\Gst{n}1{\bm}{m_E}$ is the moment generating function of the logarithms $-\log K_{N_j}(U)$, $-\log\Psi_{N_j}(U)$.
+\item For masses $\bm'$ with $\kappa_E(\bm')>0$, the \emph{interest} $J_F(\bm')=\int_{(0,\infty)^E}\alpha^{\bm'-\mathbf 1}e^{-|\alpha|}\prod_jK_{N_j}^{-s_j}\Psi_{N_j}^{-t_j}d\alpha$ equals $\Gamma(\kappa_E(\bm'))\int_{\Delta_E}u^{\bm'-\mathbf 1}\prod_jK_{N_j}^{-s_j}\Psi_{N_j}^{-t_j}d\omega_E$, and when every $s_j,t_j>0$,
+\[
+\prod_j\Gamma(s_j)\Gamma(t_j)\,J_F(\bm')=\sG_{(\bm',\mathbf s,\mathbf t);t_F}(\mathbf 1),
+\]
+the Gramma on the scales $E\sqcup\{\tau_j\}\sqcup\{\tau^\ast_j\}$ whose configuration $t_F$ has the columns $\mathbf e_e$, $e\in E$, and $(\mathbf 1_T,\mathbf e_{\tau_j})$ and $(\mathbf 1_{E\setminus T},\mathbf e_{\tau^\ast_j})$ for $T\in\cB(N_j)$, either side converging with the other.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+(i) is Lemma~\ref{lem:sections}(ii) with $A=E$, Lemma~\ref{lem:dirichlet}, and $\sZ_{\nu;I}(\mathbf y)=\prod\mathbf y^{-\nu}$. (ii) The first identity is Lemma~\ref{lem:sections}(i) on $E$, the integrand being homogeneous of degree $\kappa_E(\bm')-n$. For the second, write $K_{N_j}^{-s_j}=\Gamma(s_j)^{-1}\int_0^\infty\tau_j^{s_j-1}e^{-\tau_jK_{N_j}}d\tau_j$ and $e^{-\tau_jK_{N_j}}=\prod_{T}e^{-\tau_j\alpha^T}$, likewise for $\Psi_{N_j}$, and use Tonelli.
+\end{proof}
+
+So up to Gammas of its exponents the interest of $F$ is a Gramma, and off the balance wall the integral of the period form over $\Delta_E$ is the interest over $\Gamma(\kappa_E)$.
+
+\begin{defn}[Finite part; {\cite[Def.~1.4, p.~11; Thm.~1.6, p.~12]{F}}]\label{def:reg}
+Let $f$ be a finite sum of functions $\rho^{a-1}R(\rho)$ with $a\in\mathbb C$ and $R$ a rational function without poles in $(0,\infty)$. Its \emph{finite part} is
+\[
+\Reg\!\int_0^\infty f\,d\rho=\CT_{\varepsilon=0}\Big(\int_0^1\rho^{\varepsilon}f\,d\rho+\int_1^\infty\rho^{\varepsilon}f\,d\rho\Big),
+\]
+each half continued meromorphically in $\varepsilon$ from where it converges; here and below $\CT_{\varepsilon=0}$ is the constant term of the Laurent expansion at $\varepsilon=0$. (The handbook reads the same number off a primitive, \cite[Def.~1.4, p.~11]{F}, and \cite[Thm.~1.6, p.~12]{F} identifies the two.)
+\end{defn}
+
+\begin{lemma}[Finite parts; {\cite[Prop.~1.5, Thm.~1.6, Cor.~1.7, p.~12]{F}}]\label{lem:reg}
+Let $f$ be as in Definition~\ref{def:reg}.
+\begin{enumerate}[label=(\roman*)]
+\item The two halves continue meromorphically to $\mathbb C$. With $R(\rho)=\sum_{k\ge-k_0}r_k\rho^k$ near $0$, $\int_0^1\rho^{a-1+\varepsilon}R\,d\rho=\sum_{k<M}\frac{r_k}{a+\varepsilon+k}+h_M(\varepsilon)$, $h_M$ holomorphic for $\re(a+\varepsilon)>-M$; at $\infty$ the same holds in the expansion of $R$ in $\rho^{-1}$, with $\int_1^\infty\rho^{b-1}d\rho=-1/b$.
+\item $\Reg$ is linear.
+\item If $\int_0^\infty|f|\,d\rho<\infty$, then $\Reg\!\int_0^\infty f\,d\rho=\int_0^\infty f\,d\rho$.
+\item $\Reg\!\int_0^\infty\rho^{a-1}d\rho=0$ for every $a\in\mathbb C$.
+\item If $J(\kappa)=\int_0^\infty\rho^{\kappa-1}R(\rho)\,d\rho$ converges on a nonempty open vertical strip, it continues meromorphically to $\mathbb C$, and $\Reg\!\int_0^\infty\rho^{a-1}R\,d\rho=\CT_{\kappa=a}J(\kappa)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Subtract the expansion up to $\rho^{M-1}$ and integrate termwise. (ii) is clear. (iii) Absolute convergence forces the leading exponent of $f$ at $0$ to have real part above $-1$ and that at $\infty$ below $-1$, so both halves converge and are holomorphic for $\varepsilon$ near $0$. (iv) The halves are $\frac1{a+\varepsilon}$ and $-\frac1{a+\varepsilon}$. (v) On the strip $J(\kappa)$ is the sum of the two halves at $\varepsilon=\kappa-a$, which continue by (i).
+\end{proof}
+
+The power of a sum has a second side, on which its terms carry shares of its exponent and enter only through powers: the share side of the one-scale Gramma.
+
+\begin{lemma}[Splitting a coefficient; {\cite[Cor.~4.4, Thm.~4.5, p.~26]{F}}]\label{lem:split}
+Let $X_1,X_2>0$, $\re w>0$ and $0<c<\re w$. On the line $\re a=c$,
+\[
+\big|\Gst21{a,\ w-a}{w}\big|\le C\,(1+|\im a|)^{-2}
+\]
+with $C$ depending on $c$ and $w$ only, and
+\[
+(X_1+X_2)^{-w}=\frac1{2\pi i}\int_{\re a=c}\Gst21{a,\ w-a}{w}\,X_1^{-a}X_2^{a-w}\,da .
+\]
+The stacked Gamma $\Gst21{a,\ w-a}{w}$ is the \emph{share kernel} of the letter $X_1+X_2$ at the exponent $w$ (alias: Mellin inversion of the Beta integral).
+\end{lemma}
+
+\begin{proof}
+\emph{Bounds.} For $J\in\N$, $\Gamma(a)=\Gamma(a+J)/(a)_J$ and $\Gamma(w+J)=(w)_J\Gamma(w)$ give
+\[
+\Gst21{a,\ w-a}{w}=\frac{(w)_J}{(a)_J}\,\Gst21{a+J,\ w-a}{w+J},
+\]
+and the last factor is bounded by $\Gst21{\re a+J,\ \re(w-a)}{\re w+J}$ wherever both real parts are positive (Lemma~\ref{lem:dirichlet}). At $J=2$ on the line $\re a=c$ this is the bound of the statement, and the integral converges absolutely.
+
+\emph{Closing.} Let $X_1<X_2$ and $z=X_1/X_2$. Move the line to $\re a=\frac12-J$, $J\ge2$, across the poles of $\Gamma(a)$ at $a=-j$, $0\le j<J$, where the residue of the integrand is $\frac{(-1)^j}{j!}(w)_j\,z^jX_2^{-w}$. On the horizontal segments $|\im a|=Y$ between the two lines the integrand is $O(Y^{-J})$ by the display, so they contribute nothing as $Y\to\infty$. On the new line $|(a)_J|=\prod_{m=1}^J|m-\frac12-i\im a|\ge|\frac12-i\im a|\,|\frac32-i\im a|\,\Gst11{J+\frac12}{\frac52}$, the last factor of the display is at most $\Gst21{\frac12,\ \re w+J-\frac12}{\re w+J}\le\Gst21{\frac12,\ \re w+\frac32}{\re w+2}$, and $|X_1^{-a}X_2^{a-w}|=z^{J-\frac12}X_2^{-\re w}$; so the integral over the line is at most a constant depending on $X_1$, $X_2$ and $w$ times $q_J=(|w|)_J\,z^J/\Gamma(J+\frac12)$. Consecutive terms have $q_{J+1}/q_J=z\,(|w|+J)/(J+\frac12)\to z<1$, so $q_J\to0$. So the integral is the sum of the residues,
+\[
+X_2^{-w}\sum_{j\ge0}\frac{(-1)^j(w)_j}{j!}\,z^j=\frac{1}{\Gamma(w)}\sum_{j\ge0}\frac{(-X_1)^j}{j!}\,\Gamma(w+j)\,X_2^{-w-j}=(X_1+X_2)^{-w},
+\]
+the expansion lattice of the Gramma $\sG_{w;(1,1)}(X_1,X_2)=\int_0^\infty x^{w-1}e^{-xX_1}e^{-xX_2}dx$: expand $e^{-xX_1}$ and integrate termwise, absolutely since $X_1<X_2$. For $X_1>X_2$ close to the right across the poles of $\Gamma(w-a)$, with the roles of $X_1$ and $X_2$ exchanged; at $X_1=X_2$ both sides are continuous in $X_1$, the right side by the bound and dominated convergence.
+\end{proof}
+
+\begin{prop}[A scale integral is a stacked Gamma times a Breta; {\cite[Prop.~15.1, p.~87; Cor.~15.4, p.~88]{F}}]\label{prop:scale}
+Let $J$ be a finite set, $\mathbf w\in\mathbb C^J$ with $\re w_\ell>0$, and $0<\re\kappa<\re|\mathbf w|$.
+\begin{enumerate}[label=(\roman*)]
+\item For $\boldsymbol\xi\in(0,\infty)^J$,
+\[
+\int_0^\infty x^{\kappa-1}\prod_{\ell\in J}(x+\xi_\ell)^{-w_\ell}\,dx=\Gst{2}{|J|}{\kappa,\ |\mathbf w|-\kappa}{\mathbf w}\,\sB^{\{J\}}_{\mathbf w,\,|\mathbf w|-\kappa;\,I_J}(\boldsymbol\xi).
+\]
+\item For integer $\mathbf w$ the left side converges for $\boldsymbol\xi\in(\mathbb C\setminus(-\infty,0])^J$ and is holomorphic there. Wherever the convex hull of the $\xi_\ell$ avoids $(-\infty,0]$, the Breta converges, with the principal branch, and (i) holds; elsewhere the right side denotes the left side, which continues it.
+\item (\emph{The share side.}) Let $J=\{0,\dots,L\}$ and $\boldsymbol\xi\in(0,\infty)^J$, and choose $c_\ell\in(0,\re w_\ell)$, $1\le\ell\le L$, with $\re\kappa-\re w_0<\sum_\ell c_\ell<\re\kappa$. Then the two sides of (i) equal
+\[
+\frac1{(2\pi i)^L}\int_{\re a_\ell=c_\ell}\ \prod_{\ell=1}^L\Gst21{a_\ell,\ w_\ell-a_\ell}{w_\ell}\,\xi_\ell^{\,a_\ell-w_\ell}\cdot\Gst21{\kappa-|\mathbf a|,\ w_0-\kappa+|\mathbf a|}{w_0}\,\xi_0^{\,\kappa-|\mathbf a|-w_0}\,d\mathbf a,
+\]
+$|\mathbf a|=a_1+\dots+a_L$: the coefficients enter only through powers.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+(i) Write each letter as a Gamma integral and integrate $x$ first:
+\[
+(x+\xi_\ell)^{-w_\ell}=\frac1{\Gamma(w_\ell)}\int_0^\infty y_\ell^{w_\ell-1}e^{-y_\ell(x+\xi_\ell)}dy_\ell,\qquad \int_0^\infty x^{\kappa-1}e^{-x|\mathbf y|}dx=\Gamma(\kappa)|\mathbf y|^{-\kappa}.
+\]
+In scale and shape, $\mathbf y=\rho u$ (Lemma~\ref{lem:sections}(i)),
+\begin{align*}
+\int_{(0,\infty)^J}\mathbf y^{\mathbf w-\mathbf 1}|\mathbf y|^{-\kappa}e^{-\sum_\ell\xi_\ell y_\ell}d\mathbf y&=\int_{\Delta_J}u^{\mathbf w-\mathbf 1}\int_0^\infty\rho^{|\mathbf w|-\kappa-1}e^{-\rho\sum_\ell\xi_\ell u_\ell}d\rho\,d\omega_J(u)\\
+&=\Gamma(|\mathbf w|-\kappa)\,\sB^{\{J\}}_{\mathbf w,|\mathbf w|-\kappa;I_J}(\boldsymbol\xi).
+\end{align*}
+All integrands are absolutely integrable under the stated conditions, so Fubini applies.
+
+(ii) For $\xi\notin(-\infty,0]$ the factor $(x+\xi)^{-w}$ has no pole on $[0,\infty)$ and is $O(x^{-w})$ at $\infty$, uniformly on compact sets of $\xi$; so the left side is holomorphic. The set of $\boldsymbol\xi$ whose convex hull avoids $(-\infty,0]$ is star-shaped about $(1,\dots,1)$: if $t\boldsymbol\xi+(1-t)\mathbf 1$ had a convex combination $p\in(-\infty,0]$, then the same combination of the $\xi_\ell$ would be $(p-(1-t))/t\in(-\infty,0]$. On this connected set both sides are holomorphic, $\sum_\ell\xi_\ell u_\ell$ staying off $(-\infty,0]$, and they agree on $(0,\infty)^J$.
+
+(iii) Split each letter $(x+\xi_\ell)^{-w_\ell}$, $1\le\ell\le L$, by Lemma~\ref{lem:split} at $X_1=x$, $X_2=\xi_\ell$, and integrate $x$ first: $\int_0^\infty x^{\kappa-|\mathbf a|-1}(x+\xi_0)^{-w_0}dx=\Gst21{\kappa-|\mathbf a|,\ w_0-\kappa+|\mathbf a|}{w_0}\xi_0^{\kappa-|\mathbf a|-w_0}$, valid since $0<\re(\kappa-|\mathbf a|)<\re w_0$. By the bound of Lemma~\ref{lem:split} and $|x^{-a_\ell}|=x^{-c_\ell}$ the integrand is absolutely integrable on $(0,\infty)$ times the lines, so Fubini applies.
+\end{proof}
+
+With one coefficient this is the integral of a linear letter: for $c_0,c_1>0$ and $0<\re\nu<\re s$, $\int_0^\infty\rho^{\nu-1}(c_0+c_1\rho)^{-s}d\rho=\Gst21{\nu,\ s-\nu}{s}c_0^{\nu-s}c_1^{-\nu}$.
+
+A Trailmoment on a line has a second side as well, on which its input enters through its Laplace transform.
+
+\begin{lemma}[The Laplace side; {\cite[Thm.~5.11, p.~31]{F}}]\label{lem:laplace}
+Let $\phi$ be an input on $(0,\infty)$, $|\phi|$ the input with the absolute value of its density, and $\re\nu>0$ with $\int x^{-\re\nu}\,|\phi|(dx)<\infty$. Then the Laplace transform $\mathcal F(y)=\int e^{-yx}\,\phi(dx)$, $y>0$, has
+\[
+\Gamma(\nu)\,\Tx{\nu}{\phi}{0}=\int_0^\infty y^{\nu-1}\,\mathcal F(y)\,dy .
+\]
+\end{lemma}
+
+\begin{proof}
+For $x>0$, $\Gamma(\nu)\,x^{-\nu}=\int_0^\infty y^{\nu-1}e^{-yx}\,dy$. By Tonelli, $\int\!\!\int_0^\infty y^{\re\nu-1}e^{-yx}\,dy\,|\phi|(dx)=\Gamma(\re\nu)\int x^{-\re\nu}\,|\phi|(dx)<\infty$, so Fubini exchanges the two integrals.
+\end{proof}
+
+\section{The motive}\label{sec:motive}
+
+\subsection{The model}\label{sec:model}
+
+Let $X_E$ be the smooth projective toric variety over $\Q$ of the braid fan in $\R^E/\R\mathbf 1$. Its rays are the images $\rho_S$ of the indicator vectors $\mathbf 1_S$, $\varnothing\neq S\subsetneq E$, and its cones are the chains $S_1\subsetneq\cdots\subsetneq S_\ell$. It is Brown's iterated blow-up of $\PP^{N}$ along all coordinate linear subspaces \cite[\S5.1]{B2}, for the set of all subsets of size $\ge2$. Let $D_S$ be the divisor of $\rho_S$ and $D=\bigcup_SD_S$. Since the fan is smooth and complete, the following hold \cite[\S5]{B2}:
+\begin{itemize}
+\item $D$ is a simple normal crossings divisor;
+\item $D_{S_1}\cap\cdots\cap D_{S_\ell}\neq\varnothing$ exactly when the $S_i$ form a chain;
+\item $D_S\cong X_S\times X_{E\setminus S}$ \cite[Thm.~5.1]{B2}.
+\end{itemize}
+The closure $\tsig_E$ of $\sigma_E^\circ=\{\alpha_e>0\}$ in $X_E(\R)$ is a compact manifold with corners, with facets $\tsig_E\cap D_S\cong\tsig_S\times\tsig_{E\setminus S}$ \cite[Cor.~5.2]{B2}. For a polynomial $f$ let $\widetilde Y_f$ be the closure in $X_E$ of its zero locus in the torus; for $f=\alpha_J$ this is Brown's strict transform $\widetilde H_J$.
+
+\paragraph{Charts.} An ordering $e_1,\dots,e_n$ of $E$ gives the maximal chain $S_i=\{e_1,\dots,e_i\}$, $1\le i\le N$. The vectors $\mathbf 1_{S_1},\dots,\mathbf 1_{S_N}$ form a basis of $\Z^E/\Z\mathbf 1$, and the chart $U\cong\mathbb A^N$ of their cone has the coordinates $\varepsilon_i=\alpha_{e_i}/\alpha_{e_{i+1}}$. On $\alpha_{e_n}=1$,
+\[
+\alpha_{e_j}=\prod_{i\ge j}\varepsilon_i,\qquad \alpha^{\mathbf a}=\prod_{i=1}^N\varepsilon_i^{\langle\mathbf 1_{S_i},\mathbf a\rangle}\quad(\mathbf a\in\Z^E).
+\]
+$D_{S_i}=\{\varepsilon_i=0\}$ in $U$, the positive part $\tsig_E\cap U$ is $\{\varepsilon\ge0\}$, these charts cover $X_E$, and the sector $\{\alpha_{e_1}\le\cdots\le\alpha_{e_n}\}$ of $\sigma_E$ is the cube $[0,1]^N$; the sectors of all orderings cover $\sigma_E$.
+
+\begin{lemma}[Letters in a chart; {\cite[Thm.~8.7(ii), p.~55]{F}}]\label{lem:charts}
+Let $f$ be a letter of degree $\delta$: $K_N$, $\Psi_N=K_{N^\ast}$ or $\alpha_J=K_{\binom J1}$. In the chart of an ordering,
+\[
+f/\alpha_{e_n}^{\delta}=\prod_i\varepsilon_i^{d_f(S_i)}\ \widetilde f(\varepsilon),
+\]
+with $d_f(S)$ the floor of $f$ along $S$ (Corollary~\ref{lem:initial}) and $\widetilde f$ a polynomial with nonnegative coefficients and constant term $1$. On a stratum $\{\varepsilon_i=0:\ i\in I\}$, $\widetilde f$ restricts to the product of the block letters of the chain $(S_i)_{i\in I}$ (Corollary~\ref{cor:blocks}), each read in the coordinates $\varepsilon$ of its block and none of them zero, so $\widetilde Y_f\cap U=\{\widetilde f=0\}$. For a family $F$,
+\[
+\omega_F=\pm\prod_i\varepsilon_i^{\kappa_{S_i}(F)-1}\ \prod_j\widetilde K_{N_j}^{-s_j}\widetilde\Psi_{N_j}^{-t_j}\ d\varepsilon_1\wedge\cdots\wedge d\varepsilon_N .
+\]
+\end{lemma}
+
+\begin{proof}
+Since $\alpha^T/\alpha_{e_n}^\delta=\prod_i\varepsilon_i^{|T\cap S_i|}$, the exponent of $\varepsilon_i$ in a term of $f$ is its degree in $\alpha_{S_i}$. By Corollary~\ref{cor:blocks} along the maximal chain, applied to $N$, to $N^\ast$ for $\Psi_N$ and to $\binom J1$ for $\alpha_J$, exactly one term of $f$ is at the floors along all the $S_i$ at once, with coefficient $1$; dividing by it gives $\widetilde f$, with nonnegative coefficients and constant term $1$. On the stratum, $\widetilde f$ restricts to the bottom level of the chain $(S_i)_{i\in I}$, which is the product of Corollary~\ref{cor:blocks}. Finally $\Omega_E/(\alpha_1\cdots\alpha_n)=\pm\prod_id\varepsilon_i/\varepsilon_i$, $\alpha^{\bm}=\prod_i\varepsilon_i^{m_{S_i}}$, and the floors of $K_N$ and $\Psi_N$ are $d_N(S)$ and $d^\ast_N(S)$ (Corollary~\ref{lem:initial}).
+\end{proof}
+
+\begin{defn}[The model]\label{def:model}
+The \emph{augmented letters} of $F$ are $\cL^+(F)=\cL(F)\cup\{\alpha_J:J\subseteq E,\ |J|\ge2\}$. Put
+\[
+Y_F=\bigcup_{f\in\cL^+(F)}\widetilde Y_f,\qquad V_F=X_E\setminus Y_F,\qquad D_F=D\cap V_F .
+\]
+\end{defn}
+
+\begin{prop}\label{prop:model}
+\begin{enumerate}[label=(\roman*)]
+\item $\tsig_E\cap Y_F=\varnothing$.
+\item $\omega_F$ vanishes to order exactly $\kappa_S(F)-1$ along $D_S$. So $\omega_F$ is a regular $N$-form on $V_F$ if and only if $F$ is convergent, and $\int_{\sigma_E}\omega_F$ converges if and only if $F$ is convergent \cite[Thm.~8.7(i), p.~55; Thm.~8.10, p.~56]{F}.
+\item $V_F$ is affine, and so is every stratum $D_{S_1}\cap\cdots\cap D_{S_\ell}\cap V_F$.
+\item For a chain $S_1\subsetneq\cdots\subsetneq S_\ell$ with blocks $Z_i=S_i\setminus S_{i-1}$ ($S_0=\varnothing$, $S_{\ell+1}=E$),
+\[
+D_{S_1}\cap\cdots\cap D_{S_\ell}\cap V_F\ \cong\ \prod_{i=1}^{\ell+1}V_{Z_i},
+\]
+compatibly with the boundaries and with $\tsig_E$. Here $V_{Z}=X_{Z}\setminus\bigcup_{g}\widetilde Y_g$, with $g$ running over the non-constant block letters of the chain at $Z$ (Corollary~\ref{cor:blocks}) of the augmented letters of $F$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+(i) On $\{\varepsilon\ge0\}$, $\widetilde f\ge1$.
+
+(ii) On $V_F\cap U$ every $\widetilde f$, $f\in\cL(F)$, is invertible, since $V_F$ omits $\{\widetilde f=0\}$; so the factor $\prod_j\widetilde K^{-s_j}\widetilde\Psi^{-t_j}$ of Lemma~\ref{lem:charts} is a unit there, and $\omega_F$ has on $V_F\cap U$ no zeros or poles but those along the $D_{S_i}$, of the orders $\kappa_{S_i}-1$. Every $D_S$ meets $V_F$, since it meets $\tsig_E$, which misses $Y_F$ by (i), and every proper $S$ occurs in some maximal chain. So $\omega_F$ is regular on $V_F$ exactly when all $\kappa_S\ge1$. For the integral, the sectors cover $\sigma_E$, and on each cube the factor is bounded between positive constants, the $\widetilde f$ being $\ge1$ there. Since $\int_0\varepsilon^{\kappa-1}d\varepsilon$ converges exactly when $\kappa\ge1$, the same condition governs convergence.
+
+(iii) $X_E\setminus\bigcup_{|J|\ge2}\widetilde Y_{\alpha_J}$ is Brown's affine model $A^{\cB}$ for the set $\cB$ of all subsets of size $\ge2$ \cite[Def.~5.6, Thm.~5.7]{B2}, an affine variety. $V_F$ is obtained from it by removing the divisors $\widetilde Y_f$, $f\in\cL(F)$, which are Cartier since $X_E$ is smooth; the complement of an effective Cartier divisor is affine over the ambient variety, so $V_F$ is affine. The strata are closed in $V_F$.
+
+(iv) Under $D_{S}\cong X_S\times X_{E\setminus S}$ \cite[Thm.~5.1]{B2} the chart computation gives
+\[
+\widetilde Y_f\cap D_S=\big(\widetilde Y_{f_S}\times X_{E\setminus S}\big)\cup\big(X_S\times\widetilde Y_{f^S}\big),\qquad f_S\,f^S\ \text{the bottom level of $f$ along $S$ (Corollary~\ref{lem:initial})}.
+\]
+Iterating along the chain with Corollary~\ref{cor:blocks} gives the product. The boundary strata on both sides are the finer chains, and $\tsig_E$ restricts to $\prod\tsig_{Z_i}$ \cite[Cor.~5.2]{B2}.
+\end{proof}
+
+\subsection{Continued periods}
+
+\begin{lemma}[Cube integrals; {\cite[Lemma~8.6, p.~55]{F}}]\label{lem:cube}
+Let $h$ be smooth on a neighbourhood of $[0,1]^N$. Then $\operatorname{cube}(\mathbf y;h)=\int_{[0,1]^N}\prod_i\varepsilon_i^{y_i-1}h(\varepsilon)\,d\varepsilon$, holomorphic for $\re y_i>0$, extends to a meromorphic function on $\mathbb C^N$ with poles on the hyperplanes $y_i=-j$, $j\in\N$. It is linear in $h$, and $\operatorname{cube}(\mathbf y+\mathbf a;h)=\operatorname{cube}(\mathbf y;\varepsilon^{\mathbf a}h)$ for $\mathbf a\in\N^N$.
+\end{lemma}
+
+\begin{proof}
+Taylor in $\varepsilon_1$: $h=\sum_{j<M}h_j(\varepsilon')\varepsilon_1^j+\varepsilon_1^Mr_M(\varepsilon)$ with $r_M$ smooth. Then
+\[
+\operatorname{cube}(\mathbf y;h)=\sum_{j<M}\frac{\operatorname{cube}(\mathbf y';h_j)}{y_1+j}+\operatorname{cube}\big((y_1+M,\mathbf y');r_M\big),
+\]
+the last term holomorphic for $\re y_1>-M$. Repeat in each coordinate. The last two statements hold where the integrals converge, and persist.
+\end{proof}
+
+\begin{prop}[Continued periods; {\cite[Thm.~8.7(ii),(iii), p.~55; Def.~8.9, Thm.~8.10, p.~56]{F}}]\label{prop:continued}
+Fix the tables and the exponents of a family. For masses $\bm\in\mathbb C^E$ on the balance wall put
+\[
+P_F(\bm)=\sum_\pi\operatorname{cube}\big(\boldsymbol\kappa_\pi(\bm);h_\pi\big),\qquad \boldsymbol\kappa_\pi(\bm)=\big(\kappa_{S^\pi_i}(\bm)\big)_{i\le N},\quad h_\pi=\prod_j\widetilde K_{N_j}^{-s_j}\widetilde\Psi_{N_j}^{-t_j},
+\]
+the sum over the orderings $\pi$ of $E$, with the chains and the letters of their charts. Then $P_F(\bm)$ is the period when $F$ is convergent, and $P_F$ is meromorphic on the balance hyperplane, with poles on the hyperplanes $\kappa_S=-j$, $\varnothing\neq S\subsetneq E$, $j\in\N$.
+\end{prop}
+
+\begin{proof}
+The sectors cover $\sigma_E$ up to a null set, each is the cube of its chart, and there $\omega_F=\pm\prod_i\varepsilon_i^{\kappa_{S_i}-1}h_\pi\,d\varepsilon$ (Lemma~\ref{lem:charts}), with $h_\pi$ smooth near the cube since every $\widetilde f\ge1$ there. On the balance hyperplane, $\bm\mapsto\boldsymbol\kappa_\pi(\bm)$ is an affine bijection onto $\mathbb C^N$. Lemma~\ref{lem:cube} gives the rest.
+\end{proof}
+
+\subsection{Motivic periods and Galois conjugates}
+
+We work in Brown's category $\mathcal H$ of realizations over $\Q$ \cite[\S2--3, \S10.2]{B1}, with the ring $\mathcal P^{\m}$ of effective motivic periods and the coaction
+\begin{equation}\label{eq:coaction}
+\Delta[H,\gamma,\omega]^{\m}=\sum_i[H,\gamma,e_i]^{\m}\otimes[H,e_i^\vee,\omega]^{\dr}\qquad\text{\cite[(2.3)]{B1}},
+\end{equation}
+where $(e_i)$ is a basis of $H_{dR}$. A morphism $\phi:H\to H'$ in $\mathcal H$ gives $[H,\phi^t\gamma',\omega]^{\m}=[H',\gamma',\phi(\omega)]^{\m}$ \cite[\S2.2(ii)]{B1}. A morphism of pairs of smooth varieties with simple normal crossings boundaries induces a morphism of relative cohomology in Nori's category \cite{HMS}, and hence in $\mathcal H$.
+
+\begin{defn}[The motivic period]\label{def:mper}
+For convergent $F$ put $H_F=H^N(V_F,D_F)\in\mathcal H$. Its Betti class is $[\tsig_E]$, and $[\omega_F]$ is the class of the regular top form, which restricts to zero on $D_F$ for dimension reasons. Set
+\[
+P_F^{\m}=[H_F,\tsig_E,\omega_F]^{\m},
+\]
+whose period is $P_F$. The model without the $\alpha_J$ gives the same motivic period, by the restriction morphism; this is Brown's argument for \cite[Cor.~8.9]{B2}.
+\end{defn}
+
+\begin{defn}[Galois conjugates]\label{def:conj}
+For $\xi\in\mathcal P^{\m}$ let
+\[
+\Conj(\xi)=\big\langle(\mathrm{id}\otimes\varphi)\Delta\xi:\ \varphi\in\operatorname{Hom}_\Q(\mathcal P^{\dr},\Q)\big\rangle
+\]
+be the space of its \emph{Galois conjugates}. For $H\in\mathcal H$ and $\gamma\in H_B^\vee$ let $L(H,\gamma)=\{[H,\gamma,e]^{\m}:e\in H_{dR}\}$. For subspaces $A,B$, $A\cdot B$ denotes the span of products.
+\end{defn}
+
+\begin{lemma}\label{lem:conj}
+\begin{enumerate}[label=(\alph*)]
+\item $\xi\in\Conj(\xi)$.
+\item $\Conj([H,\gamma,\omega]^{\m})\subseteq L(H,\gamma)$, and $\Delta L(H,\gamma)\subseteq L(H,\gamma)\otimes\mathcal P^{\dr}$.
+\item $\Conj(\xi+\eta)\subseteq\Conj(\xi)+\Conj(\eta)$ and $\Conj(\xi\eta)\subseteq\Conj(\xi)\cdot\Conj(\eta)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(b) is \eqref{eq:coaction}.
+
+(a) The map $\varepsilon:\mathcal P^{\dr}\to\Q$, $[M,f,v]^{\dr}\mapsto f(v)$, is evaluation at the identity of the de Rham Galois group, and $(\mathrm{id}\otimes\varepsilon)\Delta=\mathrm{id}$ by \eqref{eq:coaction}.
+
+(c) Write $\Delta\xi=\sum\xi_i\otimes\xi_i'$ and $\Delta\eta=\sum\eta_j\otimes\eta_j'$ with the $\xi'_i$ linearly independent and the $\eta'_j$ linearly independent. Then $\xi_i\in\Conj(\xi)$ and $\eta_j\in\Conj(\eta)$. Since $\Delta$ is a ring homomorphism, $(\mathrm{id}\otimes\varphi)\Delta(\xi\eta)=\sum\xi_i\eta_j\,\varphi(\xi_i'\eta_j')$.
+\end{proof}
+
+\subsection{Birational invariance}
+
+\begin{lemma}[Birational invariance]\label{lem:birational}
+For $i=1,2$ let $X_i$ be smooth projective of dimension $N$ over $\Q$, $D_i\subset X_i$ a simple normal crossings divisor and $Y_i$ closed, and set $X_i^\circ=X_i\setminus Y_i$, $D_i^\circ=D_i\setminus Y_i$. Let $\sigma_i\subset X_i(\R)$ be compact, the closure of an oriented open semialgebraic $\sigma_i^\circ\subset(X_i\setminus(D_i\cup Y_i))(\R)$, with $\sigma_i\cap Y_i=\varnothing$ and $\sigma_i\setminus\sigma_i^\circ\subseteq D_i$. Let $\omega_i\in\Omega^N(X_i^\circ)$.
+
+Suppose $\Phi:U_1\to U_2$ is an isomorphism of dense opens $U_i\subseteq X_i\setminus(D_i\cup Y_i)$ with $\sigma_i^\circ\subseteq U_i(\R)$, $\Phi(\sigma_1^\circ)=\sigma_2^\circ$ preserving orientations, and $\Phi^\ast\omega_2=\omega_1$. Then
+\[
+[H^N(X_1^\circ,D_1^\circ),\sigma_1,\omega_1]^{\m}=[H^N(X_2^\circ,D_2^\circ),\sigma_2,\omega_2]^{\m}.
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{The resolution.} Let $\Gamma\subseteq X_1\times X_2$ be the closure of the graph of $\Phi$; the graph is closed in $U_1\times X_2$ and smooth. By \cite{Hi} there is a smooth projective $\widetilde X$ and a proper birational $\pi:\widetilde X\to\Gamma$ that is an isomorphism over the graph, such that $\pi^{-1}(\Gamma\setminus\mathrm{graph})$ is a simple normal crossings divisor. Let $q_i:\widetilde X\to X_i$ be the projections, and put
+\[
+\widetilde D_i=q_i^{-1}(D_i),\qquad \widetilde Y=q_1^{-1}(Y_1)\cup q_2^{-1}(Y_2),
+\]
+both closed. Since $D_i\cap U_i=\varnothing$, $\widetilde D_i$ is a divisor contained in $\pi^{-1}(\Gamma\setminus\mathrm{graph})$, hence a union of its components and simple normal crossings. Let $\widetilde\sigma$ be the closure of $q_1^{-1}(\sigma_1^\circ)$.
+
+\emph{The cycle avoids $\widetilde Y$.} $q_i(\widetilde\sigma)=\sigma_i$, and $\sigma_i\cap Y_i=\varnothing$.
+
+\emph{Its boundary lies in both $\widetilde D_i$.} $q_1$ is an isomorphism over $U_1$, so the points of $\widetilde\sigma$ over $\sigma_1^\circ$ are interior. Hence $\widetilde\sigma\setminus q_1^{-1}(\sigma_1^\circ)\subseteq q_1^{-1}(\sigma_1\setminus\sigma_1^\circ)\subseteq\widetilde D_1$, and symmetrically for $q_2$, using $\Phi(\sigma_1^\circ)=\sigma_2^\circ$. So $[\widetilde\sigma]$ is a relative cycle for each of the pairs below, and $q_{i\ast}[\widetilde\sigma]=[\sigma_i]$ because $q_i$ has degree one over $\sigma_i^\circ$.
+
+\emph{The forms agree.} $q_1^\ast\omega_1$ and $q_2^\ast\omega_2$ agree on the dense open $q_1^{-1}(U_1)$. So they are one form $\widetilde\omega$, regular off $q_1^{-1}(Y_1)$ and off $q_2^{-1}(Y_2)$, hence on $\widetilde X\setminus\widetilde Y$.
+
+\emph{The chain of pairs.}
+\[
+(X_1^\circ,D_1^\circ)\xleftarrow{\ q_1\ }(\widetilde X\setminus\widetilde Y,\widetilde D_1\setminus\widetilde Y)\xrightarrow{\ \mathrm{id}\ }(\widetilde X\setminus\widetilde Y,(\widetilde D_1\cup\widetilde D_2)\setminus\widetilde Y)\xleftarrow{\ \mathrm{id}\ }(\widetilde X\setminus\widetilde Y,\widetilde D_2\setminus\widetilde Y)\xrightarrow{\ q_2\ }(X_2^\circ,D_2^\circ)
+\]
+are morphisms of pairs with simple normal crossings boundaries. Each pulls back the class of the top form to the class of the top form, and pushes $[\widetilde\sigma]$ to the given cycle. The equivalence relation of \cite[\S2.2(ii)]{B1} gives the equality.
+\end{proof}
+
+\section{Bunches, cells and pieces}\label{sec:bunches}
+
+\subsection{Trees of bunches}
+
+A \emph{family of tables} $G$ on a finite set $Z$ is a finite sequence of lists on $Z$ with real exponents $s,t$, not both zero; a table \emph{carries} the letter $K$ when its exponent $s$ is not zero, and $\Psi$ when $t$ is not. A family in the sense of Definition~\ref{def:family} is one, with its active tables. Its \emph{molecules} are the parts of the finest partition of $Z$ such that every table is the direct sum of its restrictions to the parts (Lemma~\ref{lem:skeleton}(ii)); a molecule with one mark is a \emph{unit}.
+
+For a molecule $M$ that is not a unit, a \emph{bunch} is a set $\varnothing\neq B\subsetneq M$, and $R=M\setminus B$ is its \emph{room}. The patterns and the children of $B$ in a table $N$ are those of $N|M$ (Definition~\ref{def:children}), and the \emph{pattern probability} of a pattern $p$ is the share of the bases with that pattern,
+\[
+\pi_{N,p}=\frac{|\{T\in\cB(N|M):\ T\cap B=p\}|}{|\cB(N|M)|}>0 .
+\]
+The \emph{peel} of $G|M$ at $B$ is the family of tables on $R$ indexed by the pairs $(N,p)$ of a table of $G|M$ and a pattern of $B$ in it: the child $N_{(p)}$ with the exponents $(\pi_{N,p}s_N,\ \pi_{N,p}t_N)$, the \emph{native split}. A child carries the letters its parent carries. (Merging equal children, with their exponents added, gives the peel of \cite[Def.~14.1, p.~81]{F}; the indexing plays the role of its record \cite[Def.~14.2, p.~81]{F}, which keeps the parent and every letter it carries \cite[Prop.~14.3, p.~81]{F}.)
+
+\begin{lemma}[The native split hands down the centre; {\cite[Prop.~12.24, p.~75]{F}}]\label{lem:hereditary}
+Let $B$ be a bunch of a molecule $M$ of $G$, and $\sigma=\sum_N\frac{s_N+t_N}2$ the total strength of $G|M$. The peel at $B$ has the total strength $\sigma$, and the child of $N$ at $p$ has the lean $\pi_{N,p}\frac{s_N-t_N}2$. So if every table of $G|M$ has $s_N=t_N$, every table of the peel does, and with the masses $\sigma\mathbf 1$ both are balanced: a centre is handed down as a centre. A table that carries one letter only hands that letter alone to each of its children: a full lean is handed down full.
+\end{lemma}
+
+\begin{proof}
+$\sum_p\pi_{N,p}=1$. The child of $N$ at $p$ has rank $r(N|M)-|p|$ on $R$ (Lemma~\ref{lem:children}(i)), so at $s_N=t_N=\sigma_N$ its two letters have the total degree $|R|$, and the balance of the peel at $\sigma\mathbf 1_R$ reads $\sigma|R|=\sum_{N,p}\pi_{N,p}\sigma_N|R|$; that of $G|M$ at $\sigma\mathbf 1_M$ is the same with $|M|$.
+\end{proof}
+
+\begin{defn}[Trees of bunches; {\cite[Def.~19.7, p.~137]{F}}]\label{def:tree}
+A \emph{tree of bunches} $\cT$ for $F$ is a finite rooted tree whose vertices $v$ carry families of tables $F_v$ on sets $E_v\subseteq E$, with $F_{\mathrm{root}}$ the active tables of $F$ with their exponents. Each vertex is of one of three kinds.
+\begin{itemize}
+\item A \emph{leaf}: $F_v$ is a unit, or a molecule declared an \emph{atom}.
+\item A \emph{split vertex}: $F_v$ has molecules $M_1,\dots,M_q$ with $q\ge2$; the children of $v$ carry the $F_v|M_i$.
+\item A \emph{bunch vertex}: $F_v$ is a molecule with a bunch $B_v$ and room $R_v$; its one child carries the peel of $F_v$ at $B_v$.
+\end{itemize}
+The \emph{width} of a bunch vertex is the largest $c_N(B_v)$ over the tables $N$ of $F_v$.
+\end{defn}
+
+\begin{rem}[The Foreman tree]\label{rem:foreman}
+Every family has trees of bunches: split into molecules, choose a bunch at each molecule that is not a unit, peel, and continue on the room, whose marks are fewer. For nonnegative exponents the program of \cite{F} reads a family along one of them, the \emph{Foreman tree}, which the family builds itself. In logarithmic coordinates $y=\log\alpha$, centred at the table's gauge $\alpha=\mathbf 1$, the family has the \emph{potential} \cite[Def.~8.17, p.~57]{F}, the pair of the logarithms of its even letters and of the ratios of its letters,
+\[
+\Big(\sum_j\sigma_j\log\mathbf E_{N_j},\ \sum_j\delta_j\log\frac{K_{N_j}}{\Psi_{N_j}}\Big),
+\]
+and the \emph{reading} of a mark is the potential written from it, its partners unnamed: the multiset, over the orders of the other marks, of the pair of functions of the scale of the mark and of the scales of the others placed in that order \cite[Def.~10.1, p.~64]{F}. The \emph{classes} of a molecule are the level sets of the reading. For a molecule of one list they are, at its centre, the orbits of the bijections of the marks that map its bases onto its bases or onto its cobases, and at a lean the orbits of those that map its bases onto its bases \cite[Cor.~11.17, p.~69]{F}. At the centre the \emph{Foreman bunch} is, among the classes with the fewest marks, the least in \emph{the order} of \cite[Def.~13.5, p.~78; Thm.~13.7, p.~79]{F}, a strict total order on the classes with equally many marks that reads each class first on its own scale, through the Skeleton polynomials of the letters along it, and then with partners \cite[Prop.~13.2, p.~77]{F}. At a lean every class $C$ lies in one class $C^\circ$ of the centre, and the Foreman bunch is the class that minimizes in turn $|C|$, $|C^\circ|$, $C^\circ$ in the order at the centre, and $C$ in the order at the lean \cite[Def.~13.6, p.~78]{F}. The tree peels each molecule at its Foreman bunch by the peel above and continues on the room; a molecule that is one class is an \emph{atom} \cite[Def.~14.4, p.~81]{F}. The indexed peel has the potential of the merged one, so it has the same molecules, classes and tree \cite[Prop.~14.21, p.~84]{F}.
+
+What the tree provides is proved in \cite{F}.
+\begin{itemize}
+\item \emph{It makes no choice.} With the tables fixed, it depends on the exponents only through the ray of $(\sigma_j)_j$ and the ray of $(\delta_j)_j$ \cite[Thm.~14.6, p.~82]{F}. So the families on given tables with the exponent pairs $(s_j,t_j)=\lambda_j(s,t)$, for fixed $\lambda_j>0$, one list in particular, have three Foreman trees, at $s=t$, $s>t$ and $s<t$, possibly coinciding: for $\binom{[4]}1$ all three are one atom.
+\item \emph{It follows the symmetries.} Let $g$ be a bijection of the marks and $h$ one of the tables with $(s_{h(j)},t_{h(j)})=(s_j,t_j)$. If $g$ maps the bases of every $N_j$ onto those of $N_{h(j)}$, it maps each Foreman tree onto itself; if it maps them onto the cobases of $N_{h(j)}$, it maps the tree at a lean onto the tree at the opposite lean, and the tree of the centre onto itself \cite[Thm.~14.8, p.~82]{F}.
+\item \emph{It hands down what it reads.} The native split hands a centre down as centres and a full lean as full leans (Lemma~\ref{lem:hereditary}), so along the tree of a centre both letters are active at every table of every vertex.
+\item \emph{Its leaf bounds its bunches.} For a molecule with a connected active table the tree is a chain, along which the bunches never shrink and the leaf has at least as many marks as every bunch \cite[Cor.~14.23, p.~85]{F}.
+\item \emph{It suffices.} For a convergent family with nonnegative exponents the period is the word of the Foreman tree, an iterated integral, over the shares of the exponents among the patterns of its bunches, of share kernels against the periods of its leaves, with as many integrations as the period; the same holds along every tree of bunches \cite[Cor.~19.9, p.~137; Thm.~19.57, p.~159]{F}. So the Foreman tree computes the period wherever some tree of bunches does.
+\item \emph{The tree of the centre is the tree of the pseudointegral.} The procedure of \cite{F} draws one tree from the tables, the Foreman tree of the centre, and evaluates along it at every lean: integrating each of its bunches, in scale and shape at once, inside the integral over its room, the root's bunch first and the atoms last, is \emph{the Foreman's order} \cite[Def.~16.12, p.~97; Def.~16.26, p.~101]{F}. On a connected family with a native gauge, as every convergent family with nonnegative exponents is \cite[Thm.~8.18(iii), p.~58]{F}, the procedure computes in this order, by a limit along the ray of the masses, the pseudointegral, with no finite part, chart, order or closing rule \cite[Thm.~16.13, p.~98]{F}. The pseudointegral is the constant term, at the target and along the ray of the masses, of the continued period, the target being the masses moved along their ray onto the balance wall. It is defined for all nonnegative exponents and positive masses, equals the integral wherever that converges, and off the pole hyperplanes equals every regular iterated finite part of the form at the target \cite[Cor.~16.14, p.~98; Thm.~16.27, p.~102; Cor.~16.33, p.~105]{F}. An iterated integral in another order computes such a finite part, a quasi-integral, which on a pole hyperplane can depend on the order \cite[Thm.~16.21, p.~100; Cor.~16.33, p.~105]{F}.
+\end{itemize}
+So the Foreman tree is deterministic, it computes the period wherever some tree of bunches does, and the tree of the centre is to the trees of bunches what the pseudointegral is to the generalized integrals: the member that makes no choice, and the one the procedure follows at every lean. Theorem~\ref{thm:A}, Corollary~\ref{cor:serif} and Theorem~\ref{thm:B} hold along every tree of bunches, the Foreman tree among them, and along it the vertex at which each block is attached, and the node form there, are fixed by the family. Theorems~\ref{thm:C} and~\ref{thm:D} involve no tree.
+\end{rem}
+
+\subsection{Flags, blocks, attachment}
+
+\begin{defn}[Flags and blocks]\label{def:blocks}
+A \emph{flag} of $E$ is a chain $\ff:\ \varnothing=S_0\subsetneq S_1\subsetneq\cdots\subsetneq S_\ell\subsetneq S_{\ell+1}=E$, $\ell\ge0$. Its \emph{blocks} are $Z_i=S_i\setminus S_{i-1}$, $1\le i\le \ell+1$, and its \emph{dimension} is that of its stratum, $\sum_i(|Z_i|-1)=N-\ell$. The \emph{letters of the block} $(Z_i;\ff)$ are the non-constant polynomials among the block letters of the chain at $Z_i$ (Corollary~\ref{cor:blocks}),
+\[
+K_{N_{(T_0\setminus Z_i)}}\ \ (K_N\in\cL(F)),\qquad \Psi_{N_{(T_1\setminus Z_i)}}\ \ (\Psi_N\in\cL(F)),\qquad \alpha_J\ \ (J\subseteq Z_i,\ |J|\ge2),
+\]
+with $T_0$ a basis of $N$ at the bottom of every $S_j$ and $T_1$ one at the top.
+They form a set $\cL^+_{Z_i;\ff}$ of polynomials on $Z_i$, which depends on $S_{i-1}$ and $S_i$. The \emph{open space} of the block is
+\[
+\Open(Z_i;\ff)=\big\{[H^{|Z_i|-1}(V_{Z_i},\partial V_{Z_i}),\tsig_{Z_i},\eta]^{\m}:\ \eta\in\Omega^{|Z_i|-1}(V_{Z_i})\big\},
+\]
+where $V_{Z_i}=X_{Z_i}\setminus\bigcup_{g\in\cL^+_{Z_i;\ff}}\widetilde Y_g$ and $\partial V_{Z_i}$ is its toric boundary. For $|Z_i|=1$ put $\Open(Z_i;\ff)=\Q$.
+\end{defn}
+
+By Corollary~\ref{cor:blocks}, $\cL^+_{Z_i;\ff}$ is exactly the set of letters the stratum of $\ff$ meets on its factor $X_{Z_i}$, and each of them other than the $\alpha_J$ is a letter of a child of a table of $F$ at a pattern of $E\setminus Z_i$.
+
+\begin{defn}[Attachment]\label{def:attach}
+Given $\cT$, a block $(Z;\ff)$ is attached by descending from the root.
+\begin{itemize}
+\item At a split vertex $v$: if $Z$ lies in one molecule, descend to that child; otherwise attach $Z$ to $v$.
+\item At a bunch vertex $v$: if $Z\subseteq B_v$, attach $Z$ to $v$ as a \emph{bunch piece}; if $Z$ meets both $B_v$ and $R_v$, attach it as a \emph{node piece}; if $Z\subseteq R_v$, descend.
+\item At a leaf, attach $Z$ as a \emph{leaf piece}.
+\end{itemize}
+Blocks attached to a split vertex are also called node pieces. Every block is attached to exactly one vertex.
+\end{defn}
+
+\subsection{Cells and substitution}
+
+\begin{defn}[Cells; {\cite[Def.~20.1, p.~163]{F}}]\label{def:cell}
+A \emph{cell} is a list $\mathcal A$ on $R\sqcup\{g\}$ in which the \emph{hinge} $g$ is neither a loop nor a coloop. Its \emph{hinge minors} $\mathcal A\setminus g$ and $\mathcal A/g$ are lists on $R$ of the ranks $r(\mathcal A)$ and $r(\mathcal A)-1$, and
+\[
+K_{\mathcal A}=K_{\mathcal A\setminus g}+\alpha_gK_{\mathcal A/g}=K_{\mathcal A/g}\,(\alpha_g+\gamma^K_{\mathcal A}),\qquad \Psi_{\mathcal A}=\alpha_g\Psi_{\mathcal A\setminus g}+\Psi_{\mathcal A/g}=\Psi_{\mathcal A\setminus g}\,(\alpha_g+\gamma^\Psi_{\mathcal A}),
+\]
+with the \emph{hinge values} and their \emph{ratio}
+\[
+\gamma^K_{\mathcal A}=\frac{K_{\mathcal A\setminus g}}{K_{\mathcal A/g}},\qquad \gamma^\Psi_{\mathcal A}=\frac{\Psi_{\mathcal A/g}}{\Psi_{\mathcal A\setminus g}},\qquad \varrho_{\mathcal A}=\frac{\gamma^\Psi_{\mathcal A}}{\gamma^K_{\mathcal A}}=\frac{\mathbf E_{\mathcal A/g}}{\mathbf E_{\mathcal A\setminus g}},
+\]
+functions of $\alpha_R$ homogeneous of the degrees $1$, $1$ and $0$. The cell is a \emph{dual pair} if $\mathcal A/g=(\mathcal A\setminus g)^\ast$. A mark $h$ is \emph{left in place} by the cell $\binom{\{h,g\}}1$, whose hinge values are both $\alpha_h$.
+\end{defn}
+
+\begin{defn}[Substitution; {\cite[Def.~20.1, p.~163]{F}}]\label{def:substitution}
+Let $\mathcal H$, the \emph{core}, be a list on $L\sqcup\{h_1,\dots,h_q\}$ in which no $h_i$ is a loop or a coloop, and let $\mathcal A_i$ be cells on $R_i\sqcup\{g_i\}$, the sets $L,R_1,\dots,R_q$ pairwise disjoint. The \emph{substitution} $\mathcal H\langle\mathcal A_1,\dots,\mathcal A_q\rangle$, the marks of $L$ left in place, is the set system on $E=L\sqcup R_1\sqcup\cdots\sqcup R_q$ of the sets $(T\cap L)\sqcup\bigsqcup_iX_i$ with $T\in\cB(\mathcal H)$, $X_i\in\cB(\mathcal A_i\setminus g_i)$ when $h_i\in T$ and $X_i\in\cB(\mathcal A_i/g_i)$ when $h_i\notin T$. Listing the marks left in place, we also write $\mathcal H\langle l_1,\dots,l_p,\mathcal A_1,\dots,\mathcal A_q\rangle$ for $L=\{l_1,\dots,l_p\}$.
+\end{defn}
+
+\begin{lemma}[Substitution; {\cite[Prop.~20.3, Thm.~20.4, p.~164; Thm.~20.7, p.~165]{F}}]\label{lem:subst}
+Let $M=\mathcal H\langle\mathcal A_1,\dots,\mathcal A_q\rangle$.
+\begin{enumerate}[label=(\roman*)]
+\item $M$ is a list of rank $r(\mathcal H)+\sum_i\big(r(\mathcal A_i)-1\big)$.
+\item Its letters read each cell through its hinge values:
+\begin{gather*}
+K_M(\alpha)=\prod_iK_{\mathcal A_i/g_i}(\alpha_{R_i})\ K_{\mathcal H}\big(\alpha_L,\gamma^K_{\mathcal A_1}(\alpha_{R_1}),\dots,\gamma^K_{\mathcal A_q}(\alpha_{R_q})\big),\\
+\Psi_M(\alpha)=\prod_i\Psi_{\mathcal A_i\setminus g_i}(\alpha_{R_i})\ \Psi_{\mathcal H}\big(\alpha_L,\gamma^\Psi_{\mathcal A_1}(\alpha_{R_1}),\dots,\gamma^\Psi_{\mathcal A_q}(\alpha_{R_q})\big).
+\end{gather*}
+\item $M|R_i=\mathcal A_i\setminus g_i$, $M/(E\setminus R_i)=\mathcal A_i/g_i$ and $c_M(R_i)=1$; so $d_M(R_i)=r(\mathcal A_i)-1$ and $d^\ast_M(R_i)=|R_i|-r(\mathcal A_i)$.
+\item $c_M(S)=c_{\mathcal H}(S)$ for every $S\subseteq L$.
+\item If $M$ is connected, so are $\mathcal H$ and every $\mathcal A_i$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Let first $q=1$, $\mathcal H$ on $L\sqcup\{h\}$ and $\mathcal A$ on $R\sqcup\{g\}$, and let $N$ be the direct sum of $\mathcal H$ and $\mathcal A$ on $L\sqcup\{h\}\sqcup R\sqcup\{g\}$. A set $Z\subseteq L\sqcup R$ lies in $\mathcal H\langle\mathcal A\rangle$ exactly when $Z+h$ or $Z+g$ is a basis of $N$, and not both, by the sizes of $Z\cap L$ and $Z\cap R$; the system is not empty since $h$ is not a loop of $\mathcal H$ and $g$ not a coloop of $\mathcal A$. We check the exchange property. Let $Z_1,Z_2\in\mathcal H\langle\mathcal A\rangle$, $e\in Z_1\setminus Z_2$, and $Z_1+p_1,Z_2+p_2\in\cB(N)$ with $p_1,p_2\in\{h,g\}$. If $p_1=p_2$, the exchange property of $N$ gives $f\in Z_2\setminus Z_1$ with $Z_1+p_1-e+f\in\cB(N)$. Otherwise, the roles of $(\mathcal H,h)$ and $(\mathcal A,g)$ being symmetric, let $p_1=h$ and $p_2=g$: $Z_1=Y_1\sqcup X_1$ with $Y_1+h\in\cB(\mathcal H)$ and $X_1\in\cB(\mathcal A\setminus g)$, and $Z_2=Y_2\sqcup X_2$ with $Y_2\in\cB(\mathcal H\setminus h)$ and $X_2+g\in\cB(\mathcal A)$.
+\begin{itemize}
+\item If $e\in Y_1$, the exchange property of $\mathcal H$ between $Y_1+h$ and $Y_2$ at $e$ gives $f\in Y_2\setminus Y_1$ with $Y_1+h-e+f\in\cB(\mathcal H)$, and $Z_1-e+f\in\mathcal H\langle\mathcal A\rangle$.
+\item If $e\in X_1$, the exchange property of $\mathcal A$ between $X_1$ and $X_2+g$ at $e$ gives $f\in(X_2+g)\setminus X_1$ with $X_1-e+f\in\cB(\mathcal A)$. If $f\neq g$, then $Z_1-e+f\in\mathcal H\langle\mathcal A\rangle$. If $f=g$, then $X_1-e\in\cB(\mathcal A/g)$, and the exchange property of $\mathcal H$ between $Y_1+h$ and $Y_2$ at $h$ gives $f'\in Y_2\setminus Y_1$ with $Y_1+f'\in\cB(\mathcal H)$, a basis avoiding $h$; so $Z_1-e+f'=(Y_1+f')\sqcup(X_1-e)\in\mathcal H\langle\mathcal A\rangle$.
+\end{itemize}
+So $\mathcal H\langle\mathcal A\rangle$ is a list, of rank $r(\mathcal H)+r(\mathcal A)-1$. If $\mathcal H$ has further marks $h_i$ that are neither loops nor coloops, they remain so: a basis of $\mathcal H$ containing, or avoiding, $h_i$ gives a basis of $\mathcal H\langle\mathcal A\rangle$ containing, or avoiding, it. For $q\ge2$ the bases of $\mathcal H\langle\mathcal A_1,\dots,\mathcal A_q\rangle$ are those of $\mathcal H\langle\mathcal A_1\rangle\langle\mathcal A_2,\dots,\mathcal A_q\rangle$; induct.
+
+(ii) Summing over $T\in\cB(\mathcal H)$ and over the $X_i$,
+\[
+K_M=\sum_T\alpha_L^{T\cap L}\prod_{h_i\in T}K_{\mathcal A_i\setminus g_i}\prod_{h_i\notin T}K_{\mathcal A_i/g_i}=\prod_iK_{\mathcal A_i/g_i}\sum_T\alpha_L^{T\cap L}\prod_{h_i\in T}\gamma^K_{\mathcal A_i}.
+\]
+The complement of $(T\cap L)\sqcup\bigsqcup_iX_i$ is $(L\setminus T)\sqcup\bigsqcup_i(R_i\setminus X_i)$, so in the same way $\Psi_M=\prod_i\Psi_{\mathcal A_i\setminus g_i}\sum_T\alpha_L^{L\setminus T}\prod_{h_i\notin T}\gamma^\Psi_{\mathcal A_i}$.
+
+(iii) The traces of the bases of $M$ on $R_i$ are the bases of $\mathcal A_i\setminus g_i$, of size $r(\mathcal A_i)$, and those of $\mathcal A_i/g_i$, of size $r(\mathcal A_i)-1$; both occur, $h_i$ being neither a loop nor a coloop of $\mathcal H$. The top traces are the bases of $M|R_i$ and the bottom traces those of $M/(E\setminus R_i)$ (Lemma~\ref{lem:extreme}), and the width is the difference of the sizes.
+
+(iv) The traces of the bases of $M$ on $S\subseteq L$ are those of the bases of $\mathcal H$.
+
+(v) If $\mathcal H$ is a direct sum on two nonempty sets, then $M$ is the direct sum of the substitutions into the two summands of the cells at their marks, on nonempty sets. If $\mathcal A_i$ is the direct sum of $\mathcal A'$ and $\mathcal A''$ on two nonempty sets, with $g_i$ in the ground set of $\mathcal A'$, then $\mathcal A_i\setminus g_i$ and $\mathcal A_i/g_i$ are the direct sums of $\mathcal A'\setminus g_i$, respectively $\mathcal A'/g_i$, and $\mathcal A''$, so $\mathcal A''$ is a direct summand of $M$; it is a proper one, since the ground set of $\mathcal A'$ is not $\{g_i\}$ alone, $g_i$ being neither a loop nor a coloop.
+\end{proof}
+
+\begin{lemma}[A set of width one is a cell; {\cite[Prop.~12.5, p.~70; Thm.~18.6, p.~116; Prop.~20.3(iii), p.~164]{F}}]\label{lem:cellofset}
+Let $M$ be a list on $E$ and $R\subseteq E$ with $c_M(R)=1$, $R'=E\setminus R$. The sets
+\[
+\cB(M|R)\ \sqcup\ \{X+g:\ X\in\cB(M/R')\}
+\]
+are the bases of a cell $\mathcal A_R$ on $R\sqcup\{g\}$, the \emph{cell of $R$ in $M$}, with $\mathcal A_R\setminus g=M|R$ and $\mathcal A_R/g=M/R'$. For every pattern $Y_0$ of the bottom level of $R'$ there is $b\in R'\setminus Y_0$ with $Y_0+b$ a pattern of the top level, and $\mathcal A_R$ is the child of $M$ at the pattern $Y_0$ of $R'-b$, with $b$ named $g$. Moreover $M=\mathcal A_{R'}\langle\mathcal A_R\rangle$, the marks of $R'$ left in place and the hinge of $\mathcal A_{R'}$ named $h$.
+\end{lemma}
+
+\begin{proof}
+\emph{The adjacent pattern.} Let $T_0$ be a basis with the trace $Y_0$ on $R'$, at the bottom of $R'$, and $T_1$ a basis at the top of $R'$. The trace of $T_0$ on $R$ is $r_M(R)$, larger than that of $T_1$, so some $x\in(T_0\cap R)\setminus T_1$, and the exchange property gives $y\in T_1\setminus T_0$ with $T_0-x+y\in\cB(M)$. If $y\in R'$, the trace $Y_0+y$ of $T_0-x+y$ on $R'$ has $d_M(R')+1=r_M(R')$ marks, and $b=y$. If $y\in R$, $T_0-x+y$ again has the trace $Y_0$ on $R'$, and $|(T_0-x+y)\setminus T_1|=|T_0\setminus T_1|-1$; replace $T_0$ by it. Before $T_0$ could reach $T_1$, whose trace on $R'$ is larger, some step brings in a mark of $R'$.
+
+\emph{The child.} The bases of $M$ with the trace $Y_0$ on $R'-b$ have the trace $Y_0$ or $Y_0+b$ on $R'$, at the bottom or at the top of $R'$. By Lemma~\ref{lem:extreme}(ii) their sides on $R$ are, respectively, all the bases of $M|R$ and all the bases of $M/R'$. So the child of $M$ at $Y_0$, a list by Lemma~\ref{lem:children}(i), has the bases $\cB(M|R)\sqcup\{X+b:\ X\in\cB(M/R')\}$; and $b$ is not a loop, $M/R'$ having bases, nor a coloop, the bases of $M|R$ avoiding it.
+
+\emph{The gluing.} The bases of $\mathcal A_{R'}\langle\mathcal A_R\rangle$ are the unions of a basis of $M|R'$ and one of $M/R'$, and of a basis of $M/R$ and one of $M|R$. By Lemma~\ref{lem:extreme}(ii) these are the bases at the top and at the bottom of $R'$, which at width one are all the bases of $M$.
+\end{proof}
+
+\begin{lemma}[One hinge value is width one; {\cite[Thm.~18.6, p.~116]{F}}]\label{lem:onehinge}
+Let $N$ be a list on $Z=S\sqcup S'$. Say that $K_N$ \emph{reads $S$ through one hinge value} if
+\[
+K_N(\alpha)=A(\alpha_S)\,P\big(\alpha_{S'},\gamma(\alpha_S)\big),
+\]
+with $A$ and $\gamma$ positive functions on the open orthant of $\alpha_S$, homogeneous, $A$ of an integer degree and $\gamma$ of degree one, and $P$ a polynomial in $\alpha_{S'}$ and one more variable. Then $K_N$ reads $S$ through one hinge value if and only if $c_N(S)\le1$. The same holds for $\Psi_N=K_{N^\ast}$, since $c_{N^\ast}=c_N$.
+\end{lemma}
+
+\begin{proof}
+Write $d=d_N(S)$, $c=c_N(S)$, and $K^{(k)}$ for the levels of $S$ (Definition~\ref{def:children}), nonzero exactly for $d\le k\le d+c$.
+
+If $c=0$, then $K_N=K_{N|S}(\alpha_S)\,K_{N|S'}(\alpha_{S'})$ (Lemma~\ref{lem:skeleton}(ii)), and $P$ need not involve its last variable. If $c=1$, Lemma~\ref{lem:children}(i) gives
+\[
+K_N=K_{N/S'}(\alpha_S)\Big(K_{N|S'}(\alpha_{S'})+\gamma(\alpha_S)\,K_{N/S}(\alpha_{S'})\Big),\qquad \gamma=\gamma^K_S=\frac{K_{N|S}}{K_{N/S'}}.
+\]
+
+Conversely, let $c\ge2$ and $K_N=A\,P(\alpha_{S'},\gamma)$, with $A$ of degree $a$ and $P=\sum_jP_j(\alpha_{S'})\,y^j$. Replacing $\alpha_S$ by $\tau\alpha_S$,
+\[
+\sum_{k=d}^{d+c}\tau^kK^{(k)}=\tau^a\sum_j\tau^j\,A\,\gamma^j\,P_j(\alpha_{S'}),
+\]
+so $K^{(k)}=A\gamma^{k-a}P_{k-a}$ for every $k$, comparing powers of $\tau$ at each point. Fixing $\alpha_{S'}$ where $P_{k-a}\neq0$ shows that $A\gamma^{k-a}$ is a polynomial, so the matrix of coefficients of
+\[
+K^{(k)}=\sum_{|p|=k}\alpha_S^{\,p}\,K_{N_{(p)}}(\alpha_{S'}),
+\]
+rows indexed by the patterns $p$ and columns by the monomials of $\alpha_{S'}$, has rank one. Its rows are nonzero vectors of zeros and ones, hence equal: the children at the level $k$ coincide, and $K^{(k)}=f_k(\alpha_S)\,C_k(\alpha_{S'})$ with $f_k=\sum_{|p|=k}\alpha_S^{\,p}$ over the patterns of size $k$. Separating the variables in $f_kC_k=A\gamma^{k-a}P_{k-a}$, each $f_k$ is a constant multiple of $A\gamma^{k-a}$, and since $c\ge2$,
+\[
+f_{d+1}^{\,2}=\mu\,f_d\,f_{d+2},\qquad\mu\in\Q.
+\]
+For a pattern $p$ of size $d+1$ the monomial $\alpha_S^{\,2p}$ has coefficient $1$ in $f_{d+1}^2$, since $\alpha^{p'}\alpha^{p''}=\alpha^{2p}$ with sets $p',p''$ forces $p'=p''=p$. In $f_df_{d+2}$ it would need sets $q,q'$ with $\alpha^q\alpha^{q'}=\alpha^{2p}$, so $q=q'=p$, against $|q|=d\neq d+2=|q'|$. So $c\le1$.
+\end{proof}
+
+In a substitution the letters read each $R_i$ through one hinge value (Lemma~\ref{lem:subst}(ii)), so each $R_i$ has width at most one, and exactly one by Lemma~\ref{lem:subst}(iii). A set of width $c\ge2$ is read through no hinge value, rational or not, which is why its Skeleton values are needed in Theorem~\ref{thm:B}. The converse in \cite[Thm.~18.6, p.~116]{F} reads width at most one off a sum of two products of a function of $\alpha_S$ and one of $\alpha_{S'}$; here $P$ may have any degree in the hinge value. Lemma~\ref{lem:onehinge} is about one letter; in Theorems~\ref{thm:C} and~\ref{thm:D}, reading a set through one hinge value means more: all the active letters read it through the same function.
+
+\begin{lemma}[Dual pairs; {\cite[Thm.~20.4, p.~164; Cor.~22.8(ii), p.~186]{F}}]\label{lem:dualpair}
+Let $\mathcal A$ be a cell on $R\sqcup\{g\}$ that is a dual pair, and put $k=K_{\mathcal A\setminus g}(\alpha_R)$ and $\psi=\Psi_{\mathcal A\setminus g}(\alpha_R)$. Then:
+\begin{enumerate}[label=(\roman*)]
+\item $|R|=2\,r(\mathcal A)-1$, so $\deg k=\deg\psi+1$;
+\item the two hinge values agree, $\gamma^K_{\mathcal A}=\gamma^\Psi_{\mathcal A}=k/\psi$, and $\varrho_{\mathcal A}=1$;
+\item if $M=\mathcal H\langle\mathcal A_1,\dots,\mathcal A_q\rangle$, the marks of $L$ left in place, with every cell a dual pair, $k_i$ and $\psi_i$ as above and $\pi=\psi_1\cdots\psi_q$, then
+\[
+K_{\mathcal H}\big(\pi\alpha_L,(\pi k_i/\psi_i)_i\big)=\pi^{\,r(\mathcal H)-1}K_M(\alpha),\qquad \Psi_{\mathcal H}\big(\pi\alpha_L,(\pi k_i/\psi_i)_i\big)=\pi^{\,|L|+q-r(\mathcal H)-1}\,\Psi_M(\alpha),
+\]
+identities of polynomials, $\pi k_i/\psi_i=k_i\prod_{l\neq i}\psi_l$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) $r(\mathcal A/g)=r(\mathcal A)-1$ since $g$ is not a loop, and $r((\mathcal A\setminus g)^\ast)=|R|-r(\mathcal A)$ since $g$ is not a coloop.
+
+(ii) The dual pair gives $K_{\mathcal A/g}=\Psi_{\mathcal A\setminus g}=\psi$ and $\Psi_{\mathcal A/g}=K_{\mathcal A\setminus g}=k$. So $\gamma^K_{\mathcal A}=k/\psi=\gamma^\Psi_{\mathcal A}$.
+
+(iii) By Lemma~\ref{lem:subst}(ii) and (ii), $K_M=\pi\,K_{\mathcal H}(\alpha_L,(k_i/\psi_i)_i)$ and $\Psi_M=\pi\,\Psi_{\mathcal H}(\alpha_L,(k_i/\psi_i)_i)$, since $K_{\mathcal A_i/g_i}=\Psi_{\mathcal A_i\setminus g_i}=\psi_i$. The degrees of $K_{\mathcal H}$ and $\Psi_{\mathcal H}$ are $r(\mathcal H)$ and $|L|+q-r(\mathcal H)$, so homogeneity gives the identities.
+\end{proof}
+
+For $q=1$ and $L=B$, with $\mathcal H$ the cell of $B$ of rank $r(\mathcal H)=d+1$, $d=d_M(B)$, (iii) reads $K_{\mathcal H}(\alpha_B\psi,k)=\psi^dK_M$ and $\Psi_{\mathcal H}(\alpha_B\psi,k)=\psi^{|B|-d-1}\Psi_M$.
+
+\subsection{Pieces, laws and the glue}\label{sec:pieces}
+
+A bunch of any width is seen by its room through finitely many letters, one for each station of room sides. This subsection makes that precise and proves the two facts used below: the room reads the bunch only through a measure, its law, and what the bunch does to the partners on one mark decides whether that measure is a point mass.
+
+\begin{defn}[Stations, pieces, partners, glue; {\cite[Def.~27.4, p.~227]{F}}]\label{def:piece}
+Fix integers $k\ge1$ and $c_1,\dots,c_k\ge0$ and real exponents $s_j,t_j\ge0$ with
+\[
+w:=\sum_j(s_j+t_j)\,c_j>0 .
+\]
+Only the \emph{active letters} enter: $K_j$ when $s_j>0$ and $\Psi_j$ when $t_j>0$. A system of \emph{stations} is a family of finite sets $\cD_j=\bigsqcup_{i=0}^{c_j}\cD_{j,i}$ with $\cD_{j,0}$ and $\cD_{j,c_j}$ nonempty; a station $D\in\cD_{j,i}$ has the \emph{excess} $i(D)=i$.
+\begin{itemize}
+\item A \emph{piece} with these stations on a finite set $S$ carries masses $\bm_S$ and, for every active $K_j$ and $D\in\cD_j$, a nonzero polynomial $V_{jD}$ on $S$ with nonnegative coefficients, homogeneous of degree $d_j+i(D)$, and for every active $\Psi_j$ and $D\in\cD_j$ such a polynomial $V^\ast_{jD}$, homogeneous of degree $d^\ast_j+c_j-i(D)$, with $d_j,d^\ast_j\in\N$. These are its \emph{seam letters}, and its \emph{wall} is $\kappa_S=m_S-\sum_j(s_jd_j+t_jd^\ast_j)$.
+\item A \emph{partner} of it, on a finite set $Z$ disjoint from $S$, carries masses $\bm_Z$ and, in the same way, \emph{room letters} $L_{jD}$ homogeneous of degree $e_j+c_j-i(D)$ and $L^\ast_{jD}$ homogeneous of degree $e^\ast_j+i(D)$; its wall is $\kappa_Z=m_Z-\sum_j(s_je_j+t_je^\ast_j)$.
+\item The \emph{glue} $S\sqcup Z$ has the letters
+\[
+K_j=\sum_{D\in\cD_j}V_{jD}\,L_{jD},\qquad \Psi_j=\sum_{D\in\cD_j}V^\ast_{jD}\,L^\ast_{jD}
+\]
+for the active ones, with the exponents $s_j,t_j$ and the masses $(\bm_S,\bm_Z)$. It is \emph{balanced} when $\kappa_S+\kappa_Z=w$, and then its period is
+\[
+P_{S\sqcup Z}=\int_{\sigma_{S\sqcup Z}}\alpha^{\bm-\mathbf 1}\prod_jK_j^{-s_j}\Psi_j^{-t_j}\,\Omega_{S\sqcup Z}\ \in[0,\infty],
+\]
+the integrand being homogeneous of degree $-|S\sqcup Z|$ (Lemma~\ref{lem:sections}).
+\end{itemize}
+\end{defn}
+
+\begin{lemma}[A bunch is a piece; {\cite[Def.~27.1, p.~224; Props.~27.2, 27.3, pp.~225--226]{F}}]\label{lem:bunchpiece}
+Let $F=((N_j;s_j,t_j))_j$ be a family with $s_j,t_j\ge0$, $\varnothing\neq S\subsetneq E$ and $S'=E\setminus S$, with $w=\sum_j(s_j+t_j)c_{N_j}(S)>0$. In $N_j$ a \emph{room side} is a set $X=T\cap S'$, $T\in\cB(N_j)$, with the excess $i(X)=r_{N_j}(S')-|X|$, and its \emph{room child} is the child of $N_j$ at the pattern $X$ of $S'$, the list on $S$ whose bases are the $p$ with $p\sqcup X\in\cB(N_j)$. The \emph{stations} $D\in\cD_{j,i}$ are the classes of the room sides of excess $i$ with equal room children. Put
+\[
+V_{jD}=K_{N_{j,(X)}},\quad V^\ast_{jD}=\Psi_{N_{j,(X)}}\quad(X\in D),\qquad y_{jD}=\sum_{X\in D}\alpha^X,\quad y^\ast_{jD}=\sum_{X\in D}\alpha^{S'\setminus X}.
+\]
+\begin{enumerate}[label=(\roman*)]
+\item (\emph{The room-station factorization.}) $K_{N_j}=\sum_{D\in\cD_j}V_{jD}\,y_{jD}$ and $\Psi_{N_j}=\sum_{D\in\cD_j}V^\ast_{jD}\,y^\ast_{jD}$.
+\item $S$ is a piece with $c_j=c_{N_j}(S)$, $d_j=d_{N_j}(S)$ and $d^\ast_j=d^\ast_{N_j}(S)$; its room $S'$, with the room letters $y_{jD}$ and $y^\ast_{jD}$, is a partner with $e_j=d_{N_j}(S')$ and $e^\ast_j=d^\ast_{N_j}(S')$; their walls are $\kappa_S(F)$ and $\kappa_{S'}(F)$; and their glue is $F$.
+\item Every excess from $0$ to $c_j$ occurs. The excesses $0$ and $c_j$ have one station each, with
+\begin{gather*}
+V_{jD}=K_{N_j/S'},\quad V^\ast_{jD}=\Psi_{N_j/S'},\quad y_{jD}=K_{N_j|S'},\quad y^\ast_{jD}=\Psi_{N_j|S'}\qquad(i(D)=0),\\
+V_{jD}=K_{N_j|S},\quad V^\ast_{jD}=\Psi_{N_j|S},\quad y_{jD}=K_{N_j/S},\quad y^\ast_{jD}=\Psi_{N_j/S}\qquad(i(D)=c_j).
+\end{gather*}
+\end{enumerate}
+At width one the stations of $N_j$ are $D_0$ and $D_1$, and (i) is $K_{N_j}=K_{N_j/S'}K_{N_j|S'}+K_{N_j|S}K_{N_j/S}$.
+\end{lemma}
+
+\begin{proof}
+Drop the index $j$. The pattern $p=T\cap S$ of a basis with room side $X$ has $|p|=r(N)-|X|=d_N(S)+i(X)$, so $0\le i(X)\le c$, and every excess occurs by Lemma~\ref{lem:window}(i). The room child at $X$ has rank $d_N(S)+i(X)$ (Lemma~\ref{lem:children}(i)), and $|S|-d_N(S)-i(X)=d^\ast_N(S)+c-i(X)$. The room side has $|X|=r_N(S')-i(X)=d_N(S')+c-i(X)$ marks and $|S'\setminus X|=d^\ast_N(S')+i(X)$. Grouping the bases by their room side, and the room sides by their station, gives (i), and with the degrees just computed, (ii). By Lemma~\ref{lem:children}(i) at the bunch $S'$, the room sides of excess $0$, at the top of $S'$, are the bases of $N|S'$, each with the room child $N/S'$, and those of excess $c$, at the bottom of $S'$, are the bases of $N/S$, each with the room child $N|S$; this is (iii).
+\end{proof}
+
+\begin{defn}[The law of a piece; {\cite[Def.~27.5, p.~227]{F}}]\label{def:law}
+Let $S$ be a piece. Its \emph{excess sums} are $V^{(i)}_j=\sum_{D\in\cD_{j,i}}V_{jD}$ and $V^{\ast(i)}_j=\sum_{D\in\cD_{j,i}}V^\ast_{jD}$. On the open orthant of $\alpha_S$ put
+\begin{gather*}
+\gamma^\rho_S=\prod_{j:\,s_j>0}\Big(\frac{V^{(c_j)}_j}{V^{(0)}_j}\Big)^{s_j/w}\prod_{j:\,t_j>0}\Big(\frac{V^{\ast(0)}_j}{V^{\ast(c_j)}_j}\Big)^{t_j/w},\\
+\varrho^\rho_{jD}=\frac{V_{jD}}{V^{(0)}_j\,(\gamma^\rho_S)^{i(D)}},\qquad \varrho^{\rho\ast}_{jD}=\frac{V^\ast_{jD}}{V^{\ast(c_j)}_j\,(\gamma^\rho_S)^{c_j-i(D)}},
+\end{gather*}
+the \emph{scale of the piece}, positive and homogeneous of degree one, and the coordinates of the \emph{seam vector} $\boldsymbol\varrho^\rho_S=(\varrho^\rho_{jD},\varrho^{\rho\ast}_{jD})$, homogeneous of degree zero, one coordinate for each active letter and station. The \emph{scale form} is the measure
+\[
+\phi_S(du)=u^{\bm_S-\mathbf 1}\prod_j\big(V^{(0)}_j\big)^{-s_j}\big(V^{\ast(c_j)}_j\big)^{-t_j}\,(\gamma^\rho_S)^{-\kappa_S}\,d\omega_S(u)\qquad\text{on }\Delta_S,
+\]
+whose orthant form has degree zero. The \emph{seam torus} $\TT$ is the set of the points $\bx=(x_{jD},x^\ast_{jD})$ with positive coordinates such that
+\begin{gather*}
+\sum_{D\in\cD_{j,0}}x_{jD}=1\ \ (s_j>0),\qquad \sum_{D\in\cD_{j,c_j}}x^\ast_{jD}=1\ \ (t_j>0),\\
+\prod_j\Big(\sum_{D\in\cD_{j,c_j}}x_{jD}\Big)^{s_j}\Big(\sum_{D\in\cD_{j,0}}x^\ast_{jD}\Big)^{t_j}=1 .
+\end{gather*}
+The seam vector takes its values in $\TT$: the first two sums are $1$ by definition, and the product is $(\gamma^\rho_S)^{w}\,(\gamma^\rho_S)^{-\sum_j(s_j+t_j)c_j}=1$. The \emph{law} of $S$ is the image $\mu_S=(\boldsymbol\varrho^\rho_S)_\ast\phi_S$, a positive Borel measure on $\TT$, and its \emph{seam function} at shares $(\mathbf a,\mathbf b)=(a_{jD},b_{jD})$ of the active letters is $\int_{\TT}\bx^{-(\mathbf a,\mathbf b)}\,d\mu_S(\bx)\in[0,\infty]$, $\bx^{-(\mathbf a,\mathbf b)}=\prod x_{jD}^{-a_{jD}}x^{\ast}_{jD}{}^{-b_{jD}}$ (alias: the Mellin transform of the law).
+
+The \emph{one-mark piece} at $\bx\in\TT$ with the mass $\kappa$ is the piece on one mark $g$ with $V_{jD}=x_{jD}\alpha_g^{\,i(D)}$ and $V^\ast_{jD}=x^\ast_{jD}\alpha_g^{\,c_j-i(D)}$: by the relations of $\TT$ its scale is $\alpha_g$, its seam vector is $\bx$ and its law is the point mass $\delta_{\bx}$. For a partner $Z$, the \emph{partner with its stand-in at $\bx$}, $Z^{(\bx)}$, is the glue of the one-mark piece at $\bx$ with the mass $\kappa_S$ and $Z$: the family of positive letters $\sum_Dx_{jD}\alpha_g^{\,i(D)}L_{jD}$ and $\sum_Dx^\ast_{jD}\alpha_g^{\,c_j-i(D)}L^\ast_{jD}$ on $Z\sqcup\{g\}$. A partner is itself a piece with the reversed excesses $c_j-i(D)$, with $e_j,e^\ast_j$ in place of $d_j,d^\ast_j$; so it has a scale, a seam vector on its own seam torus $\TT'$, and a law $\mu_Z$.
+\end{defn}
+
+For a bunch of a family of lists that has width at most one in every active table, Lemma~\ref{lem:bunchpiece}(iii) gives the seam vector in hinge values (Lemma~\ref{lem:skeleton}(iii); \cite[Def.~27.5, p.~227; Prop.~27.10, p.~231]{F}): in a table of width one, with its stations $D_0,D_1$,
+\[
+\varrho^\rho_{jD_0}=\varrho^{\rho\ast}_{jD_1}=1,\qquad \varrho^\rho_{jD_1}=\frac{\gamma^K_{j,S}}{\gamma^\rho_S},\qquad \varrho^{\rho\ast}_{jD_0}=\frac{\gamma^\Psi_{j,S}}{\gamma^\rho_S},\qquad \gamma^\rho_S=\prod_{j:\,c_j=1}(\gamma^K_{j,S})^{s_j/w}(\gamma^\Psi_{j,S})^{t_j/w},
+\]
+and a table of width zero has one station, the coordinates $1$, and no share in $\gamma^\rho_S$.
+
+\begin{lemma}[The glue; {\cite[Lemma~27.8, p.~229; Thm.~27.9(i),(ii), p.~230]{F}}]\label{lem:glue}
+Let a piece $S$ and a partner $Z$ be glued, balanced.
+\begin{enumerate}[label=(\roman*)]
+\item (\emph{The piece absorbed.}) In $[0,\infty]$, $\displaystyle P_{S\sqcup Z}=\int_{\TT}P_{Z^{(\bx)}}\,d\mu_S(\bx)$, the stand-in carrying the mass $\kappa_S$.
+\item (\emph{Both absorbed.}) Let $t_{\cD}$ be the configuration on the scales $\{v\}$ and one scale for each active letter whose column at the coordinate $(j,D)$ of $K_j$ is $i(D)\,\mathbf e_v+\mathbf e_{K_j}$ and at that of $\Psi_j$ is $(c_j-i(D))\,\mathbf e_v+\mathbf e_{\Psi_j}$, and let $0<\kappa_S<w$. The period of the glue of two one-mark pieces with the masses $\kappa_S$ and $w-\kappa_S$ is the Zamma
+\[
+\Gamma(\kappa_S)\,\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\mathbf y)=\int_0^\infty v^{\kappa_S-1}\prod_j\Big(\sum_{D\in\cD_j}y_{jD}\,v^{i(D)}\Big)^{-s_j}\Big(\sum_{D\in\cD_j}y^\ast_{jD}\,v^{c_j-i(D)}\Big)^{-t_j}dv,
+\]
+finite at every $\mathbf y$, the index read on the active letters; and the glue is a Trailmoment of the two laws,
+\[
+P_{S\sqcup Z}=\Gamma(\kappa_S)\,\big(\sT_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}[\bx\circ\bx']\,(\mu_S\otimes\mu_Z)\big)(\TT\times\TT'),
+\]
+with $\bx\circ\bx'$ the coordinatewise product as the coefficient function.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Take $h(\alpha)=|\alpha_Z|$ and $\phi$ as in Lemma~\ref{lem:sections}(ii), on the orthant of $S\sqcup Z$. Read $\alpha_S=\rho u$ with $\rho>0$ and $u\in\Delta_S$. Since $V_{jD}(\rho u)=\rho^{d_j}V^{(0)}_j(u)\,\varrho^\rho_{jD}(u)\,(\rho\gamma^\rho_S(u))^{i(D)}$ and $V^\ast_{jD}(\rho u)=\rho^{d^\ast_j}V^{\ast(c_j)}_j(u)\,\varrho^{\rho\ast}_{jD}(u)\,(\rho\gamma^\rho_S(u))^{c_j-i(D)}$,
+\[
+K_j=\rho^{d_j}V^{(0)}_j(u)\,K^{(\bx)}_j\big(\rho\gamma^\rho_S(u),\alpha_Z\big),\qquad \Psi_j=\rho^{d^\ast_j}V^{\ast(c_j)}_j(u)\,\Psi^{(\bx)}_j\big(\rho\gamma^\rho_S(u),\alpha_Z\big)\qquad\text{at }\bx=\boldsymbol\varrho^\rho_S(u),
+\]
+with $K^{(\bx)}_j,\Psi^{(\bx)}_j$ the letters of $Z^{(\bx)}$ in the variables $(\alpha_g,\alpha_Z)$. With $d\alpha_S=\rho^{|S|-1}d\rho\,d\omega_S(u)$ the power of $\rho$ is $\rho^{\kappa_S}d\rho/\rho$. Now put $\alpha_g=\rho\gamma^\rho_S(u)$ at fixed $u$: $d\rho/\rho=d\alpha_g/\alpha_g$ and $\rho^{\kappa_S}=\alpha_g^{\kappa_S}\gamma^\rho_S(u)^{-\kappa_S}$. The integrand becomes
+\[
+\phi_S(du)\ \times\ \alpha_g^{\kappa_S-1}\alpha_Z^{\bm_Z-\mathbf 1}\prod_jK^{(\boldsymbol\varrho^\rho_S(u))}_j{}^{-s_j}\Psi^{(\boldsymbol\varrho^\rho_S(u))}_j{}^{-t_j}\,\phi(|\alpha_Z|)\,d\alpha_g\,d\alpha_Z .
+\]
+$Z^{(\bx)}$ is balanced, and $|\alpha_Z|$ is a positive function of degree one on the orthant of $Z\sqcup\{g\}$. By Tonelli on $\Delta_S\times(0,\infty)^{Z\sqcup\{g\}}$, $\phi_S$ having a continuous density, and Lemma~\ref{lem:sections}(ii), the inner integral is $P_{Z^{(\boldsymbol\varrho^\rho_S(u))}}$; and integrating a nonnegative function of the seam vector against $\phi_S$ is integrating it against the image $\mu_S$.
+
+(ii) $Z^{(\bx)}$ is the glue of the piece $Z$, with the reversed excesses, and the partner on $\{g\}$ with the room letters $x_{jD}\alpha_g^{\,i(D)}$ and $x^\ast_{jD}\alpha_g^{\,c_j-i(D)}$. Apply (i) to it: $Z$ is replaced by a one-mark piece $g'$ at $\bx'$ with the mass $\kappa_Z=w-\kappa_S$. The glue of the two one-mark pieces has the letters $\sum_Dx_{jD}x'_{jD}\alpha_g^{\,i(D)}\alpha_{g'}^{\,c_j-i(D)}$ and $\sum_Dx^\ast_{jD}x'^\ast_{jD}\alpha_g^{\,c_j-i(D)}\alpha_{g'}^{\,i(D)}$, and in the chart $\alpha_{g'}=1$, $v=\alpha_g$, its period is the integral of the statement at $\mathbf y=\bx\circ\bx'$. Opening each active letter by $\Gamma(s)L^{-s}=\int_0^\infty\tau^{s-1}e^{-\tau L}d\tau$ writes this integral as $\sG_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\mathbf y)/\prod_j\Gamma(s_j)\Gamma(t_j)$, which is $\Gamma(\kappa_S)\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\mathbf y)$. It is finite: near $v=0$ the letters tend to the positive sums of their coordinates at the excesses $0$ and $c_j$, and near $\infty$ the integrand is $O(v^{\kappa_S-1-w})$.
+\end{proof}
+
+When the exponents are integers and $0<\kappa_S<w$, the kernel is a stacked Gamma times a Breta of one bunch up to the leading coefficients of its letters. Each letter of the two-mark glue is a polynomial of degree $c_j$ in $v$ with positive coefficients, its leading coefficient times $\prod(v+\xi)$ with every $\xi\notin(-\infty,0]$; these $\xi$, the joint spectrum of the two stand-ins, are the coefficients of the Breta of Proposition~\ref{prop:scale}(i),(ii), and the leading coefficients enter to minus the exponents of their letters.
+
+\begin{defn}[The station transform; {\cite[Def.~27.20, p.~236]{F}}]\label{def:transform}
+Let $S$ be a piece with $0<\kappa_S<w$. For $\mathbf p=(p_{jD},p^\ast_{jD})$ with positive coordinates, one for each coordinate of the seam vector, the \emph{station transform} of $S$ is
+\begin{align*}
+\cI_S(\mathbf p)&=\int_{\TT}\Gamma(\kappa_S)\,\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\bx\circ\mathbf p)\,d\mu_S(\bx)\\
+&=\int_{(0,\infty)^S}\alpha^{\bm_S-\mathbf 1}\prod_j\Big(\sum_Dp_{jD}V_{jD}\Big)^{-s_j}\Big(\sum_Dp^\ast_{jD}V^\ast_{jD}\Big)^{-t_j}d\alpha
+\end{align*}
+in $[0,\infty]$: the period of the glue of $S$ with the partner $b_{\mathbf p}$ on one mark $b$ with the room letters $p_{jD}\alpha_b^{\,c_j-i(D)}$ and $p^\ast_{jD}\alpha_b^{\,i(D)}$ and the mass $w-\kappa_S$, by Lemma~\ref{lem:glue} and in the chart $\alpha_b=1$. The one-mark piece at $\bx_0$ with the mass $\kappa_S$ has the station transform $\Gamma(\kappa_S)\,\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\bx_0\circ\mathbf p)$.
+\end{defn}
+
+\begin{lemma}[The station transform sees a point mass; {\cite[Thm.~27.18, p.~235]{F}}]\label{lem:probe}
+Let $S$ be a piece with $0<\kappa_S<w$, and let $c>0$ and $\bx_0\in\TT$. If $S$ has the station transform of $c$ times the one-mark piece at $\bx_0$,
+\[
+\cI_S(\mathbf p)=c\,\Gamma(\kappa_S)\,\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\bx_0\circ\mathbf p)\qquad\text{for every }\mathbf p,
+\]
+then $\mu_S=c\,\delta_{\bx_0}$.
+\end{lemma}
+
+\begin{proof}
+The coordinates are indexed by the pairs of an active letter $\ell$ and a station of its table; let $n_S$ be their number. Write $\mathbf p=e^{\mathbf P}$ with $\mathbf P\in\R^{n_S}$, and pair shares $(\mathbf a,\mathbf b)\in\R^{n_S}$, one for each coordinate, with $\mathbf P$ by $\langle(\mathbf a,\mathbf b),\mathbf P\rangle$. Let $U\subset\R^{n_S}$ be spanned by the vectors $\mathbf u_\ell$, the indicators of the coordinates of the active letter $\ell$, and by $\mathbf u_0$, whose entries are $i(D)$ at the coordinates of the $K$-letters and $c_j-i(D)$ at those of the $\Psi$-letters. $\mathbf u_0$ is not in $U'=\operatorname{span}(\mathbf u_\ell)$: since $w>0$ some active letter has $c_j>0$, and on its coordinates $\mathbf u_0$ takes the values $0$ and $c_j$. The \emph{pins of the seam} are $\langle(\mathbf a,\mathbf b),\mathbf u_\ell\rangle=s_j$ or $t_j$, the exponent of $\ell$, and $\langle(\mathbf a,\mathbf b),\mathbf u_0\rangle=\kappa_S$, and $A$ denotes the set of the shares with positive coordinates on the pins. It is not empty, since $0<\kappa_S<w$: a letter of positive width can spread its total so that its weighted excess takes any value strictly between $0$ and its largest.
+
+\emph{The seam function.} For $(\mathbf a,\mathbf b)\in A$, $f(\mathbf P)=e^{\langle(\mathbf a,\mathbf b),\mathbf P\rangle}\,\Gamma(\kappa_S)\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(e^{\mathbf P})$ is invariant under translation by $U$: by $\mathbf u_\ell$ it is homogeneous of degree zero, and by $\mathbf u_0$ after $v\mapsto v/\lambda$ in the integral of Lemma~\ref{lem:glue}(ii). With $v=e^\tau$ and $\langle(\mathbf a,\mathbf b),\mathbf u_0\rangle=\kappa_S$,
+\[
+f(\mathbf P)=\int_\R g(\mathbf P+\tau\mathbf u_0)\,d\tau,\qquad g(\mathbf P)=e^{\langle(\mathbf a,\mathbf b),\mathbf P\rangle}\prod_j\Big(\sum_De^{P_{jD}}\Big)^{-s_j}\Big(\sum_De^{P^\ast_{jD}}\Big)^{-t_j},
+\]
+and $g$ is invariant under $U'$. Let $W$ be a linear complement of $U$, and $W'$ the subspace on which the coordinate of one chosen station $D_\ell$ of each active letter vanishes, a complement of $U'$. Since $\mathbf u_0\notin U'$, $(\mathbf P,\tau)\mapsto\mathbf P+\tau\mathbf u_0$ is a linear isomorphism $W\times\R\to\R^{n_S}/U'$, and so
+\[
+\int_Wf\,d\mathbf P=c_W\int_{W'}g=c_W\prod_{j:\,s_j>0}\Gst{|\cD_j|}1{\mathbf a_j}{s_j}\prod_{j:\,t_j>0}\Gst{|\cD_j|}1{\mathbf b_j}{t_j}=:\beta(\mathbf a,\mathbf b)\in(0,\infty),
+\]
+$c_W>0$ depending on $W$, $W'$ and the normalizations of their Lebesgue measures, but not on $(\mathbf a,\mathbf b)$: on $W'$ the integral factors over the letters, for a $K$-letter into
+\[
+\int_{(0,\infty)^{\cD_j\setminus D_\ell}}\prod_{D\neq D_\ell}y_D^{a_{jD}-1}\Big(1+\sum_{D\neq D_\ell}y_D\Big)^{-s_j}d\mathbf y=\Gst{|\cD_j|}1{\mathbf a_j}{s_j},\qquad a_{jD_\ell}=s_j-\sum_{D\neq D_\ell}a_{jD}>0,
+\]
+by the Gamma integrals of Lemma~\ref{lem:dirichlet}, and likewise for a $\Psi$-letter. For $\bx\in\TT$ with $\mathbf X=\log\bx$, $e^{\langle(\mathbf a,\mathbf b),\mathbf P\rangle}\Gamma(\kappa_S)\sZ_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}(\bx\circ e^{\mathbf P})=e^{-\langle(\mathbf a,\mathbf b),\mathbf X\rangle}f(\mathbf P+\mathbf X)$, and $\int_Wf(\mathbf P+\mathbf X)\,d\mathbf P=\int_Wf\,d\mathbf P$ by the invariance of $f$. By Tonelli,
+\[
+\int_We^{\langle(\mathbf a,\mathbf b),\mathbf P\rangle}\,\cI_S(e^{\mathbf P})\,d\mathbf P=\beta(\mathbf a,\mathbf b)\int_{\TT}\bx^{-(\mathbf a,\mathbf b)}\,d\mu_S(\bx):
+\]
+the station transform determines the seam function on $A$. The hypothesis makes the left side $c\,\beta(\mathbf a,\mathbf b)\,\bx_0^{-(\mathbf a,\mathbf b)}$, so $\int\bx^{-(\mathbf a,\mathbf b)}d\mu_S=c\,\bx_0^{-(\mathbf a,\mathbf b)}$ for every $(\mathbf a,\mathbf b)\in A$.
+
+\emph{A point mass.} Fix $(\mathbf a_0,\mathbf b_0)\in A$ and let $\nu=\bx^{-(\mathbf a_0,\mathbf b_0)}\mu_S$, a finite measure. $A$ is open in the affine space of the pins, whose direction space is $V=U^\perp$; so for $\boldsymbol\delta\in V$ near $0$,
+\[
+\int_{\TT}(\bx/\bx_0)^{-\boldsymbol\delta}\,d\nu(\bx)=c\,\bx_0^{-(\mathbf a_0,\mathbf b_0)}=:C,
+\]
+and hence, with $\boldsymbol\delta$, $-\boldsymbol\delta$ and $0$,
+\[
+\int_{\TT}\Big((\bx/\bx_0)^{\boldsymbol\delta/2}-(\bx/\bx_0)^{-\boldsymbol\delta/2}\Big)^2d\nu(\bx)=C-2C+C=0 .
+\]
+So $\langle\log\bx-\log\bx_0,\boldsymbol\delta\rangle=0$ for $\nu$-almost every $\bx$, for every $\boldsymbol\delta$ of a basis of $V$, and $\log\bx-\log\bx_0\in V^\perp=U$ for $\nu$-almost every $\bx$. Two points $\bx,\bx'$ of $\TT$ with $\log\bx-\log\bx'\in U$ are equal: $\log x_{jD}-\log x'_{jD}=\lambda_j+\lambda\,i(D)$ and $\log x^\ast_{jD}-\log x'^\ast_{jD}=\lambda^\ast_j+\lambda\,(c_j-i(D))$, the relations of $\TT$ at the excesses $0$ and $c_j$ give $\lambda_j=\lambda^\ast_j=0$, and the product relation then gives $e^{\lambda w}=1$, so $\lambda=0$. Hence $\nu=C\,\delta_{\bx_0}$, and $\mu_S=c\,\delta_{\bx_0}$.
+\end{proof}
+
+\section{Statements}\label{sec:statements}
+
+\begin{theorem}[Small blocks along the tree]\label{thm:A}
+Let $F$ be convergent, $\cT$ a tree of bunches for $F$, and $(e_i)$ a basis of $(H_F)_{dR}$ adapted to the weight filtration $W$. Then for $k<N$ every left factor of \eqref{eq:coaction} for $P_F^{\m}$ with $e_i\in W_k$ satisfies
+\[
+[H_F,\tsig_E,e_i]^{\m}\ \in\ \sum_{\ff\ \text{of dimension }k}\ \ \prod_{\text{blocks }Z\text{ of }\ff}\Open(Z;\ff).
+\]
+In particular only blocks with at most $k+1$ elements occur. Each such block is attached to exactly one vertex $v$ of $\cT$. Every letter of it other than the $\alpha_J$ is $K_{N'}$ or $\Psi_{N'}$ for a child $N'$ of a table $N$ of $F_v$ carrying that letter, at a pattern of $E_v\setminus Z$.
+\end{theorem}
+
+\begin{cor}[Open periods from families of lists]\label{cor:serif}
+Let $(Z;\ff)$ be a block with $|Z|\ge2$ and $\eta\in\Omega^{|Z|-1}(V_Z)$. On the torus,
+\[
+\eta=\sum_tc_t\,\omega_{F_t},\qquad c_t\in\Q,
+\]
+a finite sum over families $F_t$ of lists on $Z$ at integer data. The tables of $F_t$ are the lists of the letters of the block, $N'$ for $K_{N'}$ and for $\Psi_{N'}$, and $\binom J1$ for $\alpha_J$, each carrying its letter with an exponent $k_{t,g}\ge0$; the masses are some $\mathbf a_t\in\Z^Z$, on the balance wall. For every direction $\mathbf v\in\Q^Z$ with $v_Z=0$ and $v_S\neq0$ for every $\varnothing\neq S\subsetneq Z$, each continued period $P_{F_t}(\mathbf a_t+\varepsilon\mathbf v)$ (Proposition~\ref{prop:continued}) is meromorphic in $\varepsilon$ near $0$, and
+\[
+\int_{\tsig_Z}\eta=\sum_tc_t\,\CT_{\varepsilon=0}P_{F_t}(\mathbf a_t+\varepsilon\mathbf v).
+\]
+So every element of $\Open(Z;\ff)$ has as its period a rational combination of constant terms of continued periods of families of lists on $Z$. By Theorem~\ref{thm:A}, every left factor of weight $\le k$ has as its period a sum of products of such numbers over the blocks of the flags of dimension $k$, and the letters of these families are letters of children of the tables at the vertices where the blocks are attached.
+\end{cor}
+
+A family whose walls are all positive at $\mathbf a_t$ contributes its period itself; its exponents are nonnegative and its masses positive, so that period is a value of the serif family (Proposition~\ref{prop:serifvalue}).
+
+\begin{theorem}[The node]\label{thm:B}
+Let $v$ be a bunch vertex of width $c$ and $Z$ a node piece of $v$, with $Z_B=Z\cap B_v$ and $Z_R=Z\cap R_v$. Read the bunch side in scale and shape (Lemma~\ref{lem:sections}(i)) and the room side on its simplex: $\alpha_{Z_B}=\rho u$ with $\rho>0$ and $u\in\Delta_{Z_B}$, and $\alpha_{Z_R}=u'\in\Delta_{Z_R}$.
+\begin{enumerate}[label=(\roman*)]
+\item Every letter $g$ of $Z$ is $K_{N'}$ for a list $N'$ on $Z$ with $c_g:=c_{N'}(Z_B)\le c$; a $\Psi$-letter is $K$ of the dual.
+\item Along the scale of $Z_B$, with $d_g=d_{N'}(Z_B)$ and the levels $g^{(k)}$ of $Z_B$ (Definition~\ref{def:children}),
+\begin{gather*}
+g(\rho u,u')=\rho^{d_g}\,g(u,u')\,\sQ^{g}_{Z_B}\big(\rho;(u,u')\big)=\rho^{d_g}\sum_{l=0}^{c_g}\rho^{\,l}\,g^{(d_g+l)}(u,u'),\\
+g^{(k)}=\sum_{|p|=k}u^p\,K_{N'_{(p)}}(u'),
+\end{gather*}
+$\sQ^g_{Z_B}$ the Skeleton polynomial: the coefficients are the levels, each a sum over the patterns $p$ of $Z_B$ in $N'$ of a monomial of the bunch against the basis polynomial of the child $N'_{(p)}$. The extreme ones are products of a bunch letter and a room letter (Lemma~\ref{lem:children}(i)):
+\[
+g^{(d_g)}=K_{N'/Z_R}(u)\,K_{N'|Z_R}(u'),\qquad g^{(d_g+c_g)}=K_{N'|Z_B}(u)\,K_{N'/Z_B}(u').
+\]
+So $g(\rho u,u')=\rho^{d_g}g^{(d_g+c_g)}(u,u')\prod_{i=1}^{c_g}(\rho+\xi_{g,i})$, where $\xi_{g,i}(u,u')\in\mathbb C\setminus(-\infty,0]$ are the Skeleton values of $g$ along $Z_B$ (Lemma~\ref{lem:skeleton}(i)). The Skeleton values of all the letters, each counted with its letter, form the \emph{joint spectrum} of $Z_B$ at $(u,u')$.
+\item For every $\eta\in\Omega^{top}(V_Z)$ there are finitely many terms $t$, with rational functions $A_t$ on $\Delta_{Z_B}$ and $B_t$ on $\Delta_{Z_R}$, integers $a_t$ and letter exponents $k_{t,g}\ge0$, such that
+\[
+\int_{\tsig_Z}\eta=\int_{\Delta_{Z_B}\times\Delta_{Z_R}}\sum_tA_t(u)\,B_t(u')\,\mathrm{Sc}_t(u,u')\,d\omega(u)\,d\omega(u'),
+\]
+\begin{align*}
+\mathrm{Sc}_t&=\Reg\!\int_0^\infty\rho^{a_t-1}\prod_{g,i}(\rho+\xi_{g,i})^{-k_{t,g}}\,d\rho\\
+&=\CT_{\kappa=a_t}\ \Gst2{|J_t|}{\kappa,\ |\mathbf w_t|-\kappa}{\mathbf w_t}\ \sB^{\{J_t\}}_{\mathbf w_t,\,|\mathbf w_t|-\kappa;\,I_{J_t}}\big(\boldsymbol\xi(u,u')\big).
+\end{align*}
+Here $J_t$ indexes the Skeleton values $\xi_{g,i}$ of the letters with $k_{t,g}>0$, each with the letter exponent $w_{t,(g,i)}=k_{t,g}$, so $|\mathbf w_t|=\sum_gk_{t,g}c_g$; a term with $J_t$ empty has $\mathrm{Sc}_t=0$. The finite part is taken in $\rho$ (Definition~\ref{def:reg}), the stacked Gamma times the Breta is that of Proposition~\ref{prop:scale}, and the double integral converges absolutely. So the bunch and the room meet only through the joint spectrum, the coefficients of Bretas of one bunch at the unit configuration. We call this the \emph{node form} at $v$.
+\item \emph{Width one: the bunch is one mark to its room.} If $c=1$, every letter is linear along the scale and has at most one Skeleton value, the room's hinge value over the bunch's (Lemma~\ref{lem:skeleton}(iii)):
+\[
+\xi_g=\frac{\gamma^g_R(u')}{\gamma^g_B(u)},\qquad \gamma^g_B=\frac{K_{N'|Z_B}}{K_{N'/Z_R}},\qquad \gamma^g_R=\frac{K_{N'|Z_R}}{K_{N'/Z_B}}.
+\]
+For $\kappa$ in the strip $0<\re\kappa<|\mathbf w_t|$ the share side (Proposition~\ref{prop:scale}(iii), Lemma~\ref{lem:split}) writes the stacked Gamma times the Breta of (iii) as an integral over shares, one for each Skeleton value of the term but one, of stacked Gammas times powers $\xi_g^{-b_g}=\gamma^g_R(u')^{-b_g}\gamma^g_B(u)^{\,b_g}$ of the Skeleton values, the $b_g$ affine in the shares and in $\kappa$, with real parts constant along the contour. On every contour of shares on which these stacked Gammas have arguments of positive real part and
+\[
+\int_{\Delta_{Z_B}}|A_t|\prod_g(\gamma^g_B)^{\re b_g}\,d\omega<\infty,\qquad \int_{\Delta_{Z_R}}|B_t|\prod_g(\gamma^g_R)^{-\re b_g}\,d\omega<\infty,
+\]
+at fixed shares the integrand of the share integral of the term $t$ is a product of a function of $u$ and a function of $u'$, and the integrals over the bunch and over the room separate under the share integral. If $0<a_t<|\mathbf w_t|$, $\mathrm{Sc}_t$ is the convergent scale integral at $\kappa=a_t$, and the separation holds there; otherwise $\mathrm{Sc}_t$ is, at each $(u,u')$, the constant term at $\kappa=a_t$ of the continuation (Lemma~\ref{lem:reg}(v)), and the separation holds on the strip.
+\item If $v$ is the root, the period of every element of $L(H_F,\tsig_E)$, in particular of every left factor of \eqref{eq:coaction} for $P_F^{\m}$, is given by the node form at the root.
+\end{enumerate}
+At a split vertex the same holds for the split $(Z\cap M_1,\ Z\setminus M_1)$ with $c=1$: the letters of the tables have width $0$ there, and the $\alpha_J$ are the only letters with a Skeleton value.
+\end{theorem}
+
+\begin{rem}[Width two and more]\label{rem:widthtwo}
+At width $c_g\ge2$ the Skeleton values of $g$ are the negatives of the roots of its Skeleton polynomial, of degree $c_g$, whose extreme coefficients are separable and whose middle coefficients are sums over the patterns of their level; Lemma~\ref{lem:bunchpiece} groups the room sides of each level into stations. The Skeleton values are in general not rational functions of the point. On $\binom{[4]}2$ with $Z_B=\{1,2\}$, $c=2$ and $d=0$,
+\[
+K(\rho\alpha_1,\rho\alpha_2,\alpha_3,\alpha_4)=\alpha_3\alpha_4+\rho\,(\alpha_1+\alpha_2)(\alpha_3+\alpha_4)+\rho^2\alpha_1\alpha_2 .
+\]
+Its discriminant $(\alpha_1+\alpha_2)^2(\alpha_3+\alpha_4)^2-4\alpha_1\alpha_2\alpha_3\alpha_4$ is $4(\lambda^2+\lambda+1)$ on the line $\alpha=(1,1,1,\lambda)$, with two simple roots. So it is not a constant times a square, and the two Skeleton values are not rational functions of the point. In the lists of the machine checks below, all $560$ letters of width two have a discriminant that is not a constant times a square (computed).
+\end{rem}
+
+\begin{rem}[The period at a node]\label{rem:periodnode}
+For $\eta=\omega_F$ the glue reads the period itself across a set $S$ of any width (Lemmas~\ref{lem:bunchpiece} and~\ref{lem:glue}(ii)):
+\[
+P_F=\Gamma(\kappa_S)\,\big(\sT_{(\kappa_S,\mathbf s,\mathbf t);t_{\cD}}[\bx\circ\bx']\,(\mu_S\otimes\mu_{S'})\big)(\TT\times\TT'),
+\]
+a Trailmoment of the two laws whose kernel is the period of two stand-in marks: up to the leading coefficients of its letters, a stacked Gamma times a Breta of one bunch whose coefficients are the joint spectrum of the two stand-ins (the remark after Lemma~\ref{lem:glue}). So the bunch and the room meet through their two laws and one scale integral. Opened with one share per station of every active letter, the kernel separates the two laws \cite[Thm.~27.9(iii), p.~230]{F}: on every contour of shares with positive real parts on the pins of the seam (the proof of Lemma~\ref{lem:probe}) at whose real parts the two seam functions are finite,
+\[
+P_F=\int_{\text{pins}}\ \prod_{j:\,s_j>0}\Gst{|\cD_j|}1{\mathbf a_j}{s_j}\prod_{j:\,t_j>0}\Gst{|\cD_j|}1{\mathbf b_j}{t_j}\ \int_{\TT}\bx^{-(\mathbf a,\mathbf b)}\,d\mu_S(\bx)\int_{\TT'}\bx'^{-(\mathbf a,\mathbf b)}\,d\mu_{S'}(\bx'),
+\]
+a fibre integral over the pins \cite[Def.~4.1, p.~25]{F} of the seam functions of $S$ and of $S'$ at the same shares, the bunch word against the room word of \cite[Thm.~21.13, p.~178]{F}. For a convergent family with nonnegative exponents such a contour exists exactly when the bunch word and the room word have Newton sums of full dimension, the native split at the stations being then a point of it \cite[Thm.~24.12, p.~204; Lemma~28.8, p.~244]{F}; otherwise every direction that one side does not see costs one more pin, with reduced periods in place of the seam functions \cite[Thm.~27.11, p.~232]{F}. So the period separates on the shares at every width. At width one in one table with $s,t>0$ this is the one-share display of \cite[Thm.~18.13, p.~119]{F}, which Example~\ref{ex:U14} evaluates. At width one in every active table, when $S$ and its room are both pinned (Theorem~\ref{thm:D}), both laws are point masses at $\mathbf 1$, and since every letter of the stand-ins is then $1+v$ to its exponent,
+\[
+P_F=c_S\,c_{S'}\int_0^\infty v^{\kappa_S-1}(1+v)^{-w}dv=\Gst21{\kappa_S,\ w-\kappa_S}{w}\,c_S\,c_{S'},
+\]
+$c_S$ and $c_{S'}$ the periods of the two pinned families: a Beta corner times two periods \cite[Cor.~18.14, p.~121]{F}. For the period, Theorem~\ref{thm:B}(iii) is \cite[Thm.~15.2, p.~87; Cor.~15.7, p.~89]{F}, and (iv) is \cite[Thm.~18.13, p.~119]{F}; Theorem~\ref{thm:B} extends the node form from the period to every form on every node piece, and so to every left factor of the coaction.
+\end{rem}
+
+\begin{theorem}[Pinned cells]\label{thm:C}
+Let $F=((M_j;s_j,t_j))_j$ with masses $\bm$ be a convergent family on $E=L\sqcup R_1\sqcup\dots\sqcup R_q$, $q\ge1$, $|R_i|\ge2$, substituted table by table: $M_j=\mathcal H_j\langle\mathcal A_{1j},\dots,\mathcal A_{qj}\rangle$, the cores $\mathcal H_j$ on $L\sqcup\{h_1,\dots,h_q\}$, the marks of $L$ left in place, and the cells $\mathcal A_{ij}$ on $R_i\sqcup\{g_i\}$. Suppose the active letters read every cell through \emph{one hinge value}: for every $i$ there is a function $\gamma_i$ of $\alpha_{R_i}$ with
+\[
+\gamma^K_{\mathcal A_{ij}}=\gamma_i\ \text{ whenever }s_j\neq0,\qquad \gamma^\Psi_{\mathcal A_{ij}}=\gamma_i\ \text{ whenever }t_j\neq0 .
+\]
+Let $\kappa_i=\kappa_{R_i}(F)=m_{R_i}-\sum_j\big(s_j(r(\mathcal A_{ij})-1)+t_j(|R_i|-r(\mathcal A_{ij}))\big)$ be the wall of the cell (Lemma~\ref{lem:subst}(iii)), $2\sigma=\sum_j(s_j+t_j)$, and fix integer \emph{loads} $a_{ij},b_{ij}$, with $a_{ij}=0$ when $s_j=0$, $b_{ij}=0$ when $t_j=0$, and $\sum_j(a_{ij}+b_{ij})=\kappa_i$. Then:
+\begin{enumerate}[label=(\roman*)]
+\item the \emph{core family} $F_{\mathcal H}=((\mathcal H_j;s_j,t_j))_j$ on $L\sqcup\{h_1,\dots,h_q\}$, with the masses $\bm_L$ on $L$ and $\kappa_i$ on $h_i$, is a convergent family, and so is, for every $i$, the \emph{pinned family} $G_i$ on $R_i$ with the masses $\bm_{R_i}$ and, for every $j$, the tables
+\[
+\mathcal A_{ij}\setminus g_i\ \text{ at }(a_{ij},\ t_j-b_{ij}),\qquad \mathcal A_{ij}/g_i\ \text{ at }(s_j-a_{ij},\ b_{ij});
+\]
+\item the motivic period factors through the core:
+\[
+P_F^{\m}=P_{F_{\mathcal H}}^{\m}\prod_{i=1}^qP_{G_i}^{\m},\qquad\text{hence}\qquad \Conj(P_F^{\m})\subseteq\Conj(P_{F_{\mathcal H}}^{\m})\cdot\prod_{i=1}^q\Conj(P_{G_i}^{\m});
+\]
+\item the \emph{cell family} $F_i=((\mathcal A_{ij};s_j,t_j))_j$ on $R_i\sqcup\{g_i\}$, with the masses $\bm_{R_i}$ and $2\sigma-\kappa_i$ on $g_i$, is convergent, and
+\[
+P_{F_i}^{\m}=\Gst21{\kappa_i,\ 2\sigma-\kappa_i}{2\sigma}\,P_{G_i}^{\m},
+\]
+the Beta corner a positive rational number;
+\item every $S\subseteq L$ has $c_{M_j}(S)=c_{\mathcal H_j}(S)$. A bunch $B\subseteq L$ therefore has in $M_j$ the width it has in the core, and no condition is placed on it.
+\end{enumerate}
+\end{theorem}
+
+The loads change only which letters of the pinned family carry the exponents. Its form does not depend on them,
+\[
+\omega_{G_i}=\gamma_i^{-\kappa_i}\,\alpha_{R_i}^{\bm_{R_i}}\prod_jK_{\mathcal A_{ij}/g_i}^{-s_j}\Psi_{\mathcal A_{ij}\setminus g_i}^{-t_j}\ \frac{\Omega_{R_i}}{\alpha^{\mathbf 1}},
+\]
+nor do its period, the \emph{pinned shape integral} of the cell, and its motivic period, since the models of two choices both restrict to the complement of all their letters, as in Definition~\ref{def:mper}. Here $1\le\kappa_i\le2\sigma-1$, the second since $2\sigma-\kappa_i=\kappa_{E\setminus R_i}(F)$ on the balance wall (Lemma~\ref{lem:compwalls} with Lemma~\ref{lem:subst}(iii)); so when every $s_j,t_j\ge0$ the loads can be taken in $[0,s_j]$ and $[0,t_j]$, and then $G_i$ has nonnegative exponents too. The core reads each cell as one mark of mass $\kappa_i$, and a cell read through one hinge value is pinned. All factors are periods of families of lists, values of the serif family. At the level of periods, (ii) and (iii) are \cite[Thm.~21.5, Cor.~21.6, p.~173]{F}, for one cell \cite[Thm.~18.10, p.~118; Prop.~18.12, p.~119]{F}; Theorem~\ref{thm:C} lifts them to motivic periods, with the pinned shape integral written, through the loads, as the period of a family of lists.
+
+\begin{rem}[Width one belongs to the cells]\label{rem:whyone}
+By Lemma~\ref{lem:onehinge} a letter reads a set through one hinge value exactly when the set has width at most one; in the same way the stand-in of a piece is one mark of a family of tables exactly when every active table has width at most one, and width one when both of its letters are active \cite[Thm.~27.22, p.~237]{F}. So a single hinge value confines the set it reads, and only that set: the marks of a cell always form a set of width one (Lemma~\ref{lem:subst}(iii)), and it is the cells, not the bunch, that have width one. With $q$ cells the letters read the room through $q$ hinge values, one for each cell, and a bunch $B\subseteq L$ keeps in $M$ the width it has in the core, by (iv). That width is at most
+\[
+c_{\mathcal H}(B)\le r_{\mathcal H}\big((L\setminus B)\sqcup\{h_1,\dots,h_q\}\big)\le|L\setminus B|+q,
+\]
+so a bunch of width $c$ with $L=B$ needs at least $c$ cells, and every width occurs: in $\binom{B\sqcup\{h_1,\dots,h_c\}}{c}$, $|B|=c$, the bunch $B$ has width $c$. In Example~\ref{ex:M8} the core $\binom{[4]}2$ carries a bunch of width two, and Theorem~\ref{thm:C} factors the period through it. What is confined to width one is a single hinge: a set is read through one hinge value exactly at width at most one, and it splits off exactly when it is pinned (Theorem~\ref{thm:D}).
+\end{rem}
+
+\begin{cor}[Dual pairs and full leans; {\cite[Thm.~20.9, p.~166; Cor.~21.7, p.~174; Cor.~22.8(ii), p.~186]{F}}]\label{cor:instances}
+Let $F=(M;s,t)$ be a convergent family of one list.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Dual pairs.} If $M=\mathcal H\langle\mathcal A_1,\dots,\mathcal A_q\rangle$ as in Theorem~\ref{thm:C}, with every cell a dual pair, then every cell is read through one hinge value, at any integers $s,t$, and
+\[
+G_i=\big(M|R_i;\ \kappa_i,\ s+t-\kappa_i\big),\qquad \kappa_i=m_{R_i}-(s+t)\big(r(M|R_i)-1\big),
+\]
+a family of one list. So $P_F^{\m}=P_{(\mathcal H;s,t)}^{\m}\prod_iP_{G_i}^{\m}$, the core at the masses $(\bm_L,\kappa_1,\dots,\kappa_q)$.
+\item \emph{Full leans.} If $t=0$, or $s=0$, every cell of every substitution is read through one hinge value. Split $M$ at a set of width one with at least two marks on each side into its two cells (Lemma~\ref{lem:cellofset}), and repeat at the nodes until no node has such a set. The nodes that remain on four or more marks are \emph{prime}: connected (Lemma~\ref{lem:subst}(v)), with no set of width one with two marks on each side; the others, on two or three marks, are the parallel and series nodes $\binom S1$ and $\binom S{|S|-1}$. Call the prime nodes $\mathcal H_v$. Then
+\[
+P_F^{\m}=c\prod_vP^{\m}_{F_v},\qquad c\in\Q_{>0},
+\]
+the product over the prime nodes, each family $F_v=(\mathcal H_v;s,t)$ carrying the masses of its marks and, at each hinge made by a split, the wall of $F$ at the marks on the other side of that split. So $\Conj(P_F^{\m})\subseteq\prod_v\Conj(P^{\m}_{F_v})$, and a list without prime nodes has a rational motivic period at its full leans.
+\end{enumerate}
+\end{cor}
+
+Part (b) is the motivic form of the factorization of the periods at a full lean \cite[Thm.~25.6, p.~208]{F}: the series and parallel nodes contribute stacked Gammas at integer arguments \cite[Prop.~25.10, p.~209]{F}, which are rational, and their motivic periods are those rationals. At a full lean the width of a bunch plays no role at all, and the two full leans of one list are exchanged by Cremona (Lemma~\ref{lem:cremona}). (At $(s,t)=(0,2)$ with unit masses every hinge wall is $1$, two walls $\ge1$ adding to $t=2$ (Lemma~\ref{lem:compwalls}), and every Beta corner is $\Gst21{1,\ 1}{2}=1$. Alias: on the list of spanning trees of a primitive log-divergent graph, $P_F=\int_{\sigma_E}\Omega_E/\Psi^2$ is its Feynman period, a $2$-vertex cut gives a set of width one, the edges on one side, whose cell is that side closed by an edge across the cut, and (b) contains the product identity \cite[Thm.~2.10]{Sch}, read at a vertex of the split, as an identity of motivic periods.)
+
+\begin{theorem}[Only pinned sets split off]\label{thm:D}
+Let $F=((N_j;s_j,t_j))_j$ be a convergent family with $s_j,t_j\ge0$ and $\varnothing\neq S\subsetneq E$, read as a piece with the stations of its room, $S'=E\setminus S$ being a partner (Lemma~\ref{lem:bunchpiece}). Then $w=\sum_j(s_j+t_j)c_{N_j}(S)>0$ and $0<\kappa_S<w$, and the following are equivalent.
+\begin{enumerate}[label=(\roman*)]
+\item The law of $S$ is the law of one mark: $\mu_S=c\,\delta_{\bx_0}$ with $c>0$ and $\bx_0\in\TT$.
+\item $S$ is \emph{pinned}: every active table has width at most one at $S$, and the active letters of the tables of width one read $S$ through one hinge value: $\gamma^K_{j,S}=\gamma$ whenever $s_j\neq0$ and $\gamma^\Psi_{j,S}=\gamma$ whenever $t_j\neq0$, for one function $\gamma$.
+\item $S$ \emph{splits off}: it acts on every partner as one mark, that is, there are $c>0$ and $\bx_0\in\TT$ such that every partner $Z$ of $S$, glued balanced, has $P_{S\sqcup Z}=c\,P_{Z^{(\bx_0)}}$.
+\item $S$ has the station transform of $c$ times the one-mark piece at $\bx_0$ (Definition~\ref{def:transform}): it acts so on every partner on one mark.
+\end{enumerate}
+When they hold, $\bx_0=\mathbf 1$, $c=\int_{\Delta_S}\phi_S$, and $P_F=c\,P_{S'^{(\mathbf 1)}}$. If moreover $|S|\ge2$ and $S$ has width one in every active table, then every active table is the substitution $\mathcal A_{S'}\langle\mathcal A_S\rangle$ of the cell of $S$ into that of $S'$ (Lemma~\ref{lem:cellofset}), (ii) is the hypothesis of Theorem~\ref{thm:C} with $q=1$, $S'^{(\mathbf 1)}$ is the core family and $c$ the period of the pinned family, and Theorem~\ref{thm:C} makes $P_F=c\,P_{S'^{(\mathbf 1)}}$ an identity of motivic periods, $P_F^{\m}=P^{\m}_{F_{\mathcal H}}P^{\m}_G$. For one list $M$ with both letters active and $|S|\ge2$, (ii) says that $S$ has width one and $\varrho_S=1$: the hinge minors have one even letter, $\mathbf E_{M|S}=\mathbf E_{M/S'}$. When $M|S$ and $M/S'$ are connected this is $M/S'=(M|S)^\ast$, a dual pair.
+\end{theorem}
+
+So the width-one condition belongs to the factors, and only to them. A set of width two or more in some active table never splits off: it is never a pinned cell, and it enters every period glued on it through its law, which is not a point mass; a bunch $B\subseteq L$ of a substitution stays in the core with its width (Theorem~\ref{thm:C}(iv)). For one list with both letters active, a set of width one splits off exactly when its two hinge minors have one even letter; with connected hinge minors this is the dual-pair condition of Corollary~\ref{cor:instances}(a). In a prime list every set with two marks on each side has width at least two, so none of them splits off, and the factorization of Corollary~\ref{cor:instances}(b) ends at the prime nodes. Their only cells are the complements of single marks. At a full lean such a complement splits off, which trades the node for a Beta corner and the two-table family of its deletion and its contraction on one fewer mark \cite[Cor.~18.14, p.~121]{F}, $((\mathcal H_v\setminus e;\,s-m_e,0),(\mathcal H_v/e;\,m_e,0))$; at the centre it splits off exactly when the deletion and the contraction have one even letter, $\mathbf E_{\mathcal H_v\setminus e}=\mathbf E_{\mathcal H_v/e}$.
+
+Read against \cite{F}: (i)$\Leftrightarrow$(iii)$\Leftrightarrow$(iv) is \cite[Thm.~27.18, p.~235]{F} with one of its two pieces a one-mark piece; at width one, with every exponent positive, it is \cite[Thm.~22.7, Def.~22.6, p.~185; Cor.~22.8(i), p.~186]{F}, the one-mark cell family standing for the one-mark piece. That a dual pair is pinned is \cite[Cor.~22.8(ii), p.~186]{F}. That a point mass forces width at most one in every active table, (i)$\Rightarrow$(ii), rests on Lemma~\ref{lem:onehinge}, and the step from one even letter to a dual pair on \cite[Thm.~7.9, p.~49; Thm.~10.6, p.~65]{F}.
+
+The general object behind Theorems~\ref{thm:C} and~\ref{thm:D} is the glue (Lemma~\ref{lem:glue}): every period of a family glued on a set $S$ is the integral, against the law of $S$, of the period of the partner with a stand-in for $S$. When the law is a point mass the integral is one evaluation; when $S$ is moreover a cell, the change of variables behind the glue is birational, and Theorem~\ref{thm:C} makes the evaluation an identity of motivic periods. By Theorem~\ref{thm:D} no other set splits off. At every node, of every width, every open period of a node piece has the node form of Theorem~\ref{thm:B}, and at the root so does every left factor of the coaction.
+
+\begin{rem}[What the theorems use of the tree]\label{rem:used}
+Theorem~\ref{thm:A}, Corollary~\ref{cor:serif} and Theorem~\ref{thm:B}(i)--(iii),~(v) hold along every tree of bunches, at any width, and so along the Foreman tree (Remark~\ref{rem:foreman}). Width one enters Theorem~\ref{thm:B} once, in (iv): there the Skeleton values themselves are quotients of hinge values, and the share side of each term of the node form separates the bunch from the room wherever the two integrability conditions of (iv) hold. The period separates on the shares at every width, through the bunch word and the room word, with one more pin for each direction that a side does not see (Remark~\ref{rem:periodnode}). Theorem~\ref{thm:C} places no condition on the width of a bunch: width one is what a cell is (Lemmas~\ref{lem:onehinge} and~\ref{lem:subst}(iii)), and the bunch sits in the core at whatever width it has (Remark~\ref{rem:whyone}).
+
+The Foreman bunch can have width two. On the list of rank three on six marks whose bases are all triples except $\{1,2,3\}$, every set with at least two marks on each side has width two or three (computed), so the list is prime. At the centre no complement of a single mark splits off either: for every mark $e$ the two hinge values $K_{M\setminus e}/K_{M/e}$ and $\Psi_{M/e}/\Psi_{M\setminus e}$ differ (computed). So at the centre the list is its own and only factor, and it is an atom of its Foreman tree: the bijection $i\mapsto i+3$ modulo $6$, which exchanges the two triples, maps its bases onto its cobases and joins the triples into one class (computed). At a lean the two triples are its classes, the orbits of the bijections that permute each triple, sets of width two, and its Foreman bunch is one of them \cite[Def.~13.6, p.~78]{F}. By Theorem~\ref{thm:D} neither splits off; each enters every period of the list through its law, and at the root every left factor of the coaction has the node form of Theorem~\ref{thm:B}, with at most two Skeleton values per letter.
+\end{rem}
+
+\begin{rem}[Why weights]
+By Lemma~\ref{lem:openall}, in the affine model every period of $H_F$ on $\tsig_E$ is the period of a global top form: $L(H_F,\tsig_E)=\Open(E;\varnothing\subsetneq E)$. So the statement ``every left factor is a sum of products of open periods of blocks'' holds with the single block $E$ and carries no information. The face structure enters only through the weights, as in \cite[Prop.~10.7]{B1} and \cite[Thm.~8.11]{B2}. That is the form of Theorem~\ref{thm:A}.
+\end{rem}
+
+\begin{rem}[The linear letters]
+Theorems~\ref{thm:A} and~\ref{thm:B} are statements about Brown's affine model, which adjoins the linear letters $\alpha_J$ to make the complement affine \cite[\S5]{B2}. They are letters of lists, the basis polynomials of the $\binom J1$, and they enter Corollary~\ref{cor:serif} as tables of the block families: the open periods of the blocks are periods of families of lists.
+\end{rem}
+
+\section{Examples}\label{sec:examples}
+
+All lists are at their centres, $s=t=1$ with unit masses, unless a lean is named.
+
+\begin{example}[$\binom{[3]}2$]\label{ex:U23}
+On $E=\{1,2,3\}$, $K=e_2$ and $\Psi=e_1$, and $P_{\binom{[3]}2}=\int_{\sigma_E}\Omega_E/(e_1e_2)$. The pair $S=\{1,2\}$ has width one, with $M|S=\binom S2$ and $M/3=\binom S1$, a series pair; so $\gamma^K_S=\alpha_1\alpha_2/(\alpha_1+\alpha_2)$ and $\gamma^\Psi_S=\alpha_1+\alpha_2$, whose ratio is $\varrho_S=1/(u(1-u))$ on $\Delta_S$, $u=\alpha_1/(\alpha_1+\alpha_2)$ \cite[Prop.~18.5, p.~116]{F}. The pair does not split off (Theorem~\ref{thm:D}). Read the period at the root bunch $S$ (Theorem~\ref{thm:B}(iii)); its room is the one mark $3$, at $\alpha_3=1$. With $\alpha_S=\rho\,(u,1-u)$ and $Q=u(1-u)$, $e_1=1+\rho$ and $e_2=\rho\,(1+Q\rho)$, so the Skeleton values are $1$ and $\varrho_S$, and
+\[
+P_{\binom{[3]}2}=\int_0^1\int_0^\infty\frac{d\rho}{(1+\rho)(1+Q\rho)}\,du=\int_0^1\frac{\log Q}{Q-1}\,du=-2\int_0^1\frac{\log u}{1-u+u^2}\,du .
+\]
+The inner integral is the share integral of Theorem~\ref{thm:B}(iv),
+\[
+\int_0^\infty\frac{d\rho}{(1+\rho)(1+Q\rho)}=\frac1{2\pi i}\int_{(1/2)}\Gst40{a,\ a,\ 1-a,\ 1-a}{}\,Q^{-a}\,da,
+\]
+whose condition on the bunch is $\int_0^1Q^{-1/2}du<\infty$. Closed to the left, it meets the double poles $a=-j$, $j\in\N$, where the stacked Gamma has the principal part $(a+j)^{-2}$ and no simple part; the residues $-Q^j\log Q$ sum to $\log Q/(Q-1)$, the left closing of \cite[Lemma~5.16(ii), p.~34]{F}. The last equality is the reflection $u\mapsto1-u$ of the shape simplex, with $\log Q=\log u+\log(1-u)$ and $1-Q=1-u+u^2$. In the coordinate $y=\log(1/u)$,
+\[
+P_{\binom{[3]}2}=2\int_0^\infty y\,\frac{e^{-y}}{1-e^{-y}+e^{-2y}}\,dy=2\int_0^\infty y\,\frac{e^{-y}+e^{-2y}}{1+e^{-3y}}\,dy .
+\]
+The last fraction is the Laplace transform of the lattice input
+\[
+\phi=\Ilat{1+6\Z}+\Ilat{2+6\Z}-\Ilat{4+6\Z}-\Ilat{5+6\Z}
+\]
+on $(0,\infty)$, its four cosets summing as geometric series:
+\[
+\int e^{-yx}\,\phi(dx)=\frac{e^{-y}+e^{-2y}-e^{-4y}-e^{-5y}}{1-e^{-6y}}=\frac{e^{-y}+e^{-2y}}{1+e^{-3y}} .
+\]
+Since $\int x^{-2}|\phi|(dx)<\infty$, the Laplace side (Lemma~\ref{lem:laplace}) at the index two reads the integral as $\Gamma(2)\,\Tx{2}{\phi}{0}$:
+\[
+P_{\binom{[3]}2}=2\,\Tx{2}{\big(\Ilat{1+6\Z}+\Ilat{2+6\Z}-\Ilat{4+6\Z}-\Ilat{5+6\Z}\big)}{0}.
+\]
+The splittings $1+3\Z=(1+6\Z)\sqcup(4+6\Z)$ and $2+3\Z=(2+6\Z)\sqcup(5+6\Z)$ write the input as $\Ilat{1+3\Z}-\Ilat{2+3\Z}+2\big(\Ilat{2+6\Z}-\Ilat{4+6\Z}\big)$, and the dilations $2+6\Z=2(1+3\Z)$ and $4+6\Z=2(2+3\Z)$ \cite[Thm.~5.9, p.~31]{F} give
+\[
+P_{\binom{[3]}2}=2\Big(1+\frac24\Big)\Tx{2}{\big(\Ilat{1+3\Z}-\Ilat{2+3\Z}\big)}{0}=3\,\Tx{2}{\big(\Ilat{1+3\Z}-\Ilat{2+3\Z}\big)}{0},
+\]
+three times the Trailmoment at index two of the input that counts $1+3\Z$ and subtracts $2+3\Z$ (alias $3L(\chi_{-3},2)$).
+\end{example}
+
+\begin{example}[$\binom{[4]}2$]\label{ex:U24}
+On $E=\{1,2,3,4\}$, $K=\Psi=e_2$. For every mark $e$ the complement $R=E\setminus\{e\}$ has width one, $M|R=\binom R2$ and $M/e=\binom R1=\binom R2^\ast$: the cell of $R$ (Lemma~\ref{lem:cellofset}) is a dual pair, a copy of $\binom{[4]}2$ on $R\sqcup\{g\}$, and $M=\binom{\{e,h\}}1\langle e,\mathcal A_R\rangle$ with the core $\binom{\{e,h\}}1$. By Corollary~\ref{cor:instances}(a), with $\kappa_R=3-2\,(2-1)=1$,
+\[
+P^{\m}_{\binom{[4]}2}=P^{\m}_{(\binom{\{e,h\}}1;1,1)}\cdot P^{\m}_{\binom{[3]}2}=P^{\m}_{\binom{[3]}2},
+\]
+the core at the masses $(1,1)$ having the form $\alpha_e\alpha_h(\alpha_e+\alpha_h)^{-2}\,\Omega/(\alpha_e\alpha_h)$, whose motivic period is the Beta corner $\Gst21{1,\ 1}{2}=1$ (end of the proof of Theorem~\ref{thm:C}). At the level of periods this is \cite[Cor.~22.8(iii), p.~186]{F}: the bases of $\binom{[4]}2$ are closed under complement, and any one mark splits off by one Beta corner. So
+\[
+P_{\binom{[4]}2}=3\,\Tx{2}{\big(\Ilat{1+3\Z}-\Ilat{2+3\Z}\big)}{0}\qquad\text{(alias $3L(\chi_{-3},2)$)}.
+\]
+Every pair of $\binom{[4]}2$ has width two: none splits off (Theorem~\ref{thm:D}), and along a pair the Skeleton values are not rational functions of the point (Remark~\ref{rem:widthtwo}).
+\end{example}
+
+\begin{example}[$\binom{[4]}1$]\label{ex:U14}
+On $E=\{1,2,3,4\}$, $K=e_1$ and $\Psi=e_3$, and every pair has width one. At the full lean $(s,0)$, $K=|\alpha|$ and the period is the shape integral $\Gst41{\bm}{m_E}$ (Lemma~\ref{lem:dirichlet}), rational at integer data, and the full lean $(0,s)$ is its Cremona (Lemma~\ref{lem:cremona}). At the centre take $S=\{3,4\}$ with the room $S'=\{1,2\}$, both parallel pairs: $M|S=\binom S1$ and $M/S'$ has the one basis $\varnothing$, so $\gamma^K_S=\alpha_3+\alpha_4$ and $\gamma^\Psi_S=\alpha_3\alpha_4/(\alpha_3+\alpha_4)$, with the ratio $\varrho_S=u(1-u)$ on $\Delta_S$, and likewise $\varrho_{S'}=u'(1-u')$ on $\Delta_{S'}$ \cite[Prop.~18.5, p.~116]{F}. The two hinge values differ, so $S$ does not split off (Theorem~\ref{thm:D}): its scale is $\gamma^\rho_S=(\alpha_3\alpha_4)^{1/2}$, and its law is the image of the scale form $\varrho_S^{-1/2}du$ under the seam vector $(x_{D_0},x_{D_1},x^\ast_{D_0},x^\ast_{D_1})=(1,\varrho_S^{-1/2},\varrho_S^{1/2},1)$ on its seam torus, the half-line of the points $(1,x,x^{-1},1)$, $x>0$; it is carried by $x\ge2$, since $\varrho_S\le\frac14$, and is not a point mass.
+
+Read the period at the root bunch $S$ (Theorem~\ref{thm:B}(iii)). On $\Delta_S\times\Delta_{S'}$, $K(\rho u,u')=\rho+1$ and $\Psi(\rho u,u')=\rho\,\big(\varrho_S(u)\,\rho+\varrho_{S'}(u')\big)$, so the Skeleton values are $1$ and $\varrho_{S'}/\varrho_S$, and
+\[
+P_{\binom{[4]}1}=\int_{\Delta_S\times\Delta_{S'}}\int_0^\infty\frac{d\rho}{(\rho+1)\,(\varrho_S\,\rho+\varrho_{S'})}\,d\omega(u)\,d\omega(u').
+\]
+On the line $\re a=\frac12$ the share side of Theorem~\ref{thm:B}(iv) writes the inner integral as
+\[
+\int_0^\infty\frac{d\rho}{(\rho+1)\,(\varrho_S\,\rho+\varrho_{S'})}=\frac1{2\pi i}\int_{(1/2)}\Gst40{a,\ a,\ 1-a,\ 1-a}{}\,\varrho_S^{-a}\varrho_{S'}^{a-1}\,da;
+\]
+its conditions on the bunch and on the room are $\int_{\Delta_S}\varrho_S^{-1/2}<\infty$ and $\int_{\Delta_{S'}}\varrho_{S'}^{-1/2}<\infty$, and the shape integrals are Beta corners (Lemma~\ref{lem:dirichlet}):
+\begin{equation}\label{eq:U14share}
+P_{\binom{[4]}1}=\frac1{2\pi i}\int_{(1/2)}\Gst40{a,\ a,\ 1-a,\ 1-a}{}\ \Gst21{1-a,\ 1-a}{2-2a}\ \Gst21{a,\ a}{2a}\,da .
+\end{equation}
+The moments of the orders $-a$ and $a-1$ of the two ratios of hinge values are paired over one share, on the line $\re a=\frac12$: this is the display of \cite[Thm.~18.13, p.~119]{F} for one table, whose one free share is the even share. By the reflection $\Gst20{a,\ 1-a}{}=\pi/\sin\pi a$, at $a$ and at $2a$, and the shift $\Gamma(2-2a)=(1-2a)\,\Gamma(1-2a)$ \cite[Prop.~1.3, p.~11]{F},
+\[
+\Gst21{a,\ a}{2a}\Gst21{1-a,\ 1-a}{2-2a}=\frac{2\pi\cot\pi a}{1-2a}=-\frac{\partial_a\log\Gst40{a,\ a,\ 1-a,\ 1-a}{}}{1-2a},
+\]
+so that
+\[
+P_{\binom{[4]}1}=-\frac1{2\pi i}\int_{(1/2)}\frac{\partial_a\Gst40{a,\ a,\ 1-a,\ 1-a}{}}{1-2a}\,da,
+\]
+the critical-line word of order one of the argument $1$ \cite[Def.~33.3, p.~298]{F}. Close it to the right \cite[Thm.~4.5, p.~26]{F}. At every integer $m\ge1$ the stacked Gamma has the principal part $(a-m)^{-2}$ and no simple part \cite[Lemma~5.16, p.~34]{F}, so its derivative has the principal part $-2(a-m)^{-3}$ and no other negative power, and the integrand has the residue $8(1-2m)^{-3}=-(m-\frac12)^{-3}$; on the lines $\re a=M+\frac12$ the integrand is at most $\pi^3/(M\cosh^2\pi\im a)$, and on the segments $|\im a|=Y$ between them it is $O(e^{-2\pi Y})$. So the period is minus the sum of the residues \cite[Thm.~33.6, p.~298]{F},
+\[
+P_{\binom{[4]}1}=\sum_{m\ge1}\big(m-\tfrac12\big)^{-3}=\Tx{3}{\Ilat{\frac12+\Z}}{0}=7\,\Tx{3}{\IZ}{0}\qquad\text{(alias $7\zeta(3)$)},
+\]
+the last by the lattice relation at the step $2$, $\Tx{3}{\IZ}{0}+\Tx{3}{\Ilat{\frac12+\Z}}{0}=2^3\,\Tx{3}{\IZ}{0}$ \cite[Thm.~5.12(i), p.~32]{F}. At the centre the share that pairs the two ratios runs over a line. At a full lean one letter is active, with one Skeleton value, and no share is free: the period is a Beta corner times the periods of the bunch family and the room family \cite[Thm.~18.13, p.~119; Cor.~18.14, p.~121]{F}, rational here, and the centre is reached by neither full lean.
+\end{example}
+
+\begin{example}[Five marks]\label{ex:five}
+On five marks let $M$ be the list of rank two whose bases are all pairs except $\{1,2\}$. It is the substitution $\binom{\{1,2,h\}}1\langle1,2,\mathcal A\rangle$ into the list of rank one on $\{1,2,h\}$, the marks $1,2$ left in place, of the cell $\mathcal A=\binom{\{3,4,5,g\}}2$, a dual pair: $\mathcal A\setminus g=\binom{\{3,4,5\}}2$ and $\mathcal A/g=\binom{\{3,4,5\}}1=(\mathcal A\setminus g)^\ast$. At the centre $\kappa=3-2=1$, and by Corollary~\ref{cor:instances}(a) the core $(\binom{\{1,2,h\}}1;1,1)$ and the pinned family $(\binom{\{3,4,5\}}2;1,1)$, both at unit masses, have the one form $\Omega/(e_1e_2)$ on three marks, since $\binom{[3]}1=\binom{[3]}2^\ast$ and $s=t$. So $P^{\m}_M=(P^{\m}_{\binom{[3]}2})^2$, the two factors being the same motivic period after relabelling, and
+\[
+P_M=\Big(3\,\Tx{2}{\big(\Ilat{1+3\Z}-\Ilat{2+3\Z}\big)}{0}\Big)^2
+\]
+(Example~\ref{ex:U23}).
+\end{example}
+
+\begin{example}[Eight marks]\label{ex:M8}
+Let $M=\binom{\{b_1,b_2,h_1,h_2\}}2\langle b_1,b_2,\mathcal A_1,\mathcal A_2\rangle$: the core $\binom{\{b_1,b_2,h_1,h_2\}}2$, the marks $b_1,b_2$ left in place, and the cells $\mathcal A_i=\binom{\{x_i,y_i,z_i,g_i\}}2$, both dual pairs. It is a connected list of rank four (Lemma~\ref{lem:subst}), and the bunch $B=\{b_1,b_2\}$ has width two, as in the core (Lemma~\ref{lem:subst}(iv)). Along $B$, with $\gamma_i=e_2(\alpha_{R_i})/e_1(\alpha_{R_i})$,
+\[
+K_M(\tau\alpha_B,\alpha_R)=e_1(\alpha_{R_1})\,e_1(\alpha_{R_2})\Big(\gamma_1\gamma_2+\tau\,(\alpha_{b_1}+\alpha_{b_2})(\gamma_1+\gamma_2)+\tau^2\alpha_{b_1}\alpha_{b_2}\Big),
+\]
+whose discriminant is not a constant times a square: the Skeleton values of $B$ are not rational functions of the point, as in Remark~\ref{rem:widthtwo}. At the centre $\kappa_1=\kappa_2=1$, and Corollary~\ref{cor:instances}(a) and Example~\ref{ex:U24} give
+\[
+P^{\m}_M=P^{\m}_{\binom{[4]}2}\cdot\big(P^{\m}_{\binom{[3]}2}\big)^2=\big(P^{\m}_{\binom{[3]}2}\big)^3,\qquad P_M=\Big(3\,\Tx{2}{\big(\Ilat{1+3\Z}-\Ilat{2+3\Z}\big)}{0}\Big)^3
+\]
+(alias $(3L(\chi_{-3},2))^3$), every factor at its centre (the identity of forms checked in exact arithmetic below). The bunch of width two never splits off; it goes whole into the core $\binom{[4]}2$, and the core splits further at the complement of a single mark, a set of width one.
+\end{example}
+
+\paragraph{Machine checks.} The script \texttt{note\_lemmas\_check.py} (python-flint, exact arithmetic) checks the following on its test lists, $21$ lists on at most eight marks.
+\begin{itemize}
+\item Lemma~\ref{lem:dual}: the cobases of every test list have the exchange property, and the exchange of Lemma~\ref{lem:dual} holds. Lemma~\ref{lem:window}(ii) and Corollary~\ref{cor:blocks}: along all $5846$ maximal chains of the test lists on at most six marks exactly one basis is at the bottom of every set of the chain, and one at the top, so the bottom levels of the chain of $K$ and of $\Psi$ are single monomials.
+\item Corollary~\ref{lem:initial}: $1592$ faces of the $20$ test lists on at most seven marks.
+\item Lemma~\ref{lem:children}(ii) and Corollary~\ref{cor:blocks}: the $8198$ lists $(N|(Z\setminus X))/Y$ on $R$, $X\sqcup Y=B$, computed independently from the largest traces, are each a child of $N$ at a pattern of $B$.
+\item Lemma~\ref{lem:children}(iii): on the test lists on at most five marks, $c_{N_{(p)}}(A)\le c_N(A\cup W)$ at every pattern $p$, every $A\subseteq R$ and every $W\subseteq B$ ($30336$ inequalities); and, through Theorem~\ref{thm:B}(i), $305564$ block tables.
+\item Lemmas~\ref{lem:children}(i) and~\ref{lem:skeleton} at every width: $1340$ letters of widths one, two and three ($680$, $560$, $100$), each level against the sum over its patterns of the children, and the extreme levels as products; at width one with the $\alpha_J$ adjoined, $14432$ letters.
+\item At width two: for all $560$ letters the discriminant of $\sum_i\tau^iK^{(d+i)}$ is not a constant times a square: neither its primitive part nor its negative is a square (Remark~\ref{rem:widthtwo}).
+\item Lemma~\ref{lem:onehinge}, through its criterion on the levels (equal children at every level, and $f_kf_{k+2}$ proportional to $f_{k+1}^2$): the same $1340$ letters at all their sets. The criterion holds exactly at width at most one. Of the $660$ letters of width two or three, $220$ fail at a level with two different children, and $440$ have every level a product and fail only at $f_{d+1}^2$ against $f_df_{d+2}$, the squarefree step of the proof.
+\item The identities of Lemma~\ref{lem:dualpair}(iii): four dual pairs with one cell, and the eight-mark list of Example~\ref{ex:M8} with two, as exact polynomial identities.
+\item Theorem~\ref{thm:C} on the eight-mark list, at $(s,t)=(1,1)$ with unit masses and at $(2,1)$ with masses $(2,1;2,1,1;2,2,1)$: $F$, the core and both pinned families are convergent and balanced; the degree-zero part of $\omega_F$ is that of the core at $x(\alpha)$ times those of the pinned families, and each cell family is the form of the core $\binom{\{g,h\}}1$, whose period is a Beta corner, times its pinned family, all as identities of rational functions; the logarithmic Jacobian of $\Phi$ is $\pm1$ at ten random rational points. The discriminant along $B$ is not a square.
+\item Theorem~\ref{thm:C} at the full lean $(4,0)$ on the nine-mark list $\binom{\{b_1,b_2,h_1,h_2\}}2\langle b_1,b_2,\mathcal A_1,\mathcal A_2\rangle$ with the cells $\mathcal A_1=\binom{R_1+g_1}2$ on five marks and $\mathcal A_2=\binom{R_2+g_2}3$ on four, which are not dual pairs and whose two hinge values differ: the same identity of forms with the two-table pinned families, exactly.
+\item Theorem~\ref{thm:D} for one list at the centre, on the test lists: of the sets $S$ with $|S|\ge2$, $344$ have width two and $90$ width three, none of which is pinned (by the criterion above); of the $263$ of width one, $20$ are read through one hinge value, and these are exactly the $20$ dual pairs $M/S'=(M|S)^\ast$; proportional hinge values were always equal.
+\item The list of all triples of six marks but $\{1,2,3\}$ (Remark~\ref{rem:used}): the widths of the two triples, the discriminant along $\{1,2,3\}$, not a constant times a square and $45$ at $\alpha=\mathbf 1$, and primality: its sets with two marks on each side have widths two and three. The bijection $i\mapsto i+3$ modulo $6$ maps its bases onto its cobases. At the centre none of its cells $E\setminus\{e\}$ is read through one hinge value; at the full lean $(2,0)$ with unit masses each is pinned, the form being that of the core $\binom{\{e,h\}}1$, whose period is a Beta corner, times that of the deletion and the contraction, exactly. $\binom{[4]}2$ is prime as well.
+\item Lemma~\ref{lem:bunchpiece}: the room-station factorization of both letters at all $796$ sets $S$ of the test lists on at most seven marks, with the single stations at the excesses $0$ and $c$ and every excess in between occurring; at width one there are always two stations, at width two three to five, at width three four to twelve.
+\item Lemmas~\ref{lem:subst}(i) and~\ref{lem:cellofset}: the exchange property of every substitution built in the checks, and, at all $362$ sets of width one of the test lists, the cell as the child of $M$ at a bottom pattern $Y_0$ of $R'-b$, with $Y_0+b$ a top pattern, and $M=\mathcal A_{R'}\langle\mathcal A_R\rangle$.
+\item Examples~\ref{ex:U23}--\ref{ex:U14}: the identity of forms $\omega_{\binom{[4]}2}=\Phi^\ast(\omega_{(\binom{\{e,h\}}1;1,1)}\boxtimes\omega_{\binom{[3]}2})$, exactly; the Laplace transform of the input $\Ilat{1+6\Z}+\Ilat{2+6\Z}-\Ilat{4+6\Z}-\Ilat{5+6\Z}$, as an identity of rational functions of $e^{-y}$, exactly; and, in ball arithmetic at $256$ bits, the identity of stacked Gammas of Example~\ref{ex:U14} at eight random points of the strip $0<\re a<1$, the Laurent expansion of the integrand of \eqref{eq:U14share} at $a=m$, $1\le m\le10$, a pole of order three with the residue $8(1-2m)^{-3}$, and the lattice identities $2\,\Tx{2}{(\Ilat{1+6\Z}+\Ilat{2+6\Z}-\Ilat{4+6\Z}-\Ilat{5+6\Z})}{0}=3\,\Tx{2}{(\Ilat{1+3\Z}-\Ilat{2+3\Z})}{0}$ and $\Tx{3}{\Ilat{\frac12+\Z}}{0}=7\,\Tx{3}{\IZ}{0}$.
+\end{itemize}
+
+\section{Proof of Theorem~\ref{thm:A} and Corollary~\ref{cor:serif}}\label{sec:proofA}
+
+For a chain $\mathfrak c$ write $D_{\mathfrak c}$ for its stratum in $V_F$, with $D_\varnothing=V_F$. These are smooth affine varieties of dimension $N-|\mathfrak c|$, nonempty since they meet $\tsig_E$. The relative de Rham cohomology $H^\bullet_{dR}(V_F,D_F)$ is the hypercohomology of the double complex
+\[
+\Omega^\bullet_{V_F}\to\bigoplus_{|\mathfrak c|=1}\Omega^\bullet_{D_{\mathfrak c}}\to\bigoplus_{|\mathfrak c|=2}\Omega^\bullet_{D_{\mathfrak c}}\to\cdots
+\]
+\cite[\S10.2]{B1}. All its terms are quasi-coherent on the affine $V_F$, so it is the cohomology of the total complex of global sections,
+\[
+\operatorname{Tot}^m=\bigoplus_{\mathfrak c}\Omega^{m-|\mathfrak c|}(D_{\mathfrak c}).
+\]
+The summands over the chains refining $\mathfrak c$ form the double complex of the pair $(D_{\mathfrak c},\partial D_{\mathfrak c})$, shifted by $|\mathfrak c|$. Their inclusion is the face map
+\[
+\phi_{\mathfrak c}:H^{N-|\mathfrak c|}(D_{\mathfrak c},\partial D_{\mathfrak c})\to H^N(V_F,D_F)
+\]
+of \cite[(10.3)]{B1}. On the Betti side it takes the facet of a relative cycle \cite[Cor.~5.2, proof of Thm.~7.8]{B2}: $\phi_{\mathfrak c}^t[\tsig_E]=\pm[\tsig_E\cap D_{\mathfrak c}]$.
+
+\begin{lemma}[Open periods suffice]\label{lem:openall}
+Let $V$ be smooth affine of dimension $m$ and $D\subset V$ a simple normal crossings divisor; its strata $D_{\mathfrak c}$, $\mathfrak c$ a set of components with $D_{\mathfrak c}\neq\varnothing$, are closed in $V$ and hence affine. Every class in $H^m_{dR}(V,D)$ is the class of a global $m$-form on $V$. In particular
+\[
+L(H_F,\tsig_E)=\Open(E;\varnothing\subsetneq E),
+\]
+and likewise $L(H^{|Z|-1}(V_Z,\partial V_Z),\tsig_Z)=\Open(Z;\ff)$ for every block, $V_Z$ being affine by Proposition~\ref{prop:model}(iii) applied to $Z$ and its letters.
+\end{lemma}
+
+\begin{proof}
+The total complex of global sections of the double complex of $(V,D)$ computes $H^\bullet_{dR}(V,D)$, as above. Since $\Omega^q(D_{\mathfrak c})=0$ for $q>m-|\mathfrak c|$, $\operatorname{Tot}^{m+1}=0$, and every element $(\eta_{\mathfrak c})$ of $\operatorname{Tot}^m$ is a cocycle; here $\eta_{\mathfrak c}$ is a top form on $D_{\mathfrak c}$. Let $\ell=\max\{|\mathfrak c|:\eta_{\mathfrak c}\neq0\}$ and suppose $\ell\ge1$.
+
+\emph{Restriction is surjective.} For a stratum $D_{\mathfrak c'}$ with $|\mathfrak c'|=\ell-1$, restriction maps $\Omega^{m-\ell}(D_{\mathfrak c'})$ onto $\bigoplus_k\Omega^{m-\ell}(D_{\mathfrak c'}\cap D_k)$, the sum of the top forms on its boundary components. Locally, in coordinates in which the components are $z_1=0,\dots,z_s=0$, the form $\sum_t\widetilde g_t\,dz_1\wedge\cdots\widehat{dz_t}\cdots$ restricts to $g_t$ on $\{z_t=0\}$ and to $0$ on the other components. The map of coherent sheaves is therefore surjective, and so is its map on global sections, $D_{\mathfrak c'}$ being affine.
+
+\emph{Removing the deepest level.} Order the components. For each $\mathfrak c$ with $|\mathfrak c|=\ell$, let $\mathfrak c'$ be $\mathfrak c$ minus its largest component. Choose $\gamma_{\mathfrak c'}$ restricting to $\pm\eta_{\mathfrak c}$ on these $D_{\mathfrak c}$ and to $0$ on the other boundary components of $D_{\mathfrak c'}$. Then $(\eta)-D(\gamma)$ vanishes at level $\ell$ and differs from $(\eta)$ at level $\ell-1$ by the forms $d\gamma_{\mathfrak c'}$.
+
+Induction ends at $(\eta_\varnothing,0,\dots,0)$, a global top form. Applied to $V_F$ and to each $V_Z$, this gives the two equalities.
+\end{proof}
+
+\begin{prop}[Weight-graded faces]\label{prop:weights}
+For $k<N$ and $e\in W_k(H_F)_{dR}$,
+\[
+[H_F,\tsig_E,e]^{\m}\in\sum_{\ff\ \text{of dimension }k}\ \ \prod_{\text{blocks }Z\text{ of }\ff}\Open(Z;\ff).
+\]
+\end{prop}
+
+\begin{proof}
+The strata are affine, so $H^j(D_{\mathfrak c})=0$ for $j>N-|\mathfrak c|$. By \cite[Prop.~10.7]{B1} with $m=k$, the sum of the face maps
+\[
+\bigoplus_{|\mathfrak c|=N-k}W_kH^k(D_{\mathfrak c},\partial D_{\mathfrak c})\to W_kH^N(V_F,D_F)
+\]
+is surjective. Write $e=\sum\phi_{\mathfrak c}(e_{\mathfrak c})$. By Lemma~\ref{lem:openall} applied to $(D_{\mathfrak c},\partial D_{\mathfrak c})$, $e_{\mathfrak c}$ is the class of a global top form $\eta_{\mathfrak c}$ on $D_{\mathfrak c}$, and
+\[
+[H_F,\tsig_E,e]^{\m}=\sum_{\mathfrak c}\pm[H^k(D_{\mathfrak c},\partial D_{\mathfrak c}),\tsig_E\cap D_{\mathfrak c},\eta_{\mathfrak c}]^{\m}.
+\]
+By Proposition~\ref{prop:model}(iv), $(D_{\mathfrak c},\partial D_{\mathfrak c})\cong\prod_i(V_{Z_i},\partial V_{Z_i})$ and $\tsig_E\cap D_{\mathfrak c}=\prod_i\tsig_{Z_i}$. The $V_{Z_i}$ are affine, so $\mathcal O(\prod V_{Z_i})=\bigotimes\mathcal O(V_{Z_i})$, and $\eta_{\mathfrak c}$ is a finite sum of products of top forms on the factors. The external product of relative cohomology is a morphism in Nori's category \cite{HMS}, hence in $\mathcal H$, carrying the tensor products of the cycles and of the forms to their products; by \cite[\S2.2(ii)]{B1} and the definition of the product of motivic periods \cite[\S2]{B1}, each term is a product of elements of the $\Open(Z_i;\ff)$.
+\end{proof}
+
+\begin{lemma}[Letters of attached blocks]\label{lem:attach}
+Let $(Z;\ff)$ be a block attached at $v$. Every letter of it other than the $\alpha_J$ is $K_{N'}$ or $\Psi_{N'}$ for a child $N'$ of a table $N$ of $F_v$ carrying that letter, at a pattern of $E_v\setminus Z$.
+\end{lemma}
+
+\begin{proof}
+At the root this is Corollary~\ref{cor:blocks}: the block lists $N_{(T_0\setminus Z)}$ and $N_{(T_1\setminus Z)}$ are children of $N$ at patterns of $E\setminus Z$. Suppose it holds at a vertex on the way down, and the descent continues to a child.
+\begin{itemize}
+\item \emph{Split vertex.} $Z$ lies in a molecule $M_l$. Every table $N$ is the direct sum of its restrictions to the molecules (Lemma~\ref{lem:skeleton}(ii)), so its child at a pattern $q$ of $E_v\setminus Z$ is the child of $N|M_l$ at the pattern $q\cap M_l$ of $M_l\setminus Z$, and $N|M_l$ is a table of $F_v|M_l$ carrying the letters of $N$.
+\item \emph{Bunch vertex.} $Z\subseteq R$. A child of $N$ at a pattern $q$ of $E_v\setminus Z$ is the child of $N_{(q\cap B)}$ at the pattern $q\setminus B$ of $R\setminus Z$ (Lemma~\ref{lem:children}(ii)), and $N_{(q\cap B)}$ is a table of the peel carrying the letters of $N$, its exponents $\pi_{N,q\cap B}(s_N,t_N)$ vanishing exactly where those of $N$ do. \qedhere
+\end{itemize}
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:A}]
+Proposition~\ref{prop:weights} applied to $e=e_i$ gives the inclusion. A flag of dimension $k$ has $\sum_i(|Z_i|-1)=k$, so every block has at most $k+1$ elements. Attachment is Definition~\ref{def:attach}, and the letters are Lemma~\ref{lem:attach}.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:serif}]
+\emph{The forms.} On the torus $V_Z$ is the complement of the zero loci of the letters of the block, so a regular function on $V_Z$ is there a Laurent polynomial divided by a product of powers of these letters. Splitting the Laurent polynomial into its monomials writes $\eta$ as a finite sum of terms $c_t\,\alpha^{\mathbf a_t}\prod_gg^{-k_{t,g}}\,\Omega_Z/\alpha^{\mathbf 1}$, $k_{t,g}\ge0$, each the form $\omega_{F_t}$ of the family of the statement; $\eta$ has degree zero, so each $\mathbf a_t$ is balanced.
+
+\emph{The period.} For $\mathbf x\in\mathbb C^Z$ with $x_Z=0$ put $G(\mathbf x)=\int_{\tsig_Z}\alpha^{\mathbf x}\eta$, again the integral of a form of degree zero. In the chart of an ordering $\pi$ (Lemma~\ref{lem:charts}), $\eta=\pm g_\pi(\varepsilon)\,d\varepsilon$ with $g_\pi$ smooth near the cube, $\eta$ being regular near $\tsig_Z\subseteq V_Z$ (Proposition~\ref{prop:model}(i), for the letters of the block, which are $\ge1$ on the positive part of every chart), and $\alpha^{\mathbf x}=\prod_i\varepsilon_i^{x_{S_i}}$. So $G(\mathbf x)=\sum_\pi \operatorname{cube}(\mathbf x_\pi+\mathbf 1;g_\pi)$ with $\mathbf x_\pi=(x_{S^\pi_i})_i$, holomorphic for $\mathbf x$ near $0$. On the open cube Lemma~\ref{lem:charts} gives, with the same sign,
+\[
+g_\pi=\sum_tc_t\,\varepsilon^{\boldsymbol\kappa_\pi(F_t)-\mathbf 1}h_{t,\pi},\qquad h_{t,\pi}=\prod_g\widetilde g^{\,-k_{t,g}} .
+\]
+Choose $A\in\N$ with $\boldsymbol\kappa_\pi(F_t)+A\mathbf 1\ge\mathbf 1$ for every $t$ and $\pi$. By Lemma~\ref{lem:cube}, as meromorphic functions of $\mathbf x$,
+\begin{align*}
+\sum_tc_t\,\operatorname{cube}\big(\mathbf x_\pi+\boldsymbol\kappa_\pi(F_t);h_{t,\pi}\big)&=\sum_tc_t\,\operatorname{cube}\big(\mathbf x_\pi+\mathbf 1-A\mathbf 1;\varepsilon^{\boldsymbol\kappa_\pi(F_t)+(A-1)\mathbf 1}h_{t,\pi}\big)\\
+&=\operatorname{cube}\big(\mathbf x_\pi+\mathbf 1-A\mathbf 1;\varepsilon^{A\mathbf 1}g_\pi\big)=\operatorname{cube}(\mathbf x_\pi+\mathbf 1;g_\pi).
+\end{align*}
+Summing over $\pi$ and using Proposition~\ref{prop:continued}, with $\kappa_S(\mathbf a_t+\mathbf x)=\kappa_S(F_t)+x_S$,
+\[
+G(\mathbf x)=\sum_tc_t\,P_{F_t}(\mathbf a_t+\mathbf x)
+\]
+as meromorphic functions near $\mathbf x=0$. For $\mathbf x=\varepsilon\mathbf v$ with every $v_S\neq0$, no pole hyperplane $\kappa_S(F_t)+x_S=-j$ contains the line, so each term is meromorphic in $\varepsilon$. The sum is $G(\varepsilon\mathbf v)$, holomorphic at $0$ with value $\int_{\tsig_Z}\eta$, and the constant term is linear.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:B}}\label{sec:proofB}
+
+(i) By Lemma~\ref{lem:attach}, a letter of $Z$ is $K_{N'}$ or $\Psi_{N'}=K_{N'^\ast}$ for a child $N'$ of a table $N$ of $F_v$ at a pattern of $E_v\setminus Z$, and $B_v\setminus Z\subseteq E_v\setminus Z$. Lemma~\ref{lem:children}(iii) with $A=Z_B$ and $W=B_v\setminus Z$ gives
+\[
+c_{N'}(Z_B)\le c_N(B_v)\le c,
+\]
+and $c_{N'^\ast}=c_{N'}$. The $\alpha_J$ have rank one, so their width is at most one at every split; and $c\ge1$, since $F_v$ is a molecule and $\varnothing\neq B_v\subsetneq E_v$.
+
+(ii) is Definition~\ref{def:children} and Lemmas~\ref{lem:children}(i) and~\ref{lem:skeleton}(i), applied to $N'$ and, for a $\Psi$-letter, to its dual; the product over the roots holds because the leading coefficient is $g^{(d_g+c_g)}$.
+
+(iii) Let $\eta\in\Omega^{top}(V_Z)$. On the torus,
+\[
+\eta=\sum_tc_t\,\alpha^{\mathbf a_t}\prod_gg^{-k_{t,g}}\,\frac{\Omega_Z}{\alpha^{\mathbf 1}},
+\]
+a finite sum. A form of degree zero is integrated over any section (Lemma~\ref{lem:sections}(ii)); take the one with $A=Z_R$, so that $\alpha_{Z_R}=u'\in\Delta_{Z_R}$, and read $\alpha_{Z_B}=\rho u$, with $d\alpha_{Z_B}=\rho^{|Z_B|-1}d\rho\,d\omega(u)$ (Lemma~\ref{lem:sections}(i)). By (ii), $g(\rho u,u')=\rho^{d_g}\,g^{(d_g+c_g)}(u,u')\prod_i(\rho+\xi_{g,i})$, and $g^{(d_g+c_g)}=K_{N'|Z_B}(u)\,K_{N'/Z_B}(u')$. So the term $t$ is
+\[
+A_t(u)\,B_t(u')\,\rho^{a_t-1}\prod_{g,i}(\rho+\xi_{g,i})^{-k_{t,g}}\,d\rho\,d\omega(u)\,d\omega(u'),
+\]
+with $A_t=\pm c_t\,u^{\mathbf a_{t,Z_B}-\mathbf 1}\prod_gK_{N'|Z_B}(u)^{-k_{t,g}}$, $B_t=u'^{\,\mathbf a_{t,Z_R}-\mathbf 1}\prod_gK_{N'/Z_B}(u')^{-k_{t,g}}$ and $a_t=|\mathbf a_{t,Z_B}|-\sum_gk_{t,g}d_g$. The period $\int_{\tsig_Z}\eta$ converges absolutely, since $\eta$ is regular near the compact $\tsig_Z$. By Tonelli, for almost every $(u,u')$ the $\rho$-integral of the sum converges absolutely, and the period is the integral over $\Delta_{Z_B}\times\Delta_{Z_R}$ of it.
+
+At such a point the $\rho$-integral of the sum is its own finite part (Lemma~\ref{lem:reg}(iii)). Finite parts are linear, and every term is $\rho^{a_t-1}$ times a rational function of $\rho$ without poles on $[0,\infty)$, the Skeleton values lying off $(-\infty,0]$. So the $\rho$-integral of the sum is $\sum_tA_tB_t\,\mathrm{Sc}_t$. A term with $J_t$ empty integrates a power of $\rho$, whose finite part is zero (Lemma~\ref{lem:reg}(iv)). For a term with $J_t$ nonempty, $\mathrm{Sc}_t$ is the constant term at $\kappa=a_t$ of the scale integral $\int_0^\infty\rho^{\kappa-1}\prod_{g,i}(\rho+\xi_{g,i})^{-k_{t,g}}d\rho$, continued from the strip $0<\re\kappa<|\mathbf w_t|$ (Lemma~\ref{lem:reg}(v)), where it is the stacked Gamma times the Breta of the statement (Proposition~\ref{prop:scale}(i),(ii)). Both sides are meromorphic in $\kappa$, so their constant terms at $a_t$ agree.
+
+(iv) At width one, Lemma~\ref{lem:skeleton}(iii) gives each letter at most one Skeleton value,
+\[
+\xi_g=\frac{g^{(d_g)}}{g^{(d_g+1)}}=\frac{K_{N'/Z_R}(u)\,K_{N'|Z_R}(u')}{K_{N'|Z_B}(u)\,K_{N'/Z_B}(u')}=\frac{\gamma^g_R(u')}{\gamma^g_B(u)} ,
+\]
+positive. Fix $\kappa$ in the strip. The share side of Proposition~\ref{prop:scale}(iii), by Lemma~\ref{lem:split}, writes the stacked Gamma times the Breta as a share integral whose integrand is a product of share kernels, stacked Gammas of the shares, and of powers $\xi_g^{-b_g}=\gamma^g_R(u')^{-b_g}\gamma^g_B(u)^{\,b_g}$. On the contour the share kernels are absolutely integrable: each Beta corner of a split coefficient is at most $C(1+|\im a|)^{-2}$ in its share $a$ (Lemma~\ref{lem:split}), and the last one is at most its value at the real parts of its entries (Lemma~\ref{lem:dirichlet}), which are constant along the contour. Since $|\xi_g^{-b_g}|=\gamma^g_R(u')^{-\re b_g}\gamma^g_B(u)^{\re b_g}$ with $\re b_g$ constant along the contour, the integral of the absolute value of the integrand over the shares, the bunch and the room is the integral of the share kernels times the two integrals of the statement, and it is finite. So Fubini moves the integrals over $\Delta_{Z_B}$ and $\Delta_{Z_R}$ inside the share integral, where at fixed shares the integrand is a function of $u$ times a function of $u'$, and they separate. If $0<a_t<|\mathbf w_t|$, the scale integral converges at $\kappa=a_t$ and is $\mathrm{Sc}_t$ (Lemma~\ref{lem:reg}(iii)), and the argument runs at $\kappa=a_t$. Otherwise $\mathrm{Sc}_t$ is, at each $(u,u')$, the constant term at $a_t$ of the continuation (Lemma~\ref{lem:reg}(v)), as in (iii), and the argument runs on the strip.
+
+(v) By Lemma~\ref{lem:openall}, $L(H_F,\tsig_E)=\Open(E;\varnothing\subsetneq E)$. The block $E$ meets both $B$ and $R$, so it is a node piece of the root, and (iii) applies to every $\eta$. The left factors lie in $L(H_F,\tsig_E)$ by Lemma~\ref{lem:conj}(b). \qed
+
+For $\eta=\omega_F$ at the root, (iii) integrates the scale of the bunch at each pair of shapes, while the glue of Remark~\ref{rem:periodnode} integrates the shapes first, through the two laws.
+
+\section{Proofs of Theorems~\ref{thm:C} and~\ref{thm:D} and Corollary~\ref{cor:instances}}\label{sec:proofCD}
+
+\begin{proof}[Proof of Theorem~\ref{thm:C}]
+Write $\mathbf h=\{h_1,\dots,h_q\}$ and $r_{ij}=r(\mathcal A_{ij})$, so that $K_{\mathcal A_{ij}/g_i}$ and $\Psi_{\mathcal A_{ij}\setminus g_i}$ have the degrees $r_{ij}-1$ and $|R_i|-r_{ij}$.
+
+\emph{(iv)} is Lemma~\ref{lem:subst}(iv).
+
+\emph{The letters.} By Lemma~\ref{lem:subst}(ii) and the hypothesis, every active letter of $F$ reads the core at one point:
+\begin{gather*}
+K_{M_j}=\prod_iK_{\mathcal A_{ij}/g_i}(\alpha_{R_i})\ K_{\mathcal H_j}(x),\qquad \Psi_{M_j}=\prod_i\Psi_{\mathcal A_{ij}\setminus g_i}(\alpha_{R_i})\ \Psi_{\mathcal H_j}(x),\\
+x=\big(\alpha_L,\gamma_1(\alpha_{R_1}),\dots,\gamma_q(\alpha_{R_q})\big).
+\end{gather*}
+
+\emph{The map.} Each $\gamma_i$ is homogeneous of degree one, so
+\[
+\Phi:\PP(\Q^E)\dashrightarrow\PP(\Q^{L\sqcup\mathbf h})\times\prod_{i=1}^q\PP(\Q^{R_i}),\qquad[\alpha]\mapsto\big([x],[\alpha_{R_1}],\dots,[\alpha_{R_q}]\big),
+\]
+is well defined, between varieties of the same dimension $|E|-1$. Off the zero loci of the numerators and denominators of the $\gamma_i$ it restricts to an isomorphism between open subsets of the tori, with the inverse
+\[
+\alpha_L=x_L,\qquad \alpha_{R_i}=\frac{x_{h_i}}{\gamma_i(v_i)}\,v_i\qquad\text{at }\big([x],[v_1],\dots,[v_q]\big),
+\]
+well defined by the same homogeneity. Let $U_1$ be the complement in the torus of these zero loci, of those of the augmented letters of $F$, and of the pull-backs under $\Phi$ of the augmented letters of $F_{\mathcal H}$ and of the $G_i$; put $U_2=\Phi(U_1)$. All these polynomials are positive on the open positive cells, so $\Phi$ maps $\sigma^\circ_E$ bijectively onto $\sigma^\circ_{L\sqcup\mathbf h}\times\prod_i\sigma^\circ_{R_i}$.
+
+\emph{The forms.} Write $\alpha_{R_i}=\lambda_iv_i$ with $\lambda_i>0$ and $v_i$ on a section of the rays of $(0,\infty)^{R_i}$, so that $x_{h_i}=\lambda_i\gamma_i(v_i)$. In logarithmic coordinates $\Phi$ is the identity on $\log\alpha_L$ and on the $\log v_i$, and adds $\log\gamma_i(v_i)$ to $\log\lambda_i$: a shear, whose Jacobian determinant is one. So, with $\nu_Z=\Omega_Z/\alpha^{\mathbf 1}$,
+\[
+\Phi^\ast\Big(\nu_{L\sqcup\mathbf h}\wedge\bigwedge_i\nu_{R_i}\Big)=\pm\,\nu_E .
+\]
+The masses and the letters of the hinge minors are
+\begin{gather*}
+\alpha^{\bm}=\alpha_L^{\bm_L}\prod_i\lambda_i^{m_{R_i}}v_i^{\bm_{R_i}},\\
+K_{\mathcal A_{ij}/g_i}(\lambda_iv_i)=\lambda_i^{r_{ij}-1}K_{\mathcal A_{ij}/g_i}(v_i),\qquad\Psi_{\mathcal A_{ij}\setminus g_i}(\lambda_iv_i)=\lambda_i^{|R_i|-r_{ij}}\Psi_{\mathcal A_{ij}\setminus g_i}(v_i).
+\end{gather*}
+The total power of $\lambda_i$ in $\omega_F$ is therefore $m_{R_i}-\sum_j\big(s_j(r_{ij}-1)+t_j(|R_i|-r_{ij})\big)=\kappa_i$, and $\lambda_i^{\kappa_i}=x_{h_i}^{\kappa_i}\gamma_i(v_i)^{-\kappa_i}$. Hence
+\[
+\omega_F=\pm\,\Phi^\ast\Big(x_L^{\bm_L}\prod_ix_{h_i}^{\kappa_i}\prod_jK_{\mathcal H_j}^{-s_j}\Psi_{\mathcal H_j}^{-t_j}\,\nu_{L\sqcup\mathbf h}\ \wedge\ \bigwedge_i\gamma_i^{-\kappa_i}\,v_i^{\bm_{R_i}}\prod_jK_{\mathcal A_{ij}/g_i}^{-s_j}\Psi_{\mathcal A_{ij}\setminus g_i}^{-t_j}\,\nu_{R_i}\Big).
+\]
+The first factor is $\omega_{F_{\mathcal H}}$. In the $i$-th factor, $\gamma_i^{-\kappa_i}=\prod_j(\gamma^K_{\mathcal A_{ij}})^{-a_{ij}}(\gamma^\Psi_{\mathcal A_{ij}})^{-b_{ij}}$, because $a_{ij}\neq0$ only if $s_j\neq0$ and $b_{ij}\neq0$ only if $t_j\neq0$; multiplied out, the factor is $\omega_{G_i}$. So
+\[
+\Phi^\ast\big(\omega_{F_{\mathcal H}}\boxtimes\omega_{G_1}\boxtimes\cdots\boxtimes\omega_{G_q}\big)=\pm\,\omega_F,
+\]
+with the sign $+$ once the factors are oriented so that their periods are positive.
+
+\emph{Balance.} By Lemma~\ref{lem:subst}(i), $r(M_j)=r(\mathcal H_j)+\sum_i(r_{ij}-1)$, and the balance of $F$ becomes that of $F_{\mathcal H}$,
+\[
+m_L+\sum_i\kappa_i=\sum_j\Big(s_j\,r(\mathcal H_j)+t_j\big(|L|+q-r(\mathcal H_j)\big)\Big).
+\]
+The letters of $G_i$ have the total degree $\sum_j\big(s_j(r_{ij}-1)+t_j(|R_i|-r_{ij})\big)+\sum_j(a_{ij}+b_{ij})=m_{R_i}$, so $G_i$ is balanced.
+
+\emph{(i).} The integrands are positive, and by the change of variables and Tonelli $P_F=P_{F_{\mathcal H}}\prod_iP_{G_i}$ in $(0,\infty]$. So every factor is finite, and every family is convergent by Proposition~\ref{prop:model}(ii).
+
+\emph{(ii).} Apply Lemma~\ref{lem:birational} to the model of $F$ and to the product of the models of $F_{\mathcal H}$ and of the $G_i$, whose boundary and letters are the unions of the pull-backs from the factors. The external product $H_{F_{\mathcal H}}\otimes\bigotimes_iH_{G_i}\to H^N$ of the product model is a morphism in $\mathcal H$ \cite{HMS}, carrying the tensor products of the cycles and of the forms to their products; by \cite[\S2.2(ii)]{B1} and the definition of the product in $\mathcal P^{\m}$ \cite[\S2]{B1},
+\[
+P_F^{\m}=\Big[H_{F_{\mathcal H}}\otimes\bigotimes_iH_{G_i},\ \tsig\times\prod_i\tsig,\ \omega_{F_{\mathcal H}}\otimes\bigotimes_i\omega_{G_i}\Big]^{\m}=P_{F_{\mathcal H}}^{\m}\prod_iP_{G_i}^{\m},
+\]
+and Lemma~\ref{lem:conj}(c) gives the conjugates.
+
+\emph{(iii).} A cell is itself a substitution: $\mathcal A_{ij}=\binom{\{g_i,h\}}1\langle g_i,\mathcal A'_{ij}\rangle$, where $\mathcal A'_{ij}$ is a copy of $\mathcal A_{ij}$ with its hinge renamed $g'_i$, substituted at $h$ into the list of rank one on $\{g_i,h\}$, the mark $g_i$ left in place. Indeed the basis $\{h\}$ contributes the bases of $\mathcal A_{ij}\setminus g_i$, and the basis $\{g_i\}$ the sets $X+g_i$ with $X$ a basis of $\mathcal A_{ij}/g_i$. The wall of $R_i$ in $F_i$ is $\kappa_i$, by the formula above, and the hinge values are the same $\gamma_i$. The change of variables above, applied to $F_i$, gives $P_{F_i}=P_{F'_i}P_{G_i}$ in $(0,\infty]$ with the same pinned family $G_i$. Here $F'_i$ is the family of the lists $\binom{\{g_i,h\}}1$ at the exponents $(s_j,t_j)$, with the masses $2\sigma-\kappa_i$ on $g_i$ and $\kappa_i$ on $h$, whose form is $y_1^{2\sigma-\kappa_i}y_2^{\kappa_i}(y_1+y_2)^{-2\sigma}\,\nu_2$. Its period is the Beta corner $\Gst21{\kappa_i,\ 2\sigma-\kappa_i}{2\sigma}$ (Proposition~\ref{prop:scale} with one coefficient), finite since $1\le\kappa_i\le2\sigma-1$. So $F_i$ is convergent, by Proposition~\ref{prop:model}(ii), and (ii) applied to $F_i$ gives $P_{F_i}^{\m}=P_{F'_i}^{\m}P_{G_i}^{\m}$.
+
+The model of $F'_i$ is $\PP^1$ minus the point $y_1+y_2=0$, an affine line, relative to the two points $0$ and $\infty$. By the exact sequence
+\[
+H^0(\mathbb A^1)\to H^0(\{0,\infty\})\to H^1(\mathbb A^1,\{0,\infty\})\to H^1(\mathbb A^1)=0,
+\]
+$H^1(\mathbb A^1,\{0,\infty\})\cong\Q(0)$ in $\mathcal H$. So $P_{F'_i}^{\m}$ is a rational multiple of $[\Q(0),1,1]^{\m}=1$, namely its period, the Beta corner, a positive rational number at integer data.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:instances}]
+(a) By Lemma~\ref{lem:dualpair}(ii) every cell is read through the one hinge value $\gamma_i=k_i/\psi_i$, whatever $s$ and $t$. Since $K_{\mathcal A_i/g_i}=\Psi_{\mathcal A_i\setminus g_i}$ and $\Psi_{\mathcal A_i/g_i}=K_{\mathcal A_i\setminus g_i}$, the two tables of $G_i$ carry together the letters $K_{\mathcal A_i\setminus g_i}^{-(a_i+b_i)}\Psi_{\mathcal A_i\setminus g_i}^{-(s+t-a_i-b_i)}$, those of $(\mathcal A_i\setminus g_i;\kappa_i,s+t-\kappa_i)$, and $\mathcal A_i\setminus g_i=M|R_i$ (Lemma~\ref{lem:subst}(iii)). By Lemma~\ref{lem:dualpair}(i), $|R_i|-r_i=r_i-1$, so $\kappa_i=m_{R_i}-(s+t)(r_i-1)$.
+
+(b) Let $t=0$; the case $s=0$ is the same with $\Psi$. Only $K_M$ is active, so $\gamma_i=\gamma^K_{\mathcal A_i}$ meets the hypothesis of Theorem~\ref{thm:C} for every substitution. $M$ is connected: a separator $E_1$ would have $\kappa_{E_1}+\kappa_{E\setminus E_1}=0$ on the balance wall (Lemma~\ref{lem:compwalls}). We induct on $|E|$.
+
+If $M$ has a set $R$ of width one with $|R|,|E\setminus R|\ge2$, then $M=\mathcal H\langle\mathcal A\rangle$ with the marks of $L=E\setminus R$ left in place, $\mathcal H$ and $\mathcal A$ the cells of $L$ and of $R$ (Lemma~\ref{lem:cellofset}), both connected (Lemma~\ref{lem:subst}(v)) and on fewer marks. Theorem~\ref{thm:C}(ii),(iii) at $q=1$ give
+\[
+P_F^{\m}=\Gst21{\kappa_R,\ s-\kappa_R}{s}^{-1}P^{\m}_{(\mathcal H;s,0)}\,P^{\m}_{(\mathcal A;s,0)},
+\]
+the two families convergent at the masses $(\bm_L,\kappa_R)$ and $(\bm_R,s-\kappa_R)$, with $s-\kappa_R=\kappa_L$ (Lemma~\ref{lem:compwalls}).
+
+Otherwise $M$ is prime, or it has at most three marks. A connected list on two marks is $\binom S1$, and one on three marks is $\binom S1$ or $\binom S2$, a parallel or a series node; for any of its marks $g$, a list on three marks is $\binom{\{g,h\}}1\langle g,M'\rangle$ as in the proof of Theorem~\ref{thm:C}(iii). Theorem~\ref{thm:C}(ii) writes its motivic period as that of a family of $\binom{\{g,h\}}1$ times that of a pinned family on the other two marks, whose letters are among $\alpha_1+\alpha_2$, the monomial $\alpha_1\alpha_2$ and constants; the monomial has no zero on the torus and only shifts the masses. A family of $\binom S1$ on two marks at integer masses $a,b\ge1$ has the rational motivic period $\Gst21{a,\ b}{a+b}$, by the end of the proof of Theorem~\ref{thm:C}(iii). So the nodes on at most three marks contribute positive rationals, and the induction gives $P_F^{\m}=c\prod_vP^{\m}_{F_v}$. The conjugates follow by Lemma~\ref{lem:conj}(c), a nonzero rational factor changing nothing.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:D}]
+By Lemma~\ref{lem:compwalls} on the balance wall, $\kappa_S+\kappa_{S'}=w$, and $\kappa_S,\kappa_{S'}\ge1$; so $0<\kappa_S<w$. By Lemma~\ref{lem:bunchpiece}, $S$ is a piece and $S'$ a partner, glued into $F$.
+
+\emph{(i) and the seam vector.} The scale form has a positive continuous density on the open simplex, the letters being positive there, and the seam vector is continuous. So $\mu_S$ is carried by one point exactly when the seam vector is constant, $\bx_0$ say, and then $\mu_S=c\,\delta_{\bx_0}$ with $c=\int_{\Delta_S}\phi_S$. This $c$ is finite: by Lemma~\ref{lem:glue}(i), $P_F=c\,P_{S'^{(\bx_0)}}$, with $P_F<\infty$ and $P_{S'^{(\bx_0)}}>0$.
+
+\emph{(ii)$\Rightarrow$(i).} A table of width zero at $S$ has one station (Lemma~\ref{lem:bunchpiece}(iii)), and its coordinates of the seam vector are $1$. A table of width one has the coordinates displayed after Definition~\ref{def:law}: $1$, $\gamma^K_{j,S}/\gamma^\rho_S$, $\gamma^\Psi_{j,S}/\gamma^\rho_S$ and $1$. Under (ii), $\gamma^\rho_S=\prod_j\gamma^{(s_j+t_j)c_j/w}=\gamma$, and every coordinate is $1$.
+
+\emph{(i)$\Rightarrow$(ii).} Let the seam vector be the constant $\bx_0$. For every active $K_{N_j}$, $V_{jD}=x_{0,jD}\,V^{(0)}_j\,(\gamma^\rho_S)^{i(D)}$, and by the room-station factorization
+\[
+K_{N_j}=\sum_DV_{jD}\,y_{jD}=V^{(0)}_j(\alpha_S)\sum_Dx_{0,jD}\,\gamma^\rho_S(\alpha_S)^{i(D)}\,y_{jD}(\alpha_{S'}).
+\]
+So $K_{N_j}$ reads $S$ through the one function $\gamma^\rho_S$, positive and homogeneous of degree one, and Lemma~\ref{lem:onehinge} gives $c_{N_j}(S)\le1$; likewise for every active $\Psi_{N_j}$, with $V^{\ast(c_j)}_j$ and $(\gamma^\rho_S)^{c_j-i(D)}$. At width one the coordinates above are constant, so the active hinge values are positive multiples of $\gamma^\rho_S$. They are then equal. A relation $\gamma^K_{j,S}=\mu\,\gamma^\Psi_{j',S}$, for instance, reads $K_{N_j|S}\Psi_{N_{j'}|S}=\mu\,K_{N_j/S'}\Psi_{N_{j'}/S'}$. Along a maximal chain of subsets of $S$ the bottom level of each of these four letters is one monomial with coefficient $1$ (Corollary~\ref{cor:blocks}). The floors of a product of two polynomials with nonnegative coefficients are the sums of their floors, and its terms at all its floors at once are the products of theirs; so the bottom levels of the two sides are a monomial with coefficient $1$ and $\mu$ times one, and $\mu=1$. Likewise for the other pairs. Their common value is $\gamma$, and $\gamma^\rho_S$, a weighted geometric mean of them, is $\gamma$.
+
+\emph{(i)$\Rightarrow$(iii)$\Rightarrow$(iv)$\Rightarrow$(i).} The first is Lemma~\ref{lem:glue}(i) with the law $c\,\delta_{\bx_0}$; the second holds because the station transform is the period of the glue with the partners on one mark (Definition~\ref{def:transform}); the third is Lemma~\ref{lem:probe}.
+
+\emph{The rest.} Under (ii) the computation above gives $\bx_0=\mathbf 1$, and Lemma~\ref{lem:glue}(i) with $Z=S'$ gives $P_F=c\,P_{S'^{(\mathbf 1)}}$. If $|S|\ge2$ and every active table has width one at $S$, Lemma~\ref{lem:cellofset} writes each active table as $\mathcal A_{S'}\langle\mathcal A_S\rangle$, with $\mathcal A_S\setminus g=N_j|S$ and $\mathcal A_S/g=N_j/S'$; tables without an active letter can be dropped. The hinge values of $\mathcal A_S$ are $\gamma^K_{j,S}$ and $\gamma^\Psi_{j,S}$, so (ii) is the hypothesis of Theorem~\ref{thm:C} with $q=1$, $L=S'$ and $R_1=S$. At $\bx_0=\mathbf 1$ the letters of $S'^{(\mathbf 1)}$ are $K_{N_j|S'}+\alpha_gK_{N_j/S}$ and $\alpha_g\Psi_{N_j|S'}+\Psi_{N_j/S}$, those of $\mathcal A_{S'}$ with its hinge at $g$ (Lemma~\ref{lem:bunchpiece}(iii)), and its masses are $(\bm_{S'},\kappa_S)$: $S'^{(\mathbf 1)}$ is the core family. And $c=\int_{\Delta_S}u^{\bm_S-\mathbf 1}\prod_jK_{N_j/S'}^{-s_j}\Psi_{N_j|S}^{-t_j}\gamma^{-\kappa_S}d\omega_S$ is the period of the pinned family (Lemma~\ref{lem:sections}). Theorem~\ref{thm:C}(ii) is the identity of motivic periods.
+
+\emph{One list.} With both letters active, $w=(s+t)c_M(S)>0$, so (ii) says that $S$ has width one and $\gamma^K_S=\gamma^\Psi_S$, that is $\varrho_S=1$: $\mathbf E_N=\mathbf E_{N'}$ for $N=M|S$ and $N'=M/S'$, of the ranks $r$ and $r-1$ (Lemma~\ref{lem:skeleton}(iii)). Let $N$ and $N'$ be connected. The basis polynomial of a connected list $N$ on $|S|\ge2$ marks is irreducible \cite[Thm.~7.9, p.~49]{F}: it has degree at most one in each variable and contains every variable, $N$ having no loop and no coloop; so in a factorization $K_N=fg$ into non-constant factors, homogeneous as factors of a homogeneous polynomial, the two factors involve disjoint nonempty sets of variables, $X$ and $S\setminus X$, the monomials of $fg$ are the products of those of $f$ and of $g$ without cancellation, and every basis of $N$ meets $X$ in $\deg f$ marks: $X$ would be a separator. With $N$ and $N'$ connected, so are $N^\ast$ and $N'^\ast$, since $c_{N^\ast}=c_N$. So $\mathbf E_N=K_NK_{N^\ast}$ and $\mathbf E_{N'}=K_{N'}K_{N'^\ast}$ are two factorizations of one polynomial into irreducible polynomials with coefficients $0$ and $1$; unique factorization in the polynomial ring, by which \cite[Thm.~10.6, p.~65]{F} reads a potential factor by factor, gives $\{K_N,K_{N^\ast}\}=\{K_{N'},K_{N'^\ast}\}$, and the degrees $r\neq r-1$ force $K_N=K_{N'^\ast}$, that is $N'=N^\ast$. Conversely a dual pair has $\varrho_S=1$ by Lemma~\ref{lem:dualpair}(ii).
+\end{proof}
+\begin{thebibliography}{HMS}
+\bibitem[B1]{B1} F.~Brown, \emph{Notes on motivic periods}, Commun.\ Number Theory Phys.\ \textbf{11} (2017), 557--655; arXiv:1512.06410.
+\bibitem[B2]{B2} F.~Brown, \emph{Feynman amplitudes, coaction principle, and cosmic Galois group}, Commun.\ Number Theory Phys.\ \textbf{11} (2017), 453--556; arXiv:1512.06409.
+\bibitem[B3]{B3} F.~Brown, \emph{Mellin transforms, transfinite diameter and rational approximations of integrals}, arXiv:2604.20741 (2026).
+\bibitem[F]{F} B.~G.~Vandeberg, \emph{The Foreman and the serif family: handbook of the general definitions, constructions and theorems}, unpublished, version of 20 October 2026; cited by its printed numbers and pages.
+\bibitem[HMS]{HMS} A.~Huber, S.~M\"uller-Stach, \emph{Periods and Nori Motives}, Ergeb.\ Math.\ Grenzgeb.\ 65, Springer, 2017.
+\bibitem[Hi]{Hi} H.~Hironaka, \emph{Resolution of singularities of an algebraic variety over a field of characteristic zero}, Ann.\ of Math.\ \textbf{79} (1964), 109--326.
+\bibitem[Sch]{Sch} O.~Schnetz, \emph{Quantum periods: a census of $\phi^4$-transcendentals}, Commun.\ Number Theory Phys.\ \textbf{4} (2010); arXiv:0801.2856.
+\end{thebibliography}
+
+\end{document}
