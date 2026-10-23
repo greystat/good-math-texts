@@ -50,7 +50,7 @@
 \newcommand{\recalled}{\textup{[recalled]}}
 \newcommand{\notyet}{\textup{[not yet computed]}}
 
-\title{Foreman notebook, \S\S15--17\\[4pt]\large The centre ray read off the list; the five-mark lists along their hinge trees; the masters of $\binom{[5]}2$ and two marks doubled, closed}
+\title{Foreman notebook, \S\S15--19\\[4pt]\large The centre ray read off the list; the five-mark lists along their hinge trees; the masters of $\binom{[5]}2$ and two marks doubled, closed; the reading of a ray through the origin; the three-mark centre, set as an examination}
 \date{22--23 October 2026}
 \author{}
 
@@ -1139,5 +1139,629 @@ all below $\Pth$, the error shrinking by $0.1112$ per step at $q=30$, towards $\
 \item The other weights $A_s$, $B_s$, $R_s$, and $C_s$ for $s\ge2$, of $\binom{[5]}2$, as periods of the surface $e_2^2=e_1e_3$ at its $\mathbb Q(\sqrt{-5})$ point. \notyet
 \item $\mathrm M(K_4)$, opened at a mark into $K_4\setminus e$ and $K_4/e$, the latter the triangle with two marks doubled closed here. \notyet
 \end{enumerate}
+
+
+\renewcommand{\thesection}{18}
+\setcounter{proposition}{0}
+\renewcommand{\theproposition}{18.\arabic{proposition}}
+
+\section{The reading of a ray through the origin}
+
+Remark~\ref{r:paper} read the three-mark centre off its law, and Remark~\ref{r:leaf} found the same exchange rate on four rays. This entry states that reading for every ray through the origin of every family, as derived statements, and runs it where \S\S15--17 had not looked: off the centre, at a lean of three marks, and on the one connected list on four marks that had not been read. The receipts are in the script ray\_reading\_s18.py (python-flint, exact arithmetic and ball arithmetic, no quadrature in the procedure).
+
+Throughout, a \emph{ray through the origin} is a ray of Def.~35.1, p.~307, with origin $0$ and an integral direction $(\mvec_1;\mathbf s_1,\mathbf t_1)$ on the balance wall, $s_{1j},t_{1j}\in\mathbb N$, all of whose proper walls are positive, $\kappa_{1,S}>0$ for every nonempty proper $S$. Its values and its stride are
+\[
+P(k)=P_F(k\mvec_1;k\mathbf s_1,k\mathbf t_1)=\int_{y_{e_0}=0}f^k\,dy\quad(k\ge1),\qquad f=\alpha^{\mvec_1}\prod_jK_j^{-s_{1j}}\Psi_j^{-t_{1j}},
+\]
+with $\alpha^\star$ the native gauge of the direction on the orthant, where $f$ takes its largest value $f(\alpha^\star)$ there (Thm.~35.10(i), p.~309). The centre ray of Def.~35.9, p.~309, is the case $\mvec_1=\sigma\one$, $\mathbf s_1=\mathbf t_1=\boldsymbol\sigma$.
+
+\subsection*{18.1\quad One pencil, two chains}
+
+\begin{proposition}[The closings of a direction]\label{p:dirclose}\derived\
+Put $x_j=[\alpha^0]\,(1/f)^j$ for $j\in\mathbb N$, the constant terms of the powers of the Laurent polynomial $1/f=\alpha^{-\mvec_1}\prod_jK_j^{s_{1j}}\Psi_j^{t_{1j}}$, and
+\[
+\mathrm{Cor}=\sum_\pi\prod_{i=2}^n\kappa_{1,U_i}^{-1},
+\]
+the sum over the orders $\pi$ of $\cE$, with tails $U_i=\{\pi(i),\dots,\pi(n)\}$. Then $P$ continues meromorphically in $k$, with its poles at negative rational $k$, and
+\[
+\lim_{k\to-j}(k+j)^{n-1}P(k)=\mathrm{Cor}\cdot x_j\qquad(j\in\mathbb N).
+\]
+At the centre this is Proposition~\ref{p:negcorner}: there $1/f=\prod_j(K_j\Psi_j/\alpha^{\cE})^{\sigma_j}$ and $\kappa_{1,S}=\sum_j\sigma_jc_j(S)$.
+\end{proposition}
+
+\begin{proof}
+In the sector coordinates of Thm.~8.7(ii), p.~55, $\alpha_{\pi(1)}=\rho$, $\alpha_{\pi(i)}=\rho\,q_2\cdots q_i$, one has $K_j=\rho^{r_j}\prod_iq_i^{d_j(U_i)}k_{j,\pi}$, $\Psi_j=\rho^{n-r_j}\prod_iq_i^{d^\ast_j(U_i)}\psi_{j,\pi}$ and $\alpha^{\mvec_1}=\rho^{m_{1,\cE}}\prod_iq_i^{m_1(U_i)}$, so by the balance of the direction
+\[
+f=\prod_{i=2}^nq_i^{\kappa_{1,U_i}}\,\varphi_\pi(q),\qquad \varphi_\pi=\prod_jk_{j,\pi}^{-s_{1j}}\psi_{j,\pi}^{-t_{1j}},
+\]
+and by Thm.~8.10, p.~56, $P(k)=\sum_\pi\int_{[0,1]^{n-1}}\prod_iq_i^{k\kappa_{1,U_i}-1}\varphi_\pi(q)^k\,dq$. The sector letters have nonnegative coefficients and positive constant terms (Lemma~8.5, p.~55), so $(1/\varphi_\pi)^j=\sum_vc_{\pi,v}q^v$ is a polynomial. At $k=-j+\varepsilon$ write $\varphi_\pi^{k}=(1/\varphi_\pi)^j\varphi_\pi^{\varepsilon}$. By Lemma~8.6, p.~55, the term $q^v$ has a pole in $\varepsilon$ of order at most the number of $i$ with $v_i=j\kappa_{1,U_i}$, so the pole of order $n-1$ comes from $v=j\kappa_1$ alone, with the leading coefficient $c_{\pi,j\kappa_1}\prod_i\kappa_{1,U_i}^{-1}$. Finally $c_{\pi,j\kappa_1}=[q^0]\big(\prod_iq_i^{-\kappa_{1,U_i}}/\varphi_\pi\big)^j$ is the constant term of $(1/f)^j$ in the sector coordinates, and $\alpha^v\mapsto\prod_iq_i^{v(U_i)}$ is injective on exponents of degree zero, so it is $x_j$ for every $\pi$.
+\end{proof}
+
+\begin{corollary}[The law and its closings]\label{c:dirlaw}\derived\
+If $\sum_{i=0}^hc_i(k)P(k+i)=0$ identically, then $\sum_{i=0}^{\min(h,j)}c_i(-j)\,x_{j-i}=0$ for every $j\in\mathbb N$, and $c_0$ vanishes to order at least $n-1$ at $0$, with
+\[
+[k^{n-1}]c_0\cdot\mathrm{Cor}+\sum_{i\ge1}c_i(0)\,P(i)=0 .
+\]
+\end{corollary}
+
+\begin{proof}
+As Corollary~\ref{c:law}, with Proposition~\ref{p:dirclose} in place of Proposition~\ref{p:negcorner}; the second statement is the case $j=0$, $x_0=1$.
+\end{proof}
+
+So a law of the values is the recurrence of the integers $x_j$ read backwards, and reading it is exact linear algebra on integers. The converse, that the least recurrence of the $x_j$, reflected, is a law of $P$, is what a certificate of Thm.~35.3, p.~308, settles, as in Proposition~\ref{p:certs}.
+
+\begin{remark}[The torus and the chart]\label{r:twochains}\derived\
+The two sequences are one integrand on two chains. For $|q|<f(\alpha^\star)^{-1}$, $\sum_{k\ge1}P(k)q^{k-1}=\int_{y_{e_0}=0}f/(1-qf)\,dy$ (Thm.~35.10(ii) with $k_0=1$). On the torus $T=\{|\alpha_e|=1\}$, where $|1/f|\le(1/f)(\one)$ because $1/f$ has nonnegative coefficients, expanding in $1/(qf)$ gives for $|q|>f(\one)^{-1}$
+\[
+\sum_{j\ge0}x_j\,q^{-j-1}=-\frac1{(2\pi i)^{n-1}}\oint_{T}\frac{f}{1-qf}\prod_{e\ne e_0}\frac{d\alpha_e}{\alpha_e}.
+\]
+The pencil $\prod_jK_j^{s_{1j}}\Psi_j^{t_{1j}}-q\,\alpha^{\mvec_1}$ of Thm.~35.10 carries both: the positive chart gives its solution at $q=0$, whose coefficients are the periods, and the torus its solution at $q=\infty$, whose coefficients are integers for a list. Corollary~\ref{c:dirlaw} is the one equation, inhomogeneous by its boundary terms, read at its two ends, and $\mathrm{Cor}$ is the ratio of the two normalizations.
+\end{remark}
+
+\subsection*{18.2\quad The slit}
+
+\begin{proposition}[The ray lives on the slit plane]\label{p:slit}\derived\
+$G(q)=\int_{y_{e_0}=0}f/(1-qf)\,dy$ is holomorphic on $\mathbb C\setminus[f(\alpha^\star)^{-1},\infty)$, and it continues $\sum_{k\ge1}P(k)q^{k-1}$.
+\end{proposition}
+
+\begin{proof}
+On the chart $0<f\le f(\alpha^\star)$ (Thm.~35.10(i)). For $q$ off the slit the segment $q\cdot(0,f(\alpha^\star)]$ misses $1$, so $|1-qf|$ is bounded below by the distance from $1$ to that segment, locally uniformly in $q$, and $\int f\,dy=P(1)<\infty$; dominated convergence gives holomorphy. On $|q|<f(\alpha^\star)^{-1}$ the integral is the series.
+\end{proof}
+
+\begin{theorem}[Positive selection]\label{t:select}(i)--(iii) \derived; the count in (iii) \computed\ on every ray below.\
+Let $\sum_{i=0}^hc_i(k)P(k+i)=0$ be a law of a ray through the origin, $c_0c_h\ne0$, let $D$ be the largest degree of the $c_i$, and $\chi(\lambda)=\sum_i[k^D]c_i\,\lambda^i$ its symbol, with roots $\lambda_c$; it vanishes at the native value of every nondegenerate native gauge (Cor.~35.6, p.~308), and a root need not be a native value.
+\begin{enumerate}[label=(\roman*)]
+\item For every solution $(x_k)_{k\ge1}$ of the law, $X(q)=\sum_kx_kq^{k-1}$ satisfies a linear differential equation in $q$ with polynomial coefficients, inhomogeneous by a polynomial that depends linearly on $x_1,\dots,x_h$; in $\mathbb C^\times$ its singular points are the $q_c=1/\lambda_c$. So $X$ continues along every path in $\mathbb C^\times$ that avoids them.
+\item The values are the solution whose $X$ is holomorphic on $\mathbb C\setminus[f(\alpha^\star)^{-1},\infty)$ (Proposition~\ref{p:slit}): holomorphic at every $q_c$ off the slit, that is at every root $\lambda_c\notin(0,f(\alpha^\star)]$.
+\item At a singular point $q_c$, holomorphy of $X$ is $\nu_c$ linear conditions on $(x_1,\dots,x_h)$, $\nu_c$ the number of independent local solutions of the equation that are not holomorphic there, at most the multiplicity of $\lambda_c$ as a root of $\chi$. At a simple root that is the native value of a nondegenerate native gauge it is one: the branch of Thm.~35.11, p.~310, read at that gauge in place of $\alpha^\star$, of exponent $\frac{n-3}2$, with a logarithm for odd $n$. With the corner of Corollary~\ref{c:dirlaw}, if $1+\sum_{q_c\text{ off the slit}}\nu_c=h$ and the conditions are independent, the law, the corner and positivity determine the values.
+\item Then, for a basis $x^{(0)},\dots,x^{(h-1)}$ of rational solutions fixed by the corner, $P=x^{(0)}+\sum_{i\ge1}M_ix^{(i)}$, and the $M_i$ are the limits as $K\to\infty$ of the solutions of $x^{(0)}_{K+l}+\sum_iM_ix^{(i)}_{K+l}=0$, $0\le l<h-1$, with error $O\big((f(\alpha^\star)/\min_{c\ne\star}|\lambda_c|)^K\big)$ up to powers of $K$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Multiply the law by $q^{k-1}$ and sum over $k\ge1$: $k$ acts as $q\partial_q+1$, a shift by $i$ as $q^{-i}$ after removing the first $i$ terms, which leaves a polynomial. The coefficient of the top power of $q\partial_q$ is $\sum_i[k^D]c_i\,q^{-i}$, which vanishes in $\mathbb C^\times$ exactly where $\chi(1/q)=0$. (ii) Proposition~\ref{p:slit}. (iii) The inhomogeneity is holomorphic at $q_c$, so the singular part of $X$ there lies in the span of the local homogeneous solutions that are not holomorphic, with coefficients linear in $(x_1,\dots,x_h)$. At a nondegenerate native gauge the value over a steepest-descent disc (Thm.~35.5, p.~308) gives one branch of exponent $\frac{n-1}2-1$; Thm.~35.11 is this computation at $\alpha^\star$, and it is local. (iv) The coefficients of $X$ grow at the rate $|\lambda_c|$ of the singular point nearest $0$ at which $X$ is singular. The rational solutions are singular at the $q_c$ off the slit and $P$ is not, so the combination annihilating their $h-1$ largest rates is $P$, and its own size $f(\alpha^\star)^K$ against the smallest of the others is the error.
+\end{proof}
+
+\begin{procedure}[The reading of a ray]\label{p:reading}
+(1) From the family and the direction write $1/f$ and the walls $\kappa_{1,S}$, and $\mathrm{Cor}$ (Proposition~\ref{p:dirclose}). (2) The closings $x_j=[\alpha^0](1/f)^j$, exactly. (3) Their least recurrence by exact linear algebra, reflected (Corollary~\ref{c:dirlaw}): the law; its certificate by Thm.~35.3 as in Proposition~\ref{p:certs}. (4) The native values, the roots of the symbol, and the native gauges, the critical points of $\log f$: the signs and what a lean moves them to, and families. (5) The seeds: the corner, and a second corner wherever $c_0$ and $c_1$ share a zero (\S15.4). (6) Positivity, Theorem~\ref{t:select}(iii)--(iv): the masters as limits of rational solutions, at the rate $f(\alpha^\star)/\min_{c\ne\star}|\lambda_c|$. (7) Integer relations among the masters and against the members already in use; what is left over $\mathbb Q$ are the masters of the ray.
+\end{procedure}
+
+\begin{remark}[What sits on the slit]\label{r:onslit}
+Positivity says nothing at a native value in $(0,f(\alpha^\star))$. For a ray strictly inside its walls $f$ has one critical point on the orthant (Thm.~8.18(ii)--(iii), p.~58), so such a value would sit at a native gauge off the orthant; on every ray strictly inside its walls read in \S\S15--18 there is none. On a ray along walls the slit carries the faces: on the line $1$ of $\binom{[5]}2$ (\S17.1) the native values $\frac13$ and $\frac14$ of Proposition~\ref{p:u25roots} lie below $\frac49$, they come from strata at the boundary of the chart, and the constants there are the faces' own, the three-mark centre among them (Theorem~\ref{t:u25masters}). That is Thm.~35.15, p.~312, read on the slit.
+\end{remark}
+
+\subsection*{18.3\quad Off the centre: a lean of three marks}
+
+The centre is the fixed point of Cremona (Thm.~8.13, p.~57), where both letters take one exponent; a lean gives them two. For $\binom{\cE}1$, $K=\sum_e\alpha_e$ and $\Psi=\alpha^{\cE}\sum_e\alpha_e^{-1}$, and at uniform masses $m\one$ the balance is $nm=s+(n-1)t$.
+
+\begin{proposition}[The lean is the index of the Gramma]\label{p:leanindex}\derived; receipt \computed\
+For masses $\mvec$ on the balance wall and $\re s,\re t>0$,
+\[
+\Gamma(s)\Gamma(t)\,P_{\binom{\cE}1}(\mvec;s,t)=\int_0^\infty y^{t-1}\prod_{e\in\cE}\sG_{m_e-t;(1,-1)}(1,y)\,dy ,\qquad \sum_e(m_e-t)=s-t .
+\]
+At the centre this is Proposition~\ref{p:bananapin}; the lean and the offsets move the index slots of the marks' Grammas. In the direction $(2\one;4,1)$ of three marks, $P_{\binom{[3]}1}(2\one;4,1)=\frac16\int_0^\infty\sG_{1;(1,-1)}(1,y)^3\,dy=0.030080945282262304399884274898349847\ldots$ in ball arithmetic.
+\end{proposition}
+
+\begin{proof}
+On the share side (Proposition~\ref{p:share}) the mark $e$ carries the share $a_e$ of the basis $\{e\}$ in $K$ and the share $b_e$ of the cobasis $\cE\setminus e$ in $\Psi$, and the pin at $e$ reads $a_e+\sum_{e'\ne e}b_{e'}=m_e$, that is $a_e=b_e+m_e-t$. So each mark carries $\Gamma(b_e+m_e-t)\Gamma(b_e)$, the share kernel of $\sG_{m_e-t;(1,-1)}(1,y)$ (Prop.~4.2, p.~25), and the Mellin read of the product pins $\sum_eb_e=t$, as in Proposition~\ref{p:bananapin}.
+\end{proof}
+
+\begin{proposition}[The native gauges of a lean of $\binom{\cE}1$]\label{p:leangauges}\derived\
+In the direction $(m\one;s,t)$, $s\ne t$, put $u_e=\alpha_e/K(\alpha)$, $v_e=\alpha_e^{-1}/K(\alpha^{-1})$ and $\lambda=\big(K(\alpha)K(\alpha^{-1})\big)^{-1}$. At a native gauge $su_e-tv_e=\frac{s-t}n$ and $u_ev_e=\lambda$ for every $e$, so every $u_e$ is a root of $su^2-\frac{s-t}nu-t\lambda=0$; with $j$ marks at one root $u_-$ and $n-j$ at the other $u_+$,
+\[
+(n-2j)\,u_+=1-j\,\frac{s-t}{ns},\qquad f=\Big(\prod_eu_e\Big)^{\frac{s-t}n}\lambda^t .
+\]
+At $s=t$ the two roots are $\pm u_+$ and this is Proposition~\ref{p:onlysigns}. For three marks in the direction $(2\one;4,1)$: $j=0$ is the table's gauge, $f=\frac1{243}$; $j=1$ is $\alpha\propto(3,3,-2)$ and its images, $f=-\frac{27}{64}$, the sign $(1,1,-1)$ moved along the real line.
+\end{proposition}
+
+\begin{proof}
+Nativity is $m=sR_e(\alpha)+tR^\ast_e(\alpha)$ with $R_e=u_e$ and $R^\ast_e=1-v_e$ (Thm.~7.14, p.~50), and $u_ev_e=1/\big(K(\alpha)K(\alpha^{-1})\big)$ for every $e$. The $u_e$ sum to $1$, which fixes $u_+$. For the value, $\alpha^{\one}=K(\alpha)^n\prod_eu_e$ and $K(\alpha^{-1})=1/(K(\alpha)\lambda)$, and the powers of $K(\alpha)$ cancel by the balance.
+\end{proof}
+
+\noindent Receipts \computed. The walls of $(2\one;4,1)$ are $2$ on marks and $3$ on pairs, so $\mathrm{Cor}=6/(2\cdot3)=1$. The closings are $x_j=(4j)!\,j!\sum_{b_1+b_2+b_3=j}\prod_f\big(b_f!\,(b_f+j)!\big)^{-1}=1,36,4620,762300,140216076,\dots$; sixty of them have a least recurrence of order $2$ and degree $6$, and reflected it is the law
+\begin{gather*}
+-3k^2(3k+1)(3k+2)(265k^2+636k+383)\,P(k)\\
++(1721705k^6+7575502k^5+13047276k^4+11068046k^3+4766659k^2+965100k+75600)\,P(k+1)\\
++972(k+1)^2(4k+5)(4k+7)(265k^2+106k+12)\,P(k+2)=0,
+\end{gather*}
+$P(k)=P_{\binom{[3]}1}(2k\one;4k,k)$, with the symbol $265(243\lambda-1)(64\lambda+27)$: the two native values of Proposition~\ref{p:leangauges}, which were read off the list before the closings were computed. The corner gives $12600\,P(1)+68040\,P(2)=383$; positivity gives
+\[
+P_{\binom{[3]}1}(2\one;4,1)=0.0300809452822623043998842748983498467336738511\ldots,
+\]
+about two digits per step (the rate $\frac{64}{6561}$), against $0.95$ for the centre, and Proposition~\ref{p:leanindex} confirms it. Over $\mathbb Q$,
+\[
+54\,P_{\binom{[3]}1}(2\one;4,1)=11-4\,\Pth\qquad(380\text{ digits}).
+\]
+The Cremona partner $(3\one;1,4)$ has the same closings, by $\alpha\mapsto\alpha^{-1}$, and the same law. So the lean is a new coordinate system on the content of the centre: a different law, different native gauges, a different corner, the same master.
+
+The rational coordinates of this ray do not give a gap (Thm.~34.3, p.~300): on $(1,\Pth)$ their denominators beyond $d_k^2$ grow like $e^{8.7k}$, with primes of the apparent factor $265k^2+\cdots$ among them, against the decay $243^{-k}=e^{-5.49k}$ \computed; at the centre the excess is $3^{1.88k}$, against $9^{-k}$.
+
+\subsection*{18.4\quad The fourth list on four marks}
+
+On four marks the connected lists are $\binom{[4]}1$, $\binom{[4]}2$, $\binom{[4]}3$ and the triangle $H$ with one mark doubled; the first two were read in \S15.1, and the third is the dual of the first (Prop.~8.14, p.~57). $H$ is the list of \S17.4, where it was a step toward the triangle with two marks doubled; its own centre was not read there. With the doubled class $\{a,b\}$ and the marks $2,3$ its bases are the pairs other than $\{a,b\}$, and with $A=\alpha_a+\alpha_b$, $B=\alpha_2+\alpha_3$
+\[
+K=AB+\alpha_2\alpha_3,\qquad \Psi=AB+\alpha_a\alpha_b :
+\]
+the letters exchange under $\{a,b\}\leftrightarrow\{2,3\}$, so $H$ is self-dual up to that relabeling. The widths are $1$ on marks, on $\{a,b\}$, on $\{2,3\}$ and on triples, and $2$ on the four other pairs (Def.~7.10, p.~49), so at the centre $\mathrm{Cor}=8\cdot1+16\cdot\frac12=16$.
+
+\begin{proposition}[The native gauges of the centre of $H$]\label{p:Hgauges}\derived; that there are no others \computed\
+The table's gauge, of native value $\frac1{25}$; the sign $(-1,-1,1,1)$, of native value $\frac19$; and, of native value $1$, the three curves
+\[
+\{A=0,\ \alpha_a^2=\alpha_2\alpha_3\},\qquad \{B=0,\ \alpha_2^2=\alpha_a\alpha_b\},\qquad \{A=B=0\},
+\]
+the second the image of the first under the self-duality; on them the class letters vanish and $K$, $\Psi$ collapse to monomials, the case of Proposition~\ref{p:families}(ii) with one class. Every sign of value $1$ lies on them.
+\end{proposition}
+
+\begin{proof}
+At the centre nativity is $R_e(\alpha)=R_e(\alpha^{-1})$ (\S15.2). On $A=0$ also $A(\alpha^{-1})=A/(\alpha_a\alpha_b)=0$, so $K(\alpha)=\alpha_2\alpha_3$, $K(\alpha^{-1})=1/(\alpha_2\alpha_3)$ and $R_2=R_3=1$ at $\alpha$ and at $\alpha^{-1}$, while $R_a(\alpha)=\alpha_aB/(\alpha_2\alpha_3)$ and $R_a(\alpha^{-1})=B/\alpha_a$ agree exactly when $B=0$ or $\alpha_a^2=\alpha_2\alpha_3$, and likewise at $b$; there $K(\alpha)K(\alpha^{-1})=1$. The second curve follows by the self-duality. At a sign $K(\eta)=(\eta_a+\eta_b)(\eta_2+\eta_3)+\eta_2\eta_3\in\{\pm5,\pm3,\pm1\}$ (Proposition~\ref{p:signsparallel}), and $K(\eta)=\pm1$ forces $\eta_a=-\eta_b$ or $\eta_2=-\eta_3$, which puts the sign on one of the curves. Newton's method from several thousand starts in $(\mathbb C^\times)^3$ finds no critical point of $\log f$ off these.
+\end{proof}
+
+\noindent Receipts \computed. By Proposition~\ref{p:parallel} the closings are
+\[
+x_k=\sum_{i+j+l=k}\Big(\frac{k!}{i!\,j!\,l!}\Big)^2\binom{2i+2j}{i+j}=1,5,53,761,12661,229705,4410665,\dots,
+\]
+and the least recurrence of $160$ of them has order $4$ and degree $7$ (156 equations, 40 unknowns, one solution). Reflected, the law of the centre of $H$, $P(k)=P_H(k\one;k,k)$, is
+\begin{gather*}
+k^3(k+1)(144k^3+864k^2+1693k+1075)\,P(k)\\
+-2(k+1)(2592k^6+19440k^5+56322k^4+80296k^3+60004k^2+23017k+3580)\,P(k+1)\\
++2(21168k^7+211680k^6+884919k^5+2003456k^4\\
+\qquad+2646984k^3+2031207k^2+830703k+137260)\,P(k+2)\\
+-2(k+2)^2(34848k^5+261360k^4+741842k^3+984642k^2+598948k+127215)\,P(k+3)\\
++225(k+2)^2(k+3)^2(144k^3+432k^2+397k+102)\,P(k+4)=0,
+\end{gather*}
+with the symbol $144(25\lambda-1)(9\lambda-1)(\lambda-1)^2$: the curves double the root $1$, an integral direction in the exceptional set of Thm.~35.19(i), p.~313. (A search by total size first returns a recurrence of order $5$ and degree $5$: this law composed with a factor of order one, whose symbol has the extra root $\frac{131003}{4771109}$.) The corner relation is $17200-7160P(1)+274520P(2)-1017720P(3)+826200P(4)=0$, and $c_0$, $c_1$ share the zero $k=-1$; the second corner (\S15.4) is rational,
+\[
+57\,P(1)-807\,P(2)+1050\,P(3)=196\qquad(530\text{ digits}),
+\]
+the constant term at $k=-1$ being $1176$. Positivity (Theorem~\ref{t:select}: three conditions, one at $\frac19$ and two at the double root) gives
+\begin{gather*}
+P_H(\one;1,1)=4.096236998337882850055553228351268637634670896\ldots,\\
+P_H(2\one;2,2)=0.04771649869151311029741208089066366661776262936\ldots .
+\end{gather*}
+
+\begin{proposition}[The centre of $H$ on its share side]\label{p:Hshare}\derived; receipt \computed\
+$H$ is a series root over the parallel cell of $\{a,b\}$ and the two marks left in place (Def.~22.17(5), p.~191), so, as in Proposition~\ref{p:triangles},
+\[
+\Gamma(\sigma)^2P_H(\sigma\one;\sigma,\sigma)=\frac1{2\pi i}\int_{(c)}\Gamma(d)^2\,\Gamma(\sigma-d)^2\,P_{\binom{[2]}1}(d\one;d,d)^2\,dd,\qquad P_{\binom{[2]}1}(d\one;d,d)=\Gst21{d,\ d}{2d},
+\]
+$0<c<\sigma$. At $\sigma=1$, on $c=\frac12$, the integral is $4.0962369983378828500555532283512686376346709\ldots$ in ball arithmetic: the value of the positive selection, to $44$ digits.
+\end{proposition}
+
+\begin{proof}
+A series node multiplies the transforms of its cells (Thm.~22.13, p.~188): the two marks give $\sG_{0;(1,-1)}(1,y)^2$, whose Mellin read is $\Gamma(z)^2P_{\binom{[2]}1}(z\one;z,z)$ (Proposition~\ref{p:bananapin}), and the parallel cell gives the transform whose Mellin read is $\Gamma(w)^2P_{\binom{[2]}1}((\sigma-w)\one;\sigma-w,\sigma-w)$ (Proposition~\ref{p:triangles}); the Mellin read of the product pins the sum of the shares, and $d=\sigma-w$.
+\end{proof}
+
+The integrand is $\Gamma(d)^6\Gamma(\sigma-d)^2/\Gamma(2d)^2$. Its poles at $-\mathbb N$ have order four and residues that grow like $16^m$, and to the right the double poles of $\Gamma(\sigma-d)^2$ meet a factor that grows faster than every power: neither closing of Thm.~4.5, p.~26, converges. The centre of $H$ is a fibre integral of stacked Gammas that does not land on a lattice, as the five-mark centre does not (Remark~\ref{r:live}).
+
+\noindent The lean. The direction $(2\one;3,1)$ has the walls $2$ on marks, $3$ on $\{a,b\}$, $1$ on $\{2,3\}$, $4$ on the other pairs and $2$ on triples, so $\mathrm{Cor}=\frac13+1+1=\frac73$. On the slice $\alpha_a=\alpha_b=x$, $\alpha_2=\alpha_3=1$ the stride is $x^3/\big((4x+1)^3(x+4)\big)$, whose critical points are the roots of $2x^2-x-6=(x-2)(2x+3)$ \derived: the native gauge of the direction on the orthant is $(2,2,1,1)$, where $K=9$, $\Psi=12$ and $f=\frac4{2187}$, and the sign has moved to $(-\frac32,-\frac32,1,1)$, $f=\frac{27}{2500}$; the curves move to curves of value $-\frac{16}{27}$ \computed. The closings $x_j=[\alpha^{2j\one}]K^{3j}\Psi^j=1,48,10240,3131184,\dots$ have a least recurrence of order $4$ and degree $25$ ($196$ equations, $104$ unknowns, one solution), with the symbol a multiple of $(2187\lambda-4)(2500\lambda-27)(27\lambda+16)^2$; positivity converges at the rate $\frac{10000}{59049}$, about $0.77$ digits per step, and the lean's own second corner is rational: $413667900\,P'(1)+6131684550\,P'(2)+12031031250\,P'(3)=24789199$, $P'(k)=P_H(2k\one;3k,k)$.
+
+\begin{theorem}[One content, two rays]\label{t:Hcontent}\computed\
+\begin{gather*}
+28\,P_H(2\one;3,1)=14-3\,P_H(\one;1,1)-P_H(2\one;2,2),\\
+5670000\,P_H(4\one;6,2)=126002\,P_H(\one;1,1)+143398\,P_H(2\one;2,2)-522781,\\
+95681250000\,P_H(6\one;9,3)=3048368669-731189098\,P_H(\one;1,1)-1115791502\,P_H(2\one;2,2),
+\end{gather*}
+to $530$ digits. The centre ray and the lean ray of $H$, with two laws, two corners and two positive selections, land on the one space $\mathbb Q+\mathbb Q\,P_H(\one;1,1)+\mathbb Q\,P_H(2\one;2,2)$.
+\end{theorem}
+
+\begin{remark}[What the masters of $H$ are not]\label{r:Hnot}\computed\
+There is no rational relation among $1$, $P_H(\one;1,1)$, $P_H(2\one;2,2)$ and the members in use, $\Pth$, $\Gamma(\frac12)^4$, $\Tx{3}{\IZ}{0}$, $\Gamma(\frac12)^6/\sqrt3$, $\sqrt3\,\Gamma(\frac12)^2$, $\sqrt3\,\Gamma(\frac12)^2\log3$, $\Gamma(\frac12)^4\log2$, $\Gamma(\frac12)^4\log3$, $\log2$, $\log3$, $\Pth\log2$, $\Pth\log3$, $\Gamma(\frac13)^6/\Gamma(\frac12)^4$ and $\Gamma(\frac12)^8/\Gamma(\frac13)^6$, with coefficients below $10^{24}$ ($420$ digits); nor with $\Pth$, the two masters of $\binom{[5]}1$, the stacked Gamma $X$ at fifteenths of Proposition~\ref{p:stackedhalf}, $\Gamma(\frac12)^8/X$, $\Gamma(\frac12)^4$, $\sqrt3\,\Gamma(\frac12)^2$, $\sqrt{15}$, and $\sqrt{15}$ times $X$, $\Gamma(\frac12)^8/X$ and $\Gamma(\frac12)^4$, below $10^{28}$ ($380$ digits). In that framework, over $\mathbb Q$, the two masters of $H$ are new numbers. $H$ and $\binom{[5]}1$ have the same native values $\frac1{25},\frac19,1$ at their centres and different masters: the native values do not decide the numbers.
+\end{remark}
+
+\noindent What the tree expects \notyet. Opened at the mark $2$ (Prop.~19.19, p.~144), $H$ has the children $\binom{[3]}1$ and the pair $\{a,b\}$ with the coloop $3$, the strides $X_{H/1}$ and $X_{H\setminus1}$ of \S17.4, and its input is $\Psi_\sigma$ of \S17.4 without the factor $P_{\binom{[2]}1}$. Its lattice values are three-mark leans, in $\mathbb Q+\mathbb Q\,\Pth$, and its slopes should have one free direction (Proposition~\ref{p:r4zero}). As for $\binom{[5]}2$ (Theorem~\ref{t:u25masters}), the masters over the field of the weights of that closing should be $\Pth$ and one free slope, the weights carrying what Remark~\ref{r:Hnot} sees as new.
+
+\subsection*{18.5\quad Two observations}
+
+(i) \emph{The exact pairing belongs to the banana.} Propositions~\ref{p:pairing} and~\ref{p:edge} give
+\[
+\mathrm{Cor}\cdot\det H=-\frac{\lambda^\star\chi'(\lambda^\star)}{[k^{n-1}]c_0}=\prod_{c\ne\star}\Big(1-\frac{\lambda^\star}{\lambda_c}\Big)
+\]
+whenever the closings solve the adjoint of the law and $c_0$ has degree $n-1$; here $H$ in $\det H$ is the Hessian of Proposition~\ref{p:edge}. The laws of $\binom{[n]}1$ for $n=2,3,4,5$ (Theorem~\ref{t:cert}, \S15.7, Proposition~\ref{p:pairing}) are self-adjoint up to sign, $c_i(-k-i)=\pm c_i(k)$ \computed, and the identity is
+\[
+n!\cdot\frac{2^{n-1}}{n^n}=\prod_{j=1}^{\lceil n/2\rceil-1}\Big(1-\frac{(n-2j)^2}{n^2}\Big)=\prod_{j=1}^{\lceil n/2\rceil-1}\frac{4j(n-j)}{n^2}\quad\derived,
+\]
+which holds for every $n$: the low end of strength, the corner (Thm.~38.5(i), p.~330), and the high end, the Gaussian at the native gauge (Thm.~38.5(ii)), tied through the native values. On $H$, whose law is not self-adjoint, and on $\binom{[5]}2$ (\S15.5) the closings solve no adjoint and the identity fails.
+
+(ii) \emph{The content belongs to the list.} On $\binom{[3]}1$ and on $H$, two rays each, the masters of the ray are those of the list. The letter and mark relations (Thm.~8.3, p.~54) keep integer data on the balance wall with rational coefficients, so every integer period of a list lies in the span they leave, and each ray samples that span. A ray with the symmetries of the list may sample only their invariant part, which offsets would break. Hypothesis: every ray through the origin strictly inside its walls, without the list's symmetries, spans the whole content. \notyet
+
+\subsection*{18.6\quad Open}
+
+\begin{enumerate}[label=(\roman*)]
+\item Certificates of Thm.~35.3 for the three laws of \S\S18.3--18.4, and the converse of Corollary~\ref{c:dirlaw} in general. \notyet
+\item The slit: for rays strictly inside their walls, no native value in $(0,f(\alpha^\star))$; for rays along walls, exactly the faces' native values there, carrying the faces' masters. \notyet
+\item The content of a list: an offset ray, and a ray breaking the symmetries $a\leftrightarrow b$, $2\leftrightarrow3$ of $H$. \notyet
+\item The masters of $H$ through its hinge at a mark, as in \S\S17.1--17.3, with the weights. \notyet
+\item $H$ against $\binom{[5]}1$: the local exponents at $\frac19$ and $1$, the frames (Prop.~35.8, p.~309), and whether one law is a transform of the other. \notyet
+\item The period matrix of the centre ray of $H$: the solutions selected at its other native gauges, and whether they are stacked Gammas, as the lowered settings of $\binom{[5]}1$ are (Proposition~\ref{p:stackedhalf}). \notyet
+\item A carrier built for the purpose: a list on six marks that is not a graph, with native gauges off the signs and off the torus, read by certificates rather than closings. \notyet
+\end{enumerate}
+
+\noindent Aliases, last: the $x_j$ are the classical periods of the Laurent polynomial $1/f$, and the law is the Picard--Fuchs operator of its pencil read on coefficients; Theorem~\ref{t:select}(iv) is the mechanism of Ap\'ery limits, the selection read off the slit (Pincherle's minimal solution, Perron's theorem); $H$ is the cycle matroid of a triangle with one edge doubled; $\Gamma(\frac12)^6/\sqrt3$ stands for $L(\chi_{-3},3)=\frac{4\pi^3}{81\sqrt3}$; $\sG_{\nu;(1,-1)}(1,y)=2y^{\nu/2}K_\nu(2\sqrt y)$, so Proposition~\ref{p:leanindex} reads the lean as the order of the Bessel functions.
+
+
+\renewcommand{\thesection}{19}
+\setcounter{proposition}{0}
+\renewcommand{\theproposition}{19.\arabic{proposition}}
+
+\section{The three-mark centre, set as an examination}
+
+Remark~\ref{r:paper} read the three-mark centre off its law as a list of ratios, and Procedure~\ref{p:reading} states the reading of every ray through the origin. This entry runs the reading once, on that one ray, written as an examination question with its answer key and its marking scheme. A key has to say what a complete solution shows at every step and what each omission costs. So every hypothesis that \S\S15--18 checked once in passing is checked here, at the step that uses it, and the places where a solution can look right and be wrong are named, with the credit they earn. The ratios of Remark~\ref{r:paper} become a certified bracket. The receipts are in the script exam\_s19.py (python-flint: exact arithmetic for the solution, ball arithmetic only for the independent check of \S19.5).
+
+\subsection*{19.1\quad The question}
+
+\begin{center}
+\fbox{\parbox{0.94\linewidth}{\smallskip
+\textbf{Question} (40 points). Let $F=\binom{[3]}1$ be the list on the marks $\{1,2,3\}$ whose bases are the singletons, with unit weights, so that its letters are
+\[
+K=\alpha_1+\alpha_2+\alpha_3,\qquad \Psi=\alpha_1\alpha_2+\alpha_1\alpha_3+\alpha_2\alpha_3,
+\]
+and let $\ell=P_F(\one;1,1)$ be the period of its centre. By the reading of its centre ray (Procedure~\ref{p:reading}), that is, the law of the ray certified by the relations along a ray (Thm.~35.3, p.~308), its corner, and positive selection (Theorem~\ref{t:select}), find a rational number $q$ with
+\[
+0<\ell-q<10^{-6},
+\]
+and prove both inequalities.
+
+\smallskip
+You may cite the handbook and \S\S15--18 of this notebook. When you cite a statement, check its hypotheses in the case at hand. Exact computation (integers, rationals, polynomials, linear algebra over $\mathbb Q$) may be done by machine; report it so that it can be repeated. Floating-point arithmetic, numerical integration, integer-relation searches and comparison with a known decimal value of $\ell$ may be used as checks. They earn no credit.
+\smallskip}}
+\end{center}
+
+\subsection*{19.2\quad The answer and the scheme}
+
+\emph{Answer.} $q=a_9=\dfrac{2447622221}{1044248800}=2.3439071426\ldots$, with
+\[
+\frac{2447622221}{1044248800}<\ell<\frac{6414407843}{2736630400},\qquad b_9-a_9=\frac{6561}{59511099776}<1.11\cdot10^{-7}.
+\]
+Any rational $q$ with a complete proof of $0<\ell-q<10^{-6}$ earns full credit, whatever bounds the proof uses (other consequences of positivity, such as the determinants of Thm.~35.10(iii), are admissible), and the points of the scheme then go to the corresponding steps of that proof; \S19.4, items 1, 5 and 6, lists the alternatives a grader will meet most often. What the key proves is this.
+
+\begin{theorem}[The three-mark centre, bracketed]\label{t:bracket}\derived; the table \computed\ exactly.\
+Let $c$ and $r$ be the solutions of
+\[
+k^2x(k)-(10k^2+10k+3)\,x(k+1)+9(k+1)^2\,x(k+2)=0\qquad(k\ge1)
+\]
+with $c(1)=1$, $c(2)=\frac13$ and $r(1)=0$, $r(2)=-\frac23$. For every integer $K\ge2$, $c(K)>0$ and $9c(K)>c(K-1)$, and
+\begin{gather*}
+a_K=-\frac{r(K)}{c(K)}\ <\ \Pth\ <\ b_K=\frac{r(K-1)-9\,r(K)}{9\,c(K)-c(K-1)},\\
+b_K-a_K=\frac{2\cdot9^{2-K}}{3(K-1)^2\,c(K)\big(9c(K)-c(K-1)\big)} .
+\end{gather*}
+\end{theorem}
+
+\begin{center}
+\small
+\begin{tabular}{@{}r p{0.72\linewidth} r@{}}
+\toprule
+Step & What is shown & Points\\ \midrule
+1 & The ray: the chart and its measure, the stride, the values, the walls; $\ell=P(1)$ & 3\\
+2 & The stride: $f\le\frac19$; $\frac19e^{-\varphi}\le f\le e^{-\varphi}$; $\int e^{-k\varphi}dy=6/k^2$; what follows at every real $k>0$ & 5\\
+3 & The closings, their recurrence, the reflected candidate law & 3\\
+4 & A certificate for Thm.~35.3 and its exact verification & 5\\
+5 & The law at every real $k>0$: the integration by parts, with the bounds of Step 2 & 5\\
+6 & The native values; what positivity can select & 2\\
+7 & The corner: $k^2P(k)\to6$, so $9P(2)=3\ell-6$ & 5\\
+8 & The rational solutions, their signs, the exact table & 4\\
+9 & The bracket $a_K<\ell<b_K$, the choice of $K$, the answer & 8\\ \midrule
+& & 40\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{19.3\quad The key}
+
+Throughout, $e_1,e_2,e_3$ are the elementary symmetric polynomials of $\alpha_1,\alpha_2,\alpha_3$, so that $K=e_1$ and $\Psi=e_2$, and $D_e=\alpha_e\,\partial/\partial\alpha_e$.
+
+\paragraph{Step 1 (3 points). The ray.}
+Take the chart $\alpha_3=1$ of the mark $e_0=3$, with $\alpha_1=e^{y_1}$ and $\alpha_2=e^{y_2}$, so that
+\[
+dy=dy_1\,dy_2=\frac{d\alpha_1\,d\alpha_2}{\alpha_1\alpha_2}.
+\]
+The centre ray at the strength $\sigma=1$ (Def.~35.9, p.~309) has origin $0$ and direction $(\one;1,1)$. Its stride and its values are
+\[
+f=\frac{\alpha^{\one}}{K\Psi}=\frac{e_3}{e_1e_2},\qquad P(k)=P_F(k\one;k,k)=\int_{\mathbb R^2}f^k\,dy\qquad(k=1,2,\dots),
+\]
+so that
+\[
+\ell=P(1)=\int_0^\infty\!\!\int_0^\infty\frac{d\alpha_1\,d\alpha_2}{(1+\alpha_1+\alpha_2)(\alpha_1+\alpha_2+\alpha_1\alpha_2)} .
+\]
+For real $k>0$ the same integral defines $P(k)$; Step 2 shows that it converges. The walls of the direction are $\kappa_{1,S}=|S|-d(S)-d^\ast(S)$ (Def.~8.1, p.~53), the width $c(S)$ of Def.~7.10, p.~49. Every nonempty $S$ has rank $r(S)=1$, so for $S$ nonempty and proper $d(S)=|S|-r^\ast(S)=r-r(\cE\setminus S)=0$ and $d^\ast(S)=|S|-r(S)=|S|-1$, and
+\[
+\kappa_{1,S}=1\qquad(\varnothing\neq S\subsetneq\cE).
+\]
+All proper walls are positive, the hypothesis of Thm.~35.3 and of Thm.~35.10, p.~309.
+
+\smallskip\noindent\emph{Marking.} 1 point for the stride with the chart and its measure; 1 for $\ell=P(1)$ with the definition of the values cited; 1 for the walls. The measure $d\alpha_1d\alpha_2$ in place of $dy$ makes the integral diverge (the integrand is $\sim1/(\alpha_1+\alpha_2)$ at infinity): $-1$.
+
+\paragraph{Step 2 (5 points). The stride.}
+(a) \emph{The gauge.} The identity
+\[
+e_1e_2-9e_3=\alpha_1(\alpha_2-\alpha_3)^2+\alpha_2(\alpha_3-\alpha_1)^2+\alpha_3(\alpha_1-\alpha_2)^2
+\]
+holds because both sides equal $\sum_{i\neq j}\alpha_i^2\alpha_j-6e_3$, the left since $e_1e_2=\sum_{i\neq j}\alpha_i^2\alpha_j+3e_3$. So $0<f\le\frac19$ on the orthant, with equality exactly on the diagonal $\alpha_1=\alpha_2=\alpha_3$, which on the chart is the single point $y=0$. This is Thm.~35.10(i) here, with $\alpha^\star=\one$ and $f(\alpha^\star)=\frac19$.
+
+(b) \emph{The decay.} Order the coordinates, $\alpha_{(1)}\ge\alpha_{(2)}\ge\alpha_{(3)}$. Then $\alpha_{(1)}\le e_1\le3\alpha_{(1)}$, $\alpha_{(1)}\alpha_{(2)}\le e_2\le3\alpha_{(1)}\alpha_{(2)}$ and $e_3=\alpha_{(1)}\alpha_{(2)}\alpha_{(3)}$, so
+\[
+\frac19\,\frac{\alpha_{(3)}}{\alpha_{(1)}}\le f\le\frac{\alpha_{(3)}}{\alpha_{(1)}} .
+\]
+On the chart $\alpha_{(3)}/\alpha_{(1)}=e^{-\varphi(y)}$ with
+\[
+\varphi(y)=\max(y_1,y_2,0)-\min(y_1,y_2,0),
+\]
+and since $0$ and $y_i$ are both among the three entries, $\varphi(y)\ge|y_i|$: $\varphi(y)\ge\|y\|_\infty$.
+
+(c) \emph{The volume.} For real $k>0$,
+\[
+\int_{\mathbb R^2}e^{-k\varphi(y)}\,dy=\frac6{k^2}.
+\]
+The lines $y_1=y_2$, $y_1=0$, $y_2=0$ cut the plane into six cones, one for each order of the entries $(y_1,y_2,0)$, and on each cone $\varphi$ is the largest entry less the smallest:
+\begin{gather*}
+\int_{y_1\ge y_2\ge0}e^{-ky_1}dy=\int_0^\infty y_1e^{-ky_1}dy_1=\frac1{k^2},\qquad
+\int_{y_1\ge0\ge y_2}e^{-k(y_1-y_2)}dy=\frac1k\cdot\frac1k,\\
+\int_{0\ge y_1\ge y_2}e^{ky_2}dy=\int_0^\infty ue^{-ku}du=\frac1{k^2},
+\end{gather*}
+and the three cones with $y_1$ and $y_2$ exchanged give the same.
+
+(d) \emph{Consequences}, for real $k>0$:
+\[
+\frac{6\cdot9^{-k}}{k^2}\le P(k)\le\frac6{k^2},\qquad P(k+1)<\frac19\,P(k),
+\]
+the second from (a), strict because $f<\frac19$ off the single point $y=0$. And $P$ is continuous on $(0,\infty)$: on $[k_1,\infty)$ the integrands $f^k$ are dominated by $f^{k_1}$, because $0<f<1$, and $f^{k_1}$ is integrable.
+
+\smallskip\noindent\emph{Marking.} (a) 2 points; the identity must be shown or verified by expansion. The two inequalities of the arithmetic and geometric means, $e_1\ge3e_3^{1/3}$ and $e_2\ge3e_3^{2/3}$, are an accepted proof of $f\le\frac19$. The strict inequalities of Step 9 need only $f<\frac19$ on a set of positive measure; without any strictness the bracket is closed at the top, which suffices for the answer. (b) 1 point for the upper side, the decay; citing Thm.~35.10(i) for $f\le C'e^{-c'\|y\|}$ on the chart earns it, and gives convergence at every real $k>0$. 1 point for the lower side of (b) and the volume (c) together; they serve only the corner, and a solution that obtains the corner by a correct citation of Proposition~\ref{p:corner} or~\ref{p:dirclose} in Step 7 earns this point there. (d) 1 point: convergence, positivity, continuity and $P(k+1)<\frac19P(k)$. Step 2(d) credits the proof of the last inequality and Step 9(b) its use.
+
+\paragraph{Step 3 (3 points). The candidate law.}
+Here $1/f=e_1e_2/e_3=(\alpha_1+\alpha_2+\alpha_3)(\alpha_1^{-1}+\alpha_2^{-1}+\alpha_3^{-1})$, and the closings of the direction (Proposition~\ref{p:dirclose}) are
+\[
+x_j=[\alpha^0]\Big(\frac1f\Big)^j=\sum_{a_1+a_2+a_3=j}\Big(\frac{j!}{a_1!\,a_2!\,a_3!}\Big)^2=1,\ 3,\ 15,\ 93,\ 639,\ 4653,\ 35169,\ 272835,\ 2157759,\ \dots,
+\]
+since the constant term pairs the monomial $\alpha^a$ of $(\sum_e\alpha_e)^j$ with the monomial $\alpha^{-a}$ of $(\sum_e\alpha_e^{-1})^j$, and both have the coefficient $j!/(a_1!a_2!a_3!)$. Exact linear algebra with the ansatz $\sum_{i=0}^2p_i(j)\,x_{j+i}=0$, $\deg p_i\le2$, on $x_0,\dots,x_{15}$ (14 equations, 9 unknowns) has a one-dimensional space of solutions,
+\[
+(j+2)^2x_{j+2}-(10j^2+30j+23)\,x_{j+1}+9(j+1)^2x_j=0 .
+\]
+Reflected as in Corollary~\ref{c:dirlaw}, $c_i(k)=p_{2-i}(-k-2)$:
+\begin{equation}\tag{L}
+k^2P(k)-(10k^2+10k+3)\,P(k+1)+9(k+1)^2\,P(k+2)=0 .
+\end{equation}
+At this point (L) is a candidate. Corollary~\ref{c:dirlaw} runs the other way, from a law of $P$ to the recurrence of the closings, and sixteen closings do not prove their own recurrence.
+
+\smallskip\noindent\emph{Marking.} 1 point each for the closings, the recurrence (with the size of the system, or any other exact derivation) and the reflection. Any route to (L) earns the 3 points: the closings are how the law is found, not part of its proof. A solution that takes (L) as proved here keeps these 3 points and earns nothing in Steps 4 and 5.
+
+\paragraph{Step 4 (5 points). The certificate.}
+The origin is $0$, so the defects of the origin vanish, and the defect of the direction is (Lemma~35.2(ii), p.~308)
+\[
+c_e=D_e\log f=1-R_e-R^\ast_e,\qquad R_e=\frac{\alpha_e}{e_1},\qquad R^\ast_e=\frac{\alpha_e(e_1-\alpha_e)}{e_2},
+\]
+the occupation of $e$ under the basis law and under the cobasis law. Since $\sum_eR_e=1$ and $\sum_eR^\ast_e=2$, $\sum_ec_e=0$. A \emph{certificate} of (L) is a choice of insertions $g_1,g_2,g_3$ (Def.~35.1: regular functions on the letter complement; here rational functions of degree $0$ whose denominators are products of $e_1$ and $e_2$, with coefficients polynomial in $k$) such that
+\begin{equation}\tag{C}
+k^2-(10k^2+10k+3)\,f+9(k+1)^2f^2=\sum_{e=1}^3\big(D_eg_e+k\,c_e\,g_e\big).
+\end{equation}
+\emph{Ansatz:} $g_e=N_e/(e_1^2e_2)$, with $N_e$ homogeneous of degree $4$ with coefficients in $\mathbb Q+\mathbb Qk$, $g_e$ the image of $g_1$ under the exchange of the marks $1$ and $e$, and $N_1$ symmetric in $\alpha_2,\alpha_3$. Multiplied by $e_1^3e_2^2$, (C) becomes a polynomial identity, of degree $7$ in $\alpha$ and $2$ in $k$, through
+\[
+e_1^3e_2^2\big(D_eg_e+k\,c_eg_e\big)=e_1e_2\,D_eN_e-N_e\big(2\alpha_ee_2+\alpha_e(e_1-\alpha_e)e_1\big)+k\,N_e\big(e_1e_2-\alpha_ee_2-\alpha_e(e_1-\alpha_e)e_1\big),
+\]
+and it is linear in the $18$ coefficients of $N_1$: $99$ equations of rank $10$. One solution is
+\begin{equation}\tag{G}
+g_1=-\frac{\alpha_1^2\big(k\,\alpha_1(\alpha_2+\alpha_3)+(2+3k)(\alpha_2^2+\alpha_3^2)-(1-k)\,\alpha_2\alpha_3\big)}{e_1^2e_2},
+\end{equation}
+and within the ansatz the others differ from it by one insertion $h$ added at every mark, $h$ with a symmetric numerator (an $8$-dimensional space). Such an $h$ changes nothing, because $\sum_eD_eh=0$ (Euler's identity in degree $0$) and $\sum_ec_eh=0$.
+
+\emph{Verification.} Write $g_e=g^{(0)}_e+k\,g^{(1)}_e$. The three powers of $k$ in (C) read
+\begin{align*}
+k^2:&\quad \textstyle\sum_ec_eg^{(1)}_e=1-10f+9f^2=(1-f)(1-9f),\\
+k^1:&\quad \textstyle\sum_e\big(D_eg^{(1)}_e+c_eg^{(0)}_e\big)=-10f+18f^2,\\
+k^0:&\quad \textstyle\sum_eD_eg^{(0)}_e=-3f+9f^2 .
+\end{align*}
+Times $e_1^3e_2^2$ each sum over the marks is a symmetric polynomial of degree $7$, and in the basis of products of $e_1,e_2,e_3$ exact expansion gives
+\begin{gather*}
+\textstyle\sum_ee_1^3e_2^2\,c_eg^{(1)}_e=e_1^3e_2^2-10\,e_1^2e_2e_3+9\,e_1e_3^2,\\
+\textstyle\sum_ee_1^3e_2^2\,D_eg^{(1)}_e=-2\,e_1e_2^3-3\,e_1^2e_2e_3+9\,e_1e_3^2,\qquad
+\sum_ee_1^3e_2^2\,c_eg^{(0)}_e=2\,e_1e_2^3-7\,e_1^2e_2e_3+9\,e_1e_3^2,\\
+\textstyle\sum_ee_1^3e_2^2\,D_eg^{(0)}_e=-3\,e_1^2e_2e_3+9\,e_1e_3^2,
+\end{gather*}
+which, with $f=e_3/(e_1e_2)$, are the three right sides times $e_1^3e_2^2$. So (C) holds identically in $\alpha$ and $k$. Proposition~\ref{p:certs} reported a certificate of this law with the same denominator.
+
+\smallskip\noindent\emph{Marking.} 1 point for the defects $c_e$, in any equivalent form. 2 points for a certificate. Any certificate is accepted; it need not be symmetric, and any denominator is accepted for which Step 5 can be carried out. 2 points for the verification: by exact expansion, by the symmetric-function form above, or by exact evaluation of the cleared identity on a grid large enough to decide it. After clearing, both sides are polynomials of degree at most $7$ in each $\alpha_i$ and $2$ in $k$, homogeneous in $\alpha$, so agreement at $\alpha_3=1$ on $8$ values of $\alpha_1$, $8$ of $\alpha_2$ and $3$ of $k$ (all $192$ points) proves it. Agreement at a few random points is a test, not a proof. To test a certificate other than (G), a grader evaluates both sides of (C) at $\alpha=(1,2,4)$, $k=\frac13$, where the left side is $-\frac{2809}{7203}$ (there $f=\frac4{49}$, and (G) gives $g_1,g_2,g_3=-\frac{85}{1029},-\frac{310}{1029},-\frac{424}{1029}$); a certificate written on the chart, with $g_3=0$ and $D_1,D_2$ read as $\partial_{y_1},\partial_{y_2}$, is tested at the same point $(\alpha_1,\alpha_2)=(\frac14,\frac12)$. A certificate with floating-point coefficients, or verified only in floating point, earns 0 of the 4: the identity has to hold exactly. How the certificate was found does not matter: rational coefficients found by a numerical search and then verified exactly earn full credit.
+
+\paragraph{Step 5 (5 points). The law at every real $k>0$.}
+Thm.~35.3 states the relations for all \emph{large} $k$. The law is needed at $k=1,\dots,K-2$ (Step 8) and as $k\to0^+$ (Step 7), so the integration by parts is carried out here at every real $k>0$, with the bounds of Step 2. Fix a real $k>0$.
+
+(a) $D_e(f^k)=k\,c_ef^k$, so the right side of (C), times $f^k$, is $\sum_eD_e(g_ef^k)$.
+
+(b) On the chart $D_1=\partial_{y_1}$ and $D_2=\partial_{y_2}$, and for every function $h$ of degree $0$, $D_3h=-D_1h-D_2h$ (Euler's identity). So
+\[
+\sum_{e=1}^3D_e(g_ef^k)=\partial_{y_1}H_1+\partial_{y_2}H_2,\qquad H_i=(g_i-g_3)f^k .
+\]
+
+(c) \emph{Bounds.} Every monomial of every $N_e$ occurs in the expansion of $e_1^2e_2$: for $N_1$, $\alpha_1^3\alpha_2=\alpha_1^2\cdot\alpha_1\alpha_2$, $\alpha_1^2\alpha_2^2=\alpha_1\alpha_2\cdot\alpha_1\alpha_2$ and $\alpha_1^2\alpha_2\alpha_3=\alpha_1^2\cdot\alpha_2\alpha_3$, with the images under $2\leftrightarrow3$, and the other $N_e$ are images of $N_1$. The coefficients of $e_1^2e_2$ are positive, so $\alpha^v\le e_1^2e_2$ on the orthant for each such monomial, and $|g_e|\le\|N_e\|_1$, the sum of the absolute values of the coefficients. For every mark $i$,
+\[
+D_ig_e=\frac{D_iN_e}{e_1^2e_2}-g_e\,\big(2R_i+R^\ast_i\big),
+\]
+where $D_iN_e$ has the monomials of $N_e$ or fewer and $0\le R_i,R^\ast_i\le1$; and $|c_i|\le1$. With Step 2(b) there is, for fixed $k$, a constant $C$ with
+\[
+|H_i|\le C\,e^{-k\varphi},\qquad |\partial_{y_j}H_i|\le C\,e^{-k\varphi} .
+\]
+
+(d) If $H$ is $C^1$ on $\mathbb R^2$, tends to $0$ at infinity and $\partial_{y_1}H$ is integrable, then $\int\partial_{y_1}H\,dy=0$: for every $y_2$, $\int_{-R}^R\partial_{y_1}H\,dy_1=H(R,y_2)-H(-R,y_2)\to0$, and Fubini applies. By (c) and Step 2, $H_1$ and $H_2$ qualify ($e^{-k\varphi}\le e^{-k\|y\|_\infty}\to0$, and $e^{-k\varphi}$ is integrable), so the right side of (C), times $f^k$, integrates to $0$.
+
+(e) The left side of (C), times $f^k$, integrates to the left side of (L), all three integrals convergent by Step 2. Hence (L) holds at every real $k>0$.
+
+\smallskip\noindent\emph{Marking.} 1 point for (a)--(b), including the mark $3$ on its own chart. 2 points for the bounds (c). 1 point for (d). 1 point for the conclusion at every real $k>0$, with the reason it is needed. Citing Thm.~35.3 at $k=1,2,\dots$ and as $k\to0^+$ without (c): 2 of 5. Any complete extension earns full credit; for instance (C) integrated at large integers by Thm.~35.3 as stated (its hypothesis checked in Step 1), then carried to every $k$ with $\re k>0$ by Carlson's theorem: the left side of (L) is holomorphic there, it is bounded by a polynomial in $|k|$ on $\re k\ge1$ because $|P(k)|\le P(\re k)\le6/(\re k)^2$ (Step 2), and Carlson's theorem applied to $z\mapsto F(N+z)$, with $F$ the left side of (L) and $N\ge1$ an integer from which on (L) holds at every integer, makes $F$ vanish identically. Integrating $D_3(g_3f^k)$ by parts ``in $y_3$'' on the chart $\alpha_3=1$, where $y_3$ is not a coordinate: $-1$, unless repaired by Euler's identity or by a certificate with $g_3=0$.
+
+\paragraph{Step 6 (2 points). The native values; what positivity can select.}
+The symbol of (L) (Cor.~35.6, p.~308) is
+\[
+\chi(\lambda)=1-10\lambda+9\lambda^2=(1-\lambda)(1-9\lambda).
+\]
+The native gauges of the centre ray are the signs $\eta$ with $\eta_3=1$ (Proposition~\ref{p:onlysigns}, Thm.~35.12, p.~310), of native value $K(\eta)^{-2}$: the table's gauge $\eta=(1,1,1)=\alpha^\star$, with $K(\eta)=3$ and the value $\frac19=f(\alpha^\star)$; and $\eta=(-1,1,1),(1,-1,1),(-1,-1,1)$, with $K(\eta)=\pm1$ and the value $1$. They are nondegenerate. By Thm.~35.12(ii) the Hessian of $-\log f$ at $\eta$ is $2\big(\kappa_\eta(X_e,X_{e'})\big)_{e,e'\neq3}$, the covariances of the indicators under the signed measure $\mathbb P_\eta(\{e\})=\eta_e/K(\eta)$. Its determinant is $\frac4{27}$ at $(1,1,1)$ and $-4$ at each of the other three signs. So Cor.~35.6, with $g=1$, makes both native values roots of $\chi$, and since $\chi$ has degree $2$ they are all its roots. (Cor.~35.6 runs from native values to roots; a root need not be a native value, as the extra root $\frac{131003}{4771109}$ in \S18.4 shows.)
+
+In Theorem~\ref{t:select} the singular points are $q=9$, where the slit $[9,\infty)$ begins, and $q=1$, off the slit. At $q=1$, a simple root and the value of nondegenerate gauges, positivity imposes $\nu=1$ condition, and with the corner $1+\nu=2=h$. The condition is independent, and here that is seen directly: by Step 8, $c(K)\ge3^{1-K}$ and $9c(K)-c(K-1)\ge2c(K-1)\ge2\cdot3^{2-K}$, so the width of Step 9(d) is at most $1/(K-1)^2$ and the bracket closes on one number. So the law, the corner and positivity determine $P$ (Theorem~\ref{t:select}(iii)). The rational solutions of (L) have the exponential rate $1$ of the signs and $P$ the rate $\frac19$ of the gauge, so the bracket shrinks by about $\frac19$ per step, $\log_{10}9=0.954$ digits: about seven steps for $10^{-6}$, before constants. The constants decide in Step 9.
+
+\smallskip\noindent\emph{Marking.} 1 point for the native values with their nondegeneracy, matched to the roots of the symbol in the direction Cor.~35.6 gives. ``The roots are native values by Cor.~35.6'' reverses the corollary and earns 0 for this point unless the roots are matched to gauges directly, as above. 1 point for the count $1+\nu=h$ with the independence, or any equivalent statement that the corner supplies the condition positivity does not. The step is not used in the proofs of the bounds; a complete solution without it loses these 2 points only.
+
+\paragraph{Step 7 (5 points). The corner.}
+(a) By Step 2(d), $6\cdot9^{-k}\le k^2P(k)\le6$ for real $k>0$, so
+\[
+\lim_{k\to0^+}k^2P(k)=6 .
+\]
+(b) Take (L) at real $k\in(0,1)$ (Step 5) and let $k\to0^+$. By the continuity of Step 2(d), $P(k+1)\to P(1)=\ell$ and $P(k+2)\to P(2)$, while $10k^2+10k+3\to3$ and $9(k+1)^2\to9$. So $6-3\ell+9P(2)=0$:
+\begin{equation}\tag{S}
+P(2)=\frac{\ell-2}3 .
+\end{equation}
+(c) This is Corollary~\ref{c:dirlaw} at $j=0$,
+\[
+[k^2]c_0\cdot\mathrm{Cor}+c_1(0)P(1)+c_2(0)P(2)=0,\qquad \mathrm{Cor}=\sum_\pi\prod_{i=2}^3\kappa_{1,U_i}^{-1}=3!\cdot1=6
+\]
+(Proposition~\ref{p:dirclose}; for $\binom{\cE}1$ the corner is $n!$, Proposition~\ref{p:corner}). The six cones of Step 2(c) are the six orders $\pi$, each contributing $\prod_i\kappa_{1,U_i}^{-1}=1$.
+
+\smallskip\noindent\emph{Marking.} 2 points for (a), 2 for (b), 1 for (c). A correct citation of Proposition~\ref{p:corner} or~\ref{p:dirclose} in place of (a), with the walls of Step 1 and the sum over the $3!$ orders, earns the 2 points of (a). Errors:
+\begin{itemize}
+\item Reading (L) at $k=0$ as $0\cdot P(0)-3P(1)+9P(2)=0$. Here $P(0)=\int dy=\infty$, and the product $0\cdot\infty$ is the corner, $6$, not $0$. The reading gives $P(2)=\ell/3$, which is false ($P(2)=0.1146\ldots$, $\ell/3=0.78\ldots$) and contradicts Step 2(d) at once: $P(2)<\frac19P(1)$ would say $\ell/3<\ell/9$. After it every $P(K)$ is $\ell$ times a positive rational, positivity fixes only ratios, and the bracket is empty. 0 for Step 7, and in Steps 8--9 only the points that do not depend on (S): the signs and their use, 2 points.
+\item Passing the limit under the integral, $k^2f^k\to0$ pointwise, so ``$k^2P(k)\to0$'': 0 for (a). There is no domination, since $\int dy=\infty$.
+\item The wrong power ($kP(k)$, the corner of a ray on two marks) or $\mathrm{Cor}=1$ (one order): 0 for (a); (b) is marked as a consequence.
+\item Citing Corollary~\ref{c:dirlaw} for (S). Its hypothesis is the law \emph{identically}, as meromorphic functions of $k$; Step 5 gives it at real $k>0$, and the continuation of Proposition~\ref{p:dirclose} extends it. Citing the corollary with the law proved only at the integers leaves a gap: $-1$.
+\end{itemize}
+
+\paragraph{Step 8 (4 points). The rational solutions and their signs.}
+For integers $k\ge1$, $9(k+1)^2\neq0$, and (L) gives
+\[
+P(k+2)=\frac{(10k^2+10k+3)\,P(k+1)-k^2P(k)}{9(k+1)^2}.
+\]
+Let $c$ and $r$ be the solutions of (L) with $c(1)=1$, $c(2)=\frac13$ and $r(1)=0$, $r(2)=-\frac23$. From $P(1)=\ell$, (S) and induction,
+\[
+P(K)=c(K)\,\ell+r(K)\qquad(K\ge1).
+\]
+\emph{Signs, at every $K$.} Put $x'_j=9^jc(j+1)$. Then (L) at $k=j+1$ reads $(j+2)^2x'_{j+2}=(10j^2+30j+23)\,x'_{j+1}-9(j+1)^2x'_j$, with $x'_0=1$, $x'_1=3$. If $x'_{j+1}\ge3x'_j>0$, then
+\[
+(j+2)^2x'_{j+2}\ge\big(10j^2+30j+23-3(j+1)^2\big)x'_{j+1}=(7j^2+24j+20)\,x'_{j+1}\ge3(j+2)^2x'_{j+1},
+\]
+since $7j^2+24j+20-3(j+2)^2=4(j+1)(j+2)\ge0$. So $x'_{j+1}\ge3x'_j>0$ for every $j$, hence $x'_j\ge3^j$, that is,
+\[
+c(K)\ge3^{1-K}>0,\qquad 9c(K)\ge3c(K-1)>c(K-1)\qquad(K\ge2).
+\]
+The $x'_j$ obey the recurrence of the closings with the same first two terms, so $x'_j=x_j$ and $c(K)=9^{1-K}x_{K-1}$ wherever that recurrence holds: in the table below by inspection, and for every $j$ by Corollary~\ref{c:dirlaw} once (L) holds identically. The proof of the signs does not use this.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}r r r r l@{}}
+\toprule
+$K$ & $c(K)$ & $r(K)$ & $a_K=-r(K)/c(K)$ & \\ \midrule
+1 & $1$ & $0$ & $0$ & \\
+2 & $1/3$ & $-2/3$ & $2$ & \\
+3 & $5/27$ & $-23/54$ & $23/10$ & $2.3$\\
+4 & $31/243$ & $-145/486$ & $145/62$ & $2.33870967\ldots$\\
+5 & $71/729$ & $-1331/5832$ & $1331/568$ & $2.34330985\ldots$\\
+6 & $517/6561$ & $-242353/1312200$ & $242353/103400$ & $2.34383945\ldots$\\
+7 & $11723/177147$ & $-5495507/35429400$ & $5495507/2344600$ & $2.34389959\ldots$\\
+8 & $10105/177147$ & $-46422941/347208120$ & $46422941/19805800$ & $2.34390638\ldots$\\
+9 & $26639/531441$ & $-2447622221/20832487200$ & $2447622221/1044248800$ & $2.34390714\ldots$\\
+10 & $5773279/129140163$ & $-530455590781/5062294389600$ & $530455590781/226312536800$ & $2.34390722\ldots$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Two checks a grader can run on a student's table: $9^{K-1}c(K)$ is the closing $x_{K-1}$ ($1,3,15,93,\dots$), and the frame of the two solutions (Prop.~35.8, p.~309: $C_{k+1}=\frac{c_0(k)}{c_2(k)}C_k=\frac{k^2}{9(k+1)^2}C_k$, $C_1=-\frac23$) is
+\[
+c(k)\,r(k+1)-c(k+1)\,r(k)=-\frac23\cdot\frac{9^{1-k}}{k^2} .
+\]
+
+\smallskip\noindent\emph{Marking.} 2 points for $P(K)=c(K)\ell+r(K)$ with the initial values from (S). 1 point for the signs $c(K)>0$ and $9c(K)-c(K-1)>0$, at every $K$ as above or at the $K$ used from the exact table. 1 point for the table, exact, through the $K$ used. A decimal table: 0 for the last point.
+
+\paragraph{Step 9 (8 points). The bracket and the answer.}
+(a) \emph{Below, by positivity.} $P(K)=c(K)\ell+r(K)>0$, divided by $c(K)$, gives
+\[
+\ell>a_K=-\frac{r(K)}{c(K)} .
+\]
+(b) \emph{Above, by the gauge.} By Step 2(d), $P(K)<\frac19P(K-1)$, that is, $c(K)\ell+r(K)<\frac19\big(c(K-1)\ell+r(K-1)\big)$, or $\big(9c(K)-c(K-1)\big)\ell<r(K-1)-9r(K)$, and divided by $9c(K)-c(K-1)$,
+\[
+\ell<b_K=\frac{r(K-1)-9\,r(K)}{9\,c(K)-c(K-1)} .
+\]
+(c) \emph{The signs.} Both divisions keep the direction of the inequality: $c(K)>0$ and $9c(K)-c(K-1)>0$ by Step 8.
+
+At $K=2$ this is the first bracket: $P(2)=\frac{\ell-2}3>0$ gives $\ell>2$, and $P(2)<\frac19P(1)$ gives $\ell<3$.
+
+(d) \emph{The width and the answer.} With the frame of Step 8,
+\[
+b_K-a_K=\frac{r(K-1)\,c(K)-r(K)\,c(K-1)}{c(K)\big(9c(K)-c(K-1)\big)}=\frac{2\cdot9^{2-K}}{3(K-1)^2\,c(K)\big(9c(K)-c(K-1)\big)},
+\]
+and in exact arithmetic:
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}r r r r@{}}
+\toprule
+$K$ & $b_K$ & $b_K-a_K$ & width with $P(K)<9^{1-K}\ell$ instead\\ \midrule
+2 & $3$ & $1$ & $1$\\
+3 & $19/8$ & $7.50\cdot10^{-2}$ & $1.64\cdot10^{-1}$\\
+4 & $61/26$ & $7.44\cdot10^{-3}$ & $2.54\cdot10^{-2}$\\
+5 & $3413/1456$ & $7.84\cdot10^{-4}$ & $3.67\cdot10^{-3}$\\
+6 & $104539/44600$ & $8.43\cdot10^{-5}$ & $5.04\cdot10^{-4}$\\
+7 & $149014/63575$ & $9.17\cdot10^{-6}$ & $6.66\cdot10^{-5}$\\
+8 & $909876251/388187800$ & $1.0036\cdot10^{-6}$ & $8.59\cdot10^{-6}$\\
+9 & $6414407843/2736630400$ & $1.1025\cdot10^{-7}$ & $1.0863\cdot10^{-6}$\\
+10 & $232184895407/99058909600$ & $1.21\cdot10^{-8}$ & $1.35\cdot10^{-7}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At $K=8$ the certified width is $1.0036\cdot10^{-6}>10^{-6}$; at $K=9$ it is $\frac{6561}{59511099776}<1.11\cdot10^{-7}$. So
+\[
+\frac{2447622221}{1044248800}=a_9<\ell<b_9=\frac{6414407843}{2736630400},
+\]
+and $q=a_9$ satisfies $0<\ell-q<b_9-a_9<1.11\cdot10^{-7}<10^{-6}$.
+
+\smallskip\noindent\emph{Marking.} (a) 2 points. (b) 2 points: 1 for using $P(K)<\frac19P(K-1)$ (its proof is credited in Step 2(d)), 1 for $b_K$. (c) 1 point for invoking the two signs at the divisions (their proof is credited in Step 8; a sign proved there and used here silently loses nothing). (d) 3 points: 1 for a $K$ at which the width certified by (a)--(c) is below $10^{-6}$, 1 for the exact comparison, 1 for a stated $q$ whose inequalities $0<\ell-q<10^{-6}$ follow from the bracket.
+
+\subsection*{19.4\quad Where a solution that looks right is wrong}
+
+\begin{enumerate}[label=\arabic*.]
+\item \emph{The answer one step early.} $a_8=\frac{46422941}{19805800}$ is a correct answer: $\ell-a_8=8.58\cdot10^{-7}$. But the bracket at $K=8$ has width $1.0036\cdot10^{-6}$, so a solution that certifies $a_8$ from $K=8$ alone has an error in it. The upper bound at $K=9$ certifies it: $\ell-a_8<b_9-a_8=8.72\cdot10^{-7}$. Full credit with that; with the bound claimed at $K=8$, 5 of the 8 points of Step 9. The true error falls below the tolerance one step before the certified one does.
+\item \emph{The observed error.} Comparing $a_K$ with a decimal value of $\ell$ (from the share side, from a quadrature, or from a closed form recalled elsewhere) proves nothing about $\ell-a_K$: 0 for Step 9(d).
+\item \emph{The rate as a bound.} Theorem~\ref{t:select}(iv) gives the error $O(9^{-K})$ up to powers of $K$, with no constant: 0 for Step 9(d). Nor is the last step a bound: $a_9-a_8=7.62\cdot10^{-7}$ is smaller than $\ell-a_8=8.58\cdot10^{-7}$, because the $a_K$ increase to $\ell$ with ratio about $\frac19$, so the remaining error is about $\frac98$ of the next step.
+\item \emph{An unproved upper bound.} ``$P(K)\le9^{-K}\ell$, since $f\le\frac19$''. The gauge gives $P(K)<\frac19P(K-1)$, and iterated $P(K)<9^{1-K}P(1)$; the factor $9^{-K}$ does not follow from $f\le\frac19$, it would need $\int dy<\infty$. (The inequality is in fact true for $K\ge8$ and false for $K\le7$: $9^KP(K)$ decreases by Step 2(d), and $9^7P(7)/\ell=1.03$, $9^8P(8)/\ell=0.90$. Nothing in such a solution proves it, and a grader who checks it numerically should not be misled.) With it the width at $K=9$ is $1.21\cdot10^{-7}$, while the simple bound actually proved gives $1.09\cdot10^{-6}$ there, so the solution certifies nothing below $10^{-6}$. The stated $q=a_9$ is right and the proof is not: 1 of 2 in Step 9(b), 0 in 9(d), 4 of the 8 points of Step 9.
+\item \emph{The simple bound, done right.} $P(K)<9^{1-K}P(1)=9^{1-K}\ell$ gives $\big(c(K)-9^{1-K}\big)\ell<-r(K)$, and $c(K)-9^{1-K}=9^{1-K}(x'_{K-1}-1)>0$ for $K\ge2$ by Step 8, so $\ell<-r(K)/\big(c(K)-9^{1-K}\big)$: valid and cruder (the last column of the table). It needs $K=10$, with $q=a_{10}=\frac{530455590781}{226312536800}$. Full credit, with the sign stated.
+\item \emph{Decimals.} $q=2.343907$ is accepted, with the exact comparisons $\frac{2343907}{10^6}<a_9$ and $b_9-\frac{2343907}{10^6}=2.53\cdot10^{-7}$. A decimal above $a_9$, such as $2.3439072$, is a correct answer ($\ell-2.3439072=3.9\cdot10^{-8}$) but needs a new lower bound: $a_{10}=2.34390722\ldots$ supplies it. A decimal rounded above the lower bound in hand: $-1$ in Step 9(d), its last point.
+\item \emph{The signs.} Signs of $c(K)$ and of $9c(K)-c(K-1)$ neither proved nor checked: $-2$ in all, the sign point of Step 8 and Step 9(c). They hold here at every $K$ (Step 8), but where a rational solution changes sign the inequality reverses; on the line $1$ of $\binom{[5]}2$, Remark~\ref{r:paper} checked the sign only for $m\le80$.
+\item \emph{The corner.} Reading the law at $k=0$ with $0\cdot P(0)=0$, or passing the limit $k\to0^+$ under the integral: the approximation is lost (Step 7). The first gives $P(2)=\ell/3$, every $P(K)$ is then $\ell$ times a positive rational, positivity gives only $\ell>0$, and the gauge bound at $K=2$, $\ell/3<\ell/9$, gives $\ell<0$: the student's own bracket is empty, which the grader can point to.
+\item \emph{The theorem at small $k$.} Thm.~35.3 cited at $k=1,2,\dots$ or as $k\to0^+$ without the decay of Step 2: Step 5.
+\item \emph{A certificate checked at sample points only}: Step 4.
+\item \emph{The measure} $d\alpha_1d\alpha_2$ on the chart: Step 1.
+\item \emph{A quadrature for $\ell$ or for $P(2)$ used in the solution}: no credit at the step where it is used. It is a check (\S19.5).
+\end{enumerate}
+
+\subsection*{19.5\quad Receipts and the independent check}
+
+The script exam\_s19.py prints every number of this entry. Exact: the sum of squares; the closings $x_0,\dots,x_{15}$ and their recurrence (14 equations, 9 unknowns, nullity 1); the reflection; the certificate (G) and the identity (C) after clearing $e_1^3e_2^2$; its three powers of $k$ in the basis of products of $e_1,e_2,e_3$; the rank $10$ of the symmetric ansatz in $18$ unknowns; the monomial check of Step 5(c); the spot value $-\frac{2809}{7203}$; the symbol and the signs; the walls and $\mathrm{Cor}=6$; the table and the brackets to $K=10$; and to $K=16$ the signs with $c(K)\ge3^{1-K}$, the identity $9^{K-1}c(K)=x_{K-1}$, the frame, and the two forms of the width with its bound $1/(K-1)^2$.
+
+\noindent Check \computed, not part of the solution, in ball arithmetic, with the integrals cut where their tails are below $10^{-70}$. On the chart, the integral over $\alpha_2$ is elementary, $\int_0^\infty\frac{d\alpha_2}{(\alpha_2+A)(A\alpha_2+B)}=\frac{\log(A^2/B)}{A^2-B}$ with $A=1+\alpha_1$, $B=\alpha_1$, so
+\[
+\ell=\int_0^\infty\frac{\log\big((1+x)^2/x\big)}{1+x+x^2}\,dx=2.343907238689458890601562288872277069095\ldots .
+\]
+On the share side (Proposition~\ref{p:bananapin}), $\Gamma(k)^2P(k)=\int_0^\infty y^{k-1}\sG_{0;(1,-1)}(1,y)^3\,dy$ gives the same $\ell$ to $40$ digits, $P(2)-\frac{\ell-2}3=0$ to $47$ digits, and $P(9)=4.8152090557463543143\cdot10^{-9}=c(9)\ell+r(9)$. With this value,
+\[
+\ell-a_8=8.5773\cdot10^{-7},\qquad \ell-a_9=9.6062\cdot10^{-8},\qquad b_9-\ell=1.4186\cdot10^{-8}.
+\]
+The upper side is the sharper. Its slack is $\frac19P(K-1)-P(K)$, which is about $P(K)/(K-1)$ because $P(k)$ decays like $9^{-k}/k$ (for three marks the branch of Thm.~35.11, p.~310, is logarithmic), so $b_K-\ell$ is about $\frac9{8(K-1)}(\ell-a_K)$.
+
+\subsection*{19.6\quad What the example shows}
+
+The reading needed three inputs, and each was elementary once it was named. The analytic input is one inequality, $e_1e_2\ge9e_3$, sharpened to $f\asymp e^{-\varphi}$ by the tropical stride $\varphi$: it gives the convergence at every real $k>0$, the corner, and the upper side of the bracket. The algebraic input is one certificate: it gives the law at every real $k>0$, not only at large $k$. The arithmetic is exact. Positivity gives the lower side and the gauge the upper side. On every ray through the origin the first two inputs exist \derived: $f\le f(\alpha^\star)$ (Thm.~35.10(i)), and the tropical stride, whose volume is $\mathrm{Cor}$ (the six cones of Step 2(c) are the six orders of Proposition~\ref{p:dirclose}). A certificate exists for every law that follows from the relations (Thm.~35.19, p.~313), but Step 5 needs more than existence: bounds on the $g_e$ and their derivatives against the decay of $f^k$ down to $k\to0^+$. Here they came from the numerators lying among the monomials of $e_1^2e_2$, as the exponent condition did in Proposition~\ref{p:certs}; that a certificate with such bounds exists on every ray is \notyet. With $h-1$ masters, positivity of $P(K),\dots,P(K+h-2)$ and the gauge bounds $P(K+i)<f(\alpha^\star)P(K+i-1)$ cut out a polytope in the coordinates of the masters, and Theorem~\ref{t:select}(iv) is the rate at which it shrinks \notyet. The width of the bracket is a ratio of integers from the other end of the pencil (Remark~\ref{r:twochains}):
+\[
+b_K-a_K=\frac{2\cdot9^{K-1}}{3(K-1)^2\,x_{K-1}\,(x_{K-1}-x_{K-2})}\qquad\derived,
+\]
+from $c(K)=9^{1-K}x_{K-1}$, which holds at every $K$ by Corollary~\ref{c:dirlaw}: by Step 5 and the continuation of Proposition~\ref{p:dirclose}, (L) holds identically.
+
+\noindent Open.
+\begin{enumerate}[label=(\roman*)]
+\item The same examination for the lean $(2\one;4,1)$ of \S18.3: its law has no certificate yet (\S18.6(i)), and the signs of its rational solutions are unproved. \notyet
+\item The polytope for the two masters of $H$ (\S18.4), with a certificate for its law of order $4$. \notyet
+\item The corner as the boundary term of the certificate at $k=0$, where $g^{(0)}_e$ does not vanish at infinity, instead of a limit. \notyet
+\end{enumerate}
+
+\subsection*{19.7\quad Corrections}
+
+\begin{enumerate}[label=(\roman*)]
+\item The receipts of Proposition~\ref{p:certs} say that Thm.~35.3 ``applies as stated'' to the banana rays. As stated it gives the relations for large $k$, and Remark~\ref{r:paper} used the three-mark law from $k=1$ and its corner from $k\to0^+$. Step 5 closes that gap for the three-mark law; the four-mark banana ray needs the same bounds, with its own tropical stride.
+\item In Remark~\ref{r:paper} the ratios $-r/c$ are lower bounds at every $q$, since $c(q)>0$ at every $q$ (Step 8), not only at the $q$ computed.
+\item Theorem~\ref{t:select} said that the roots of the symbol are native values, citing Cor.~35.6. The corollary gives the converse, that the native value of every nondegenerate native gauge is a root, and a root need not be a native value (the extra root $\frac{131003}{4771109}$ of \S18.4). The statement is corrected in place: (ii) speaks of roots, and the count of one condition in (iii) is for a simple root that is the value of a nondegenerate native gauge. Step 6 checks that hypothesis here.
+\end{enumerate}
+
+\noindent Aliases, last: $\ell=3L(\chi_{-3},2)$ \recalled, which agrees with the check to $40$ digits; the closings are the sums of squares of trinomial coefficients, the even moments of the planar walk of three unit steps; (L) is an Ap\'ery-like recurrence, and Step 9 is Ap\'ery's limit made two-sided by positivity (Pincherle's minimal solution, read with signs); the certificate is a creative-telescoping certificate for the integral; with $\sG_{0;(1,-1)}(1,y)=2K_0(2\sqrt y)$ the share side is the Bessel moment, $P(k)=4^{2-k}\Gamma(k)^{-2}\int_0^\infty x^{2k-1}K_0(x)^3dx$; $\varphi$ is the tropicalization of $-\log f$, and $\int e^{-k\varphi}dy=6/k^2$ its volume.
 
 \end{document}
